@@ -1,0 +1,192 @@
+{
+  "SaveName": "",
+  "Date": "",
+  "VersionNumber": "",
+  "GameMode": "",
+  "GameType": "",
+  "GameComplexity": "",
+  "Tags": [],
+  "Gravity": 0.5,
+  "PlayArea": 0.5,
+  "Table": "",
+  "Sky": "",
+  "Note": "",
+  "TabStates": {},
+  "LuaScript": "",
+  "LuaScriptState": "",
+  "XmlUI": "",
+  "ObjectStates": [
+    {
+      "GUID": "b84373",
+      "Name": "BlockTriangle",
+      "Transform": {
+        "posX": 8.959896,
+        "posY": 1.64200389,
+        "posZ": 1.637764,
+        "rotX": 1.16902675E-06,
+        "rotY": 90.02703,
+        "rotZ": 2.22985682E-06,
+        "scaleX": 3.18000054,
+        "scaleY": 3.18329763,
+        "scaleZ": 13.5072536
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.0509801,
+        "g": 0.09019569,
+        "b": 0.2666662
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "function onLoad()\r\n    self.addContextMenuItem('텍스트 입력', enterText)\r\n    local length = math.max(self.getBounds().size.x, self.getBounds().size.y, self.getBounds().size.z)\r\n\r\n    -- 새로운 크기에 대한 xml 값 생성용\r\n    -- local st = 13.6\r\n    -- local nv\r\n    -- nv = 990 * length / st\r\n    -- print('width = ', tostring(nv))\r\n    -- nv = 0.1 * st / length\r\n    -- print('scale = ', tostring(nv))\r\nend\r\n\r\n\r\nfunction enterText(color, pos, obj)\r\n    Player[color].showInputDialog(\"캐릭터 이름 입력\", \r\n        function(text, pColor)\r\n            self.UI.setValue('nametext1', text)\r\n            self.UI.setValue('nametext2', text)\r\n        end\r\n    )\r\nend\r\n\r\nfunction setText(input)\r\n    self.UI.setValue('nametext1', input)\r\n    self.UI.setValue('nametext2', input)\r\nend",
+      "LuaScriptState": "",
+      "XmlUI": "<Panel id=\"main\">\r\n    <Panel id=\"side1\" position=\"36 -0.2 -14.5\" rotation=\"0 -45 90\" width=\"990\" height=\"230\" scale=\"0.1 0.4 0.1\">\r\n        <Text id=\"nametext1\" offsetXY=\"0 -35\" fontSize=\"110\" font=\"font/kpwbatang\" color=\"#FFFFFF\" outline=\"#000000\" outlineSize=\"2 -2\" fontStyle=\"Bold\"></Text>\r\n    </Panel>\r\n    <Panel id=\"side2\" position=\"-36 -0.2 -14.5\" rotation=\"0 45 270\" width=\"990\" height=\"230\" scale=\"0.1 0.4 0.1\">\r\n        <Text id=\"nametext2\" offsetXY=\"0 -35\" fontSize=\"110\" font=\"font/kpwbatang\" color=\"#FFFFFF\" outline=\"#000000\" outlineSize=\"2 -2\" fontStyle=\"Bold\"></Text>\r\n    </Panel>\r\n\r\n\r\n</Panel>",
+      "CustomUIAssets": [
+        {
+          "Type": 1,
+          "Name": "font",
+          "URL": "https://steamusercontent-a.akamaihd.net/ugc/15508115169845381258/6CA70CDE3726541A61EC4B1A7711168986A1A89D/"
+        }
+      ],
+      "ChildObjects": [
+        {
+          "GUID": "aa16fa",
+          "Name": "CardCustom",
+          "Transform": {
+            "posX": 0.355346859,
+            "posY": 0.141362742,
+            "posZ": -0.00111281686,
+            "rotX": 45.0000153,
+            "rotY": 89.98678,
+            "rotZ": -0.0004225964,
+            "scaleX": 0.4627236,
+            "scaleY": 0.020429654,
+            "scaleZ": 0.314302355
+          },
+          "Nickname": "",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": true,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 100,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/17750102009802500863/613703BC449736CE9973A0421C460ABE3857098F/",
+              "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/17750102009802500863/613703BC449736CE9973A0421C460ABE3857098F/",
+              "NumWidth": 1,
+              "NumHeight": 1,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 1
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "3f28dc",
+          "Name": "CardCustom",
+          "Transform": {
+            "posX": -0.355344474,
+            "posY": 0.1413628,
+            "posZ": -0.00149999489,
+            "rotX": 45.0,
+            "rotY": 269.9868,
+            "rotZ": -0.0004201815,
+            "scaleX": 0.4627235,
+            "scaleY": 0.020429654,
+            "scaleZ": 0.314302355
+          },
+          "Nickname": "",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": true,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 100,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1": {
+              "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/17750102009802500863/613703BC449736CE9973A0421C460ABE3857098F/",
+              "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/17750102009802500863/613703BC449736CE9973A0421C460ABE3857098F/",
+              "NumWidth": 1,
+              "NumHeight": 1,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 1
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        }
+      ]
+    }
+  ]
+}

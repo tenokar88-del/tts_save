@@ -1,0 +1,77 @@
+{
+  "SaveName": "",
+  "Date": "",
+  "VersionNumber": "",
+  "GameMode": "",
+  "GameType": "",
+  "GameComplexity": "",
+  "Tags": [],
+  "Gravity": 0.5,
+  "PlayArea": 0.5,
+  "Table": "",
+  "Sky": "",
+  "Note": "",
+  "TabStates": {},
+  "LuaScript": "",
+  "LuaScriptState": "",
+  "XmlUI": "",
+  "ObjectStates": [
+    {
+      "GUID": "264c88",
+      "Name": "Custom_Tile",
+      "Transform": {
+        "posX": -1.4527564,
+        "posY": 0.9600001,
+        "posZ": -1.30867743,
+        "rotX": -2.30196491E-07,
+        "rotY": 179.999619,
+        "rotZ": 2.3265946E-07,
+        "scaleX": 3.04999828,
+        "scaleY": 1.0,
+        "scaleZ": 3.04999828
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 0.9182286,
+        "b": 0.7944253
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomImage": {
+        "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/11750711528789754975/69125EA40A4D22EE5471C3A4DC4C3EA5EC118C5C/",
+        "ImageSecondaryURL": "",
+        "ImageScalar": 1.0,
+        "WidthScale": 0.0,
+        "CustomTile": {
+          "Type": 0,
+          "Thickness": 0.1,
+          "Stackable": false,
+          "Stretch": true
+        }
+      },
+      "LuaScript": "question = nil\r\nanswer = nil\r\ntempAnswer = nil\r\nfunction onLoad(en_state)\r\n    local state = JSON.decode(en_state)\r\n    if state ~= nil then\r\n        if state.question ~= nil then\r\n            question = state.question\r\n        else\r\n            question = ''\r\n        end\r\n        if state.answer ~= nil then\r\n            answer = state.answer\r\n        else\r\n            answer = ''\r\n        end\r\n    end\r\n\r\n    makeOpenButton()\r\nend\r\n\r\nfunction onSave()\r\n    local state = {\r\n        question = question,\r\n        answer = answer,\r\n    }\r\n    return JSON.encode(state)\r\nend\r\n\r\nfunction makeOpenButton()\r\n    self.createButton({position={x=0, y=0.105, z=0}, scale={0.5, 0.5, 0.5}, \r\n    width=700, height=180, label=\"봉투 열기\", tooltip=\"봉투를 연 사람만 내용 열람이 가능합니다.\",\r\n    click_function='openEnvelope', function_owner=self,})\r\n    self.createButton({position={x=0, y=0.105, z=0.3}, scale={0.5, 0.5, 0.5}, color=\"Red\",\r\n    width=700, height=180, label=\"전체 공개\", tooltip=\"봉투의 내용을 전체 공개합니다.\",\r\n    click_function='showToAll', function_owner=self,})\r\nend\r\n\r\n\r\nfunction openEnvelope(obj, player_color, alt_click)\r\n    if alt_click == true then return end\r\n    self.removeButton(0)\r\n    self.removeButton(1)\r\n    self.UI.setAttribute('mainPanel', 'visibility', 'Black|'..player_color)\r\n    self.UI.setAttribute('mainPanel', 'active', 'true')\r\n    self.UI.setAttribute('background', 'active', 'true')\r\n    self.UI.setValue('questionText', question)\r\n    self.UI.setAttribute('ifAnswer', 'text', answer)\r\n    self.UI.setAttribute('ifAnswer', 'readOnly', 'false')\r\nend\r\n\r\nfunction closeEnvelope(player, value, id)\r\n    self.UI.setAttribute('mainPanel', 'active', 'false')\r\n    self.UI.setAttribute('background', 'active', 'false')\r\n    Wait.frames(function ()\r\n        answer = tempAnswer\r\n        makeOpenButton()\r\n    end, 20)\r\nend\r\n\r\nfunction showToAll(obj, player_color, alt_click)\r\n    if alt_click == true then return end\r\n    self.removeButton(0)\r\n    self.removeButton(1)\r\n    self.UI.setAttribute('mainPanel', 'visibility', '')\r\n    self.UI.setAttribute('mainPanel', 'active', 'true')\r\n    self.UI.setAttribute('background', 'active', 'true')\r\n    self.UI.setValue('questionText', question)\r\n    self.UI.setAttribute('ifAnswer', 'text', answer)\r\n    self.UI.setAttribute('ifAnswer', 'readOnly', 'true')\r\nend\r\n\r\nfunction setQuestion(player, value, id)\r\n    player.showMemoDialog(\"질문글 설정\",\r\n    function (text, player_color)\r\n        question = text\r\n        self.UI.setValue('questionText', question)\r\n    end)\r\nend\r\n\r\nfunction onEndEdit(player, value, id)\r\n    self.UI.setAttribute(id, \"text\", value)\r\n    tempAnswer = value\r\nend",
+      "LuaScriptState": "{\"answer\":\"\",\"question\":\"\"}",
+      "XmlUI": "<Image id=\"background\" active=\"false\" position=\"0 0 -10.1\" rotation=\"0 0 180\" width=\"1333\" height=\"2000\" scale=\"0.1 0.1 0.1\" image=\"https://steamusercontent-a.akamaihd.net/ugc/17205357775264553517/93F25B99F14E4C68984B5EFCB99A5C8C26DA225B/\"/>\r\n<Panel id=\"mainPanel\" active=\"false\" position=\"0 0 -10.2\" rotation=\"0 0 180\" width=\"1333\" height=\"2000\" scale=\"0.1 0.1 0.1\">\r\n<Button rectAlignment=\"UpperRight\" offsetXY=\"-100 -10\" width=\"380\" height=\"80\" color=\"#000000\" textColor=\"#FFFFFF\" fontSize=\"55\"\r\nonClick=\"setQuestion\" visibility=\"Black\">질문글 설정</Button>\r\n<Text offsetXY=\"100 -30\" fontSize=\"40\" alignment=\"UpperLeft\" rectAlignment=\"MiddleCenter\" fontStyle=\"Bold\" color=\"#0000FF\">[질문]</Text>\r\n<Panel offsetXY=\"0 -100\" width=\"1133\" height=\"550\" rectAlignment=\"UpperCenter\" color=\"#FFFFFF44\">\r\n<Text id=\"questionText\" width=\"95%\" height=\"95%\" fontSize=\"40\" alignment=\"UpperLeft\" rectAlignment=\"MiddleCenter\"/>\r\n</Panel>\r\n<Text offsetXY=\"100 -705\" fontSize=\"40\" alignment=\"UpperLeft\" rectAlignment=\"MiddleCenter\" fontStyle=\"Bold\" color=\"#0000FF\">[답변]</Text>\r\n<InputField id=\"ifAnswer\" width=\"1133\" height=\"1050\" offsetXY=\"0 -300\" fontSize=\"40\" onEndEdit=\"onEndEdit\" lineType=\"MultiLineNewLine\"/>\r\n<Button rectAlignment=\"LowerCenter\" offsetXY=\"0 50\" width=\"310\" height=\"90\" color=\"#44FF44\" textColor=\"#000000\" fontSize=\"55\"\r\nonClick=\"closeEnvelope\">봉투 닫기</Button>\r\n<Text rectAlignment=\"LowerRight\" width=\"500\" height=\"80\" offsetXY=\"-10 50\" fontSize=\"30\" fontStyle=\"Bold\" color=\"#FF0000\">※봉투를 닫아야 내용이 저장됩니다.</Text>\r\n</Panel>"
+    }
+  ]
+}

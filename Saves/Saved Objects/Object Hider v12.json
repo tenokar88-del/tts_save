@@ -1,0 +1,65 @@
+{
+  "SaveName": "",
+  "Date": "",
+  "VersionNumber": "",
+  "GameMode": "",
+  "GameType": "",
+  "GameComplexity": "",
+  "Tags": [],
+  "Gravity": 0.5,
+  "PlayArea": 0.5,
+  "Table": "",
+  "Sky": "",
+  "Note": "",
+  "TabStates": {},
+  "LuaScript": "",
+  "LuaScriptState": "",
+  "XmlUI": "",
+  "ObjectStates": [
+    {
+      "GUID": "f96899",
+      "Name": "BlockSquare",
+      "Transform": {
+        "posX": -0.03321638,
+        "posY": 1.05999935,
+        "posZ": -0.249041915,
+        "rotX": 5.45498369E-06,
+        "rotY": 180.0,
+        "rotZ": 1.70347789E-07,
+        "scaleX": 4.0,
+        "scaleY": 0.2,
+        "scaleZ": 4.0
+      },
+      "Nickname": "Object Hider v1.2",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "autoHideSwitch = 0\r\n\r\nbtparams1 = {\r\n    click_function = \"hideObjects\",\r\n    function_owner = self,\r\n    label          = \"숨기기\",\r\n    position       = {0, 1, -0.25},\r\n    rotation       = {0, 0, 0},\r\n    width          = 1100,\r\n    height         = 330,\r\n    font_size      = 180,\r\n    scale          = {0.3, 0.3, 0.3},\r\n    color          = {1, 1, 1},\r\n    font_color     = {0, 0, 0},\r\n    tooltip        = \"오브젝트를 숨깁니다.\",\r\n}\r\nbtparams2 = {\r\n    click_function = \"showObjects\",\r\n    function_owner = self,\r\n    label          = \"보이기\",\r\n    position       = {0, 1, 0},\r\n    rotation       = {0, 0, 0},\r\n    width          = 1100,\r\n    height         = 330,\r\n    font_size      = 180,\r\n    scale          = {0.3, 0.3, 0.3},\r\n    color          = {1, 1, 1},\r\n    font_color     = {0, 0, 0},\r\n    tooltip        = \"오브젝트를 보이게 합니다.\",\r\n}\r\nbtparams3 = {\r\n    click_function = \"autoHideObjects\",\r\n    function_owner = self,\r\n    label          = \"자동 숨김\",\r\n    position       = {0, 1, 0.25},\r\n    rotation       = {0, 0, 0},\r\n    width          = 1100,\r\n    height         = 330,\r\n    font_size      = 180,\r\n    scale          = {0.3, 0.3, 0.3},\r\n    color          = {1, 1, 1},\r\n    font_color     = {0, 0, 0},\r\n    tooltip        = \"계속 오브젝트를 숨깁니다.\\n(새로운 오브젝트가 생기거나 description이 변경될 때에도 숨겨짐)\",\r\n}\r\n\r\nfunction onLoad(script_state)\r\n    local savedTable = JSON.decode(script_state)\r\n\r\n    if savedTable ~= nil then\r\n        if savedTable.AHS ~= nil then\r\n            autoHideSwitch = savedTable.AHS\r\n        end\r\n    end\r\n    if autoHideSwitch == 0 then\r\n        hideObjects(self, 'Black', false)\r\n    end\r\n    self.createButton(btparams1)\r\n    self.createButton(btparams2)\r\n    self.createButton(btparams3)\r\nend\r\n\r\nfunction onSave()\r\n    local state = {\r\n        AHS = autoHideSwitch\r\n    }\r\n    return JSON.encode(state)\r\nend\r\n\r\nfunction hideObjects(obj, color, alt_click)\r\n    if alt_click == true then\r\n        return\r\n    end\r\n    if color ~= 'Black' and color ~= nil then\r\n        if Player[color].host == false and Player[color].promoted == false and Player[color].seated == true then\r\n            broadcastToColor('검정색 플레이어 또는 호스트나 프로모트 플레이어만이 조정할 수 있습니다.')\r\n            return\r\n        end\r\n    end\r\n    \r\n    if autoHideSwitch == 1 then\r\n        if Player[color].seated == true then\r\n            broadcastToColor('자동 숨김이 꺼집니다.', color, {0, 1, 0})\r\n        end\r\n        autoHideSwitch = 0\r\n    end\r\n    self.setColorTint({0, 0, 1})\r\n    if Player[color].seated == true then\r\n        broadcastToColor('개인 오브젝트를 숨깁니다.', color, {0, 1, 0})\r\n    end\r\n    hideObjects_func()\r\nend\r\n\r\nfunction showObjects(obj, color, alt_click)\r\n    if alt_click == true then\r\n        return\r\n    end\r\n    if color ~= 'Black' and color ~= nil then\r\n        if Player[color].host == false and Player[color].promoted == false and Player[color].seated == true then\r\n            broadcastToColor('검정색 플레이어 또는 호스트나 프로모트 플레이어만이 조정할 수 있습니다.')\r\n            return\r\n        end\r\n    end\r\n\r\n    local tmpObjects = getObjects()\r\n    local desc\r\n    if autoHideSwitch == 1 then\r\n        if Player[color].seated == true then\r\n            broadcastToColor('자동 숨김이 꺼집니다.', color, {0, 1, 0})\r\n        end\r\n        autoHideSwitch = 0\r\n    end\r\n    self.setColorTint({0, 0, 0})\r\n    if Player[color].seated == true then\r\n        broadcastToColor('개인 오브젝트 숨김을 해제합니다.', color, {0, 1, 0})\r\n    end\r\n    for i = 1, #tmpObjects do\r\n        desc = string.lower(tmpObjects[i].getDescription())\r\n        if string.find(desc, 'show:') then\r\n            tmpObjects[i].setInvisibleTo({})\r\n        end\r\n    end\r\nend\r\n\r\nfunction autoHideObjects(obj, color, alt_click)\r\n    if alt_click == true then\r\n        return\r\n    end\r\n    if color ~= 'Black' and color ~= nil then\r\n        if Player[color].host == false and Player[color].promoted == false and Player[color].seated == true then\r\n            broadcastToColor('검정색 플레이어 또는 호스트나 프로모트 플레이어만이 조정할 수 있습니다.')\r\n            return\r\n        end\r\n    end\r\n\r\n    if autoHideSwitch == 0 then\r\n        if Player[color].seated == true then\r\n            broadcastToColor('자동 숨김이 켜집니다.', color, {0, 1, 0})\r\n        end\r\n        autoHideSwitch = 1\r\n        self.setColorTint({0, 0.5, 0})\r\n    else\r\n        if Player[color].seated == true then\r\n            broadcastToColor('자동 숨김이 꺼집니다.', color, {0, 1, 0})\r\n        end\r\n        autoHideSwitch = 0\r\n        self.setColorTint({0, 0, 1})\r\n    end\r\nend\r\n\r\n\r\nfunction hideObjects_func()\r\n    local tmpObjects = getObjects()\r\n    local desc\r\n    for i = 1, #tmpObjects do\r\n        desc = string.lower(tmpObjects[i].getDescription())\r\n        local allColors = {'White', 'Brown', 'Red', 'Orange', 'Yellow', 'Green', 'Teal', 'Blue', 'Purple', 'Pink', 'Grey'}\r\n        local hideColors = {}\r\n        if string.find(desc, 'show:') then\r\n            for j = 1, #allColors do\r\n                if string.find(desc, string.lower(allColors[j])) == nil then\r\n                    hideColors[#hideColors + 1] = allColors[j]\r\n                end\r\n            end\r\n            tmpObjects[i].setInvisibleTo(hideColors)\r\n        end\r\n        -- if string.find(desc, 'show:white') then\r\n        --     showToOnly(tmpObjects[i], 'White')\r\n        -- elseif string.find(desc, 'show:brown') then\r\n        --     showToOnly(tmpObjects[i], 'Brown')\r\n        -- elseif string.find(desc, 'show:red') then\r\n        --     showToOnly(tmpObjects[i], 'Red')\r\n        -- elseif string.find(desc, 'show:orange') then\r\n        --     showToOnly(tmpObjects[i], 'Orange')\r\n        -- elseif string.find(desc, 'show:yellow') then\r\n        --     showToOnly(tmpObjects[i], 'Yellow')\r\n        -- elseif string.find(desc, 'show:green') then\r\n        --     showToOnly(tmpObjects[i], 'Green')\r\n        -- elseif string.find(desc, 'show:teal') then\r\n        --     showToOnly(tmpObjects[i], 'Teal')\r\n        -- elseif string.find(desc, 'show:blue') then\r\n        --     showToOnly(tmpObjects[i], 'Blue')\r\n        -- elseif string.find(desc, 'show:purple') then\r\n        --     showToOnly(tmpObjects[i], 'Purple')\r\n        -- elseif string.find(desc, 'show:pink') then\r\n        --     showToOnly(tmpObjects[i], 'Pink')\r\n        -- elseif string.find(desc, 'show:black') then\r\n        --     showToOnly(tmpObjects[i], 'Black')\r\n        -- elseif string.find(desc, 'reveal') then\r\n        --     tmpObjects[i].setInvisibleTo({})\r\n        -- end\r\n    end\r\nend\r\n\r\n\r\nfunction onFixedUpdate()\r\n    if autoHideSwitch == 1 then\r\n        hideObjects_func()\r\n    end\r\nend\r\n\r\nfunction showToOnly(object, color)\r\n    local allColors = {'White', 'Brown', 'Red', 'Orange', 'Yellow', 'Green', 'Teal', 'Blue', 'Purple', 'Pink', 'Grey'}\r\n    for i = 1, 10 do\r\n        if allColors[i] == color then\r\n            allColors[i] = 'Grey'\r\n            break\r\n        end\r\n    end\r\n    object.setInvisibleTo(allColors)\r\nend",
+      "LuaScriptState": "{\"AHS\":0}",
+      "XmlUI": "<Panel active=\"true\" width=\"1000\" height=\"1000\" visibility=\"Black\"\r\n    rectAlignment=\"MiddleCenter\" offsetXY=\"0 0\" scale=\"0.1 0.1 1\" position=\"0 0 -51\" rotation=\"0 0 180\">\r\n    <Text color=\"#FFFF00\" width=\"180\" height=\"80\" offsetXY=\"-10 0\" fontSize=\"70\" rectAlignment=\"UpperRight\">v1.2</Text>\r\n    <!-- <Button onClick=\"hideObjects\" width=\"600\" height=\"200\" offsetXY=\"0 300\" fontSize=\"100\">숨기기</Button>\r\n    <Button onClick=\"showObjects\" width=\"600\" height=\"200\" offsetXY=\"0 0\" fontSize=\"100\">보이기</Button>\r\n    <Button onClick=\"autoHideObjects\" width=\"600\" height=\"200\" offsetXY=\"0 -300\" fontSize=\"100\">자동숨김</Button> -->\r\n    <Text position=\"0 0 102\" rotation=\"0 180 0\" fontSize=\"50\" color=\"#FFFFFF\" width=\"800\" height=\"800\">- 사용법 -\r\n    <textcolor color=\"#FFBB00\">숨기기 원하는 오브젝트 우클릭\r\n    Description 항목 입력</textcolor>\r\n    (show:COLOR 형식으로 입력)\r\n\r\n    - 예시 -\r\n    show:white <textsize size=\"22\">(white에게만 보임)</textsize>\r\n    show:brown,red <textsize size=\"22\">(brown, red에게만 보임)</textsize>\r\n    \r\n    색상 목록 : white, brown,\r\n    red, orange, yellow, green,\r\n    teal, blue, purple, pink\r\n    </Text>\r\n</Panel>"
+    }
+  ]
+}

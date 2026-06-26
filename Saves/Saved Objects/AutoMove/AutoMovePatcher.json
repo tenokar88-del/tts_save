@@ -1,0 +1,77 @@
+{
+  "SaveName": "",
+  "Date": "",
+  "VersionNumber": "",
+  "GameMode": "",
+  "GameType": "",
+  "GameComplexity": "",
+  "Tags": [],
+  "Gravity": 0.5,
+  "PlayArea": 0.5,
+  "Table": "",
+  "Sky": "",
+  "Note": "",
+  "TabStates": {},
+  "LuaScript": "",
+  "LuaScriptState": "",
+  "XmlUI": "",
+  "ObjectStates": [
+    {
+      "GUID": "2cb209",
+      "Name": "Custom_Tile",
+      "Transform": {
+        "posX": -1.03481555,
+        "posY": 1.48149931,
+        "posZ": -2.79244781,
+        "rotX": -1.557288E-08,
+        "rotY": 179.9849,
+        "rotZ": 4.31609E-08,
+        "scaleX": 3.31565976,
+        "scaleY": 1.0,
+        "scaleZ": 3.31565976
+      },
+      "Nickname": "밀담방 이동 패치",
+      "Description": "",
+      "GMNotes": "밀담방 이동 패치",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.559233248,
+        "g": 0.336275518,
+        "b": 0.152957648
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomImage": {
+        "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/16634486873030030658/B07ADD4978B309450F5042DAE029D5F29E2330DC/",
+        "ImageSecondaryURL": "https://steamusercontent-a.akamaihd.net/ugc/9811379854791557153/86E00BB451107B6620D09E18DB5EE90042C926C3/",
+        "ImageScalar": 1.0,
+        "WidthScale": 0.0,
+        "CustomTile": {
+          "Type": 0,
+          "Thickness": 0.2,
+          "Stackable": false,
+          "Stretch": true
+        }
+      },
+      "LuaScript": "btColor = {r=1, g=0, b=0}\r\n\r\nfunction onLoad(en_state)\r\n    local state = JSON.decode(en_state)\r\n    if state ~= nil then\r\n        if state.btColor ~= nil then\r\n            btColor.r = state.btColor.r\r\n            btColor.g = state.btColor.g\r\n            btColor.b = state.btColor.b\r\n        end\r\n    end\r\n    self.createButton({position={x=0, y=0.21, z=-0.40}, scale={4, 4, 4}, color=btColor, \r\n        click_function='userFunction', function_owner=self, tooltip=self.getGMNotes()})\r\n    self.createButton({position={x=0, y=0.21, z=0.40}, scale={0.38, 0.38, 0.38}, color={r=0, g=0, b=0}, width=0, height=0,\r\n        click_function='none', function_owner=self, fontSize=80, label=self.getGMNotes()})\r\n    -- self.addContextMenuItem(\"캡션 설정\", setCaption)\r\n    -- self.addContextMenuItem(\"버튼색 설정\", setBtColor)\r\nend\r\n\r\nsubst1F = [==[Player[movingPlayerColor].lookAt({position=cameraLocation[tonumber(nextRoom)], pitch=55, yaw=0, distance=120})]==]\r\nsubst1T = [==[Player[movingPlayerColor].lookAt({position=cameraLocation[tonumber(nextRoom)], pitch=55, yaw=0, distance=120})\r\n        if autoMoveModule ~= nil then\r\n            autoMoveModule.call('autoMove', {steamId = Player[movingPlayerColor].steam_id, nextRoom = tonumber(nextRoom)})\r\n        end]==]\r\nsubst2F = [==[Player['Black'].lookAt({position=cameraLocation[tonumber(roomtomove)], pitch=55, yaw=0, distance=120})]==]\r\nsubst2T = [==[Player['Black'].lookAt({position=cameraLocation[tonumber(roomtomove)], pitch=55, yaw=0, distance=120})\r\n        if autoMoveModule ~= nil then\r\n            autoMoveModule.call('autoMove', {steamId = player.steam_id, nextRoom = tonumber(roomtomove)})\r\n        end]==]\r\nsubst3F = [==[cameraLocation[5] = {x = 130, y = -9, z = -150}]==]\r\nsubst3T = [==[cameraLocation[5] = {x = 130, y = -9, z = -150}\r\nautoMoveModule = nil\r\n]==]\r\n\r\nsubst1F2 = [==[Player[movingPlayerColor].lookAt({position=TableFloor[nextRoom].getPosition(), pitch=55, yaw=0, distance=120})]==]\r\nsubst1T2 = [==[Player[movingPlayerColor].lookAt({position=TableFloor[nextRoom].getPosition(), pitch=55, yaw=0, distance=120})\r\n        if autoMoveModule ~= nil then\r\n            autoMoveModule.call('autoMove', {steamId = Player[movingPlayerColor].steam_id, nextRoom = tonumber(nextRoom)})\r\n        end]==]\r\nsubst2F2 = [==[Player['Black'].lookAt({position=TableFloor[tonumber(roomtomove)].getPosition(), pitch=55, yaw=0, distance=120})]==]\r\nsubst2T2 = [==[Player['Black'].lookAt({position=TableFloor[tonumber(roomtomove)].getPosition(), pitch=55, yaw=0, distance=120})\r\n        if autoMoveModule ~= nil then\r\n            autoMoveModule.call('autoMove', {steamId = player.steam_id, nextRoom = tonumber(roomtomove)})\r\n        end]==]\r\nsubst3F2 = [==[pcNameList = {}]==]\r\nsubst3T2 = [==[autoMoveModule = nil\r\npcNameList = {}]==]\r\n\r\nguidetext = [=[오른쪽에 생성된 스크립트를\r\n전체복사(Ctrl+A, Ctrl+C)하여\r\nModding -> Scripting ->\r\nGlobal Lua에 붙여넣기하세요.\r\n그 후 게임을 저장하면 됩니다.\r\n]=]\r\n\r\nlocal function literalGsub(str, from, to)\r\n    -- gsub 패턴 특수문자 이스케이프\r\n    from = from:gsub('([%(%)%.%%%+%-%*%?%[%]%^%$])', '%%%1')\r\n    -- 교체 문자열의 % 이스케이프\r\n    to = to:gsub('%%', '%%%%')\r\n    return str:gsub(from, to)\r\nend\r\n\r\nfunction userFunction(obj, player_color, alt_click)\r\n    if alt_click == true then return end\r\n    \r\n    local g_script = Global.getLuaScript() or \"\"\r\n    \r\n    if string.find(g_script, 'autoMoveModule') then\r\n        broadcastToAll('패치가 필요없습니다.')\r\n    else\r\n        local g_script_res\r\n        local count1\r\n        local count2\r\n        local count3\r\n        if string.find(g_script, 'cameraLocation') then\r\n            g_script_res, count1 = literalGsub(g_script, subst1F, subst1T)\r\n            g_script_res, count2 = literalGsub(g_script_res, subst2F, subst2T)\r\n            g_script_res, count3 = literalGsub(g_script_res, subst3F, subst3T)\r\n        else\r\n            g_script_res, count1 = literalGsub(g_script, subst1F2, subst1T2)\r\n            g_script_res, count2 = literalGsub(g_script_res, subst2F2, subst2T2)\r\n            g_script_res, count3 = literalGsub(g_script_res, subst3F2, subst3T2)\r\n        end\r\n\r\n        if count1 == 0 or count2 == 0 or count3 == 0 then\r\n            broadcastToAll('알맞은 수정 포인트를 찾을 수 없습니다. 제작자에게 문의해주세요.')\r\n            return\r\n        end\r\n        broadcastToAll('Global 스크립트를 수정하고 저장하세요.')\r\n        self.editButton({\r\n            index = 1,\r\n            label = guidetext,\r\n            fontSize=3\r\n        })\r\n        self.UI.setAttribute('mainPanel', 'active', 'true')\r\n        self.UI.setAttribute('if', 'text', g_script_res)\r\n    end\r\nend\r\n\r\n\r\nfunction onSave()\r\n    local state = {\r\n        btColor = {r = btColor.r, g = btColor.g, b = btColor.b}\r\n    }\r\n    return JSON.encode(state)\r\nend",
+      "LuaScriptState": "{\"btColor\":{\"b\":0,\"g\":0,\"r\":1}}",
+      "XmlUI": "<Panel id=\"mainPanel\" active=\"false\" position=\"-230 0 -100\" rotation=\"0 0 180\" width=\"800\" height=\"1000\" color=\"#FFFFFF88\" scale=\"0.4 0.4 0.4\">\r\n<InputField id=\"if\" width=\"750\" height=\"950\" lineType=\"MultiLineNewLine\" readOnly=\"true\"/>\r\n</Panel>"
+    }
+  ]
+}

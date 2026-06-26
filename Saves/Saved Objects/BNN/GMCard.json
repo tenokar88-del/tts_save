@@ -1,0 +1,85 @@
+{
+  "SaveName": "",
+  "Date": "",
+  "VersionNumber": "",
+  "GameMode": "",
+  "GameType": "",
+  "GameComplexity": "",
+  "Tags": [],
+  "Gravity": 0.5,
+  "PlayArea": 0.5,
+  "Table": "",
+  "Sky": "",
+  "Note": "",
+  "TabStates": {},
+  "LuaScript": "",
+  "LuaScriptState": "",
+  "XmlUI": "",
+  "ObjectStates": [
+    {
+      "GUID": "f936a0",
+      "Name": "CardCustom",
+      "Transform": {
+        "posX": -14.63035,
+        "posY": 1.49510384,
+        "posZ": 11.3092852,
+        "rotX": 2.8803695E-09,
+        "rotY": 180.000015,
+        "rotZ": 180.0,
+        "scaleX": 1.7,
+        "scaleY": 1.0,
+        "scaleZ": 1.7
+      },
+      "Nickname": "GMCard",
+      "Description": "",
+      "GMNotes": "CardForCopy",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.713235259,
+        "g": 0.713235259,
+        "b": 0.713235259
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": false,
+      "GridProjection": false,
+      "HideWhenFaceDown": true,
+      "Hands": true,
+      "CardID": 1100,
+      "SidewaysCard": false,
+      "CustomDeck": {
+        "11": {
+          "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/12936461695320473076/2433AFF29962B5DF272599C75FA9CCB8412BD1BD/",
+          "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/10019717118789669326/2BB1A2194E8C0DA2F7E57129CB9B3CC4F8228859/",
+          "NumWidth": 1,
+          "NumHeight": 1,
+          "BackIsHidden": true,
+          "UniqueBack": false,
+          "Type": 0
+        }
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "CustomUIAssets": [
+        {
+          "Type": 1,
+          "Name": "font",
+          "URL": "https://steamusercontent-a.akamaihd.net/ugc/15508115169845381258/6CA70CDE3726541A61EC4B1A7711168986A1A89D/"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "SaveName": "",
+  "Date": "",
+  "VersionNumber": "",
+  "GameMode": "",
+  "GameType": "",
+  "GameComplexity": "",
+  "Tags": [],
+  "Gravity": 0.5,
+  "PlayArea": 0.5,
+  "Table": "",
+  "Sky": "",
+  "Note": "",
+  "TabStates": {},
+  "LuaScript": "",
+  "LuaScriptState": "",
+  "XmlUI": "",
+  "ObjectStates": [
+    {
+      "GUID": "f96899",
+      "Name": "BlockSquare",
+      "Transform": {
+        "posX": -0.0330397,
+        "posY": 1.05999935,
+        "posZ": -0.249003083,
+        "rotX": 5.48475236E-06,
+        "rotY": 180.0,
+        "rotZ": -9.857856E-08,
+        "scaleX": 4.0,
+        "scaleY": 0.2,
+        "scaleZ": 4.0
+      },
+      "Nickname": "플레이어 순서 결정",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 0.81412673,
+        "b": 0.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "autoHideSwitch = 0\r\n\r\nbtparams1 = {\r\n    click_function = \"getSelectingOrder\",\r\n    function_owner = self,\r\n    label          = \"회색 순서 결정\",\r\n    position       = {0, 1, -0.15},\r\n    rotation       = {0, 0, 0},\r\n    width          = 1400,\r\n    height         = 330,\r\n    font_size      = 180,\r\n    scale          = {0.3, 0.3, 0.3},\r\n    color          = {1, 1, 1},\r\n    font_color     = {0, 0, 0},\r\n    tooltip        = \"회색 플레이어들 중 순서를 정합니다.\",\r\n}\r\nbtparams2 = {\r\n    click_function = \"getColorOrder\",\r\n    function_owner = self,\r\n    label          = \"색상 순서 결정\",\r\n    position       = {0, 1, 0.15},\r\n    rotation       = {0, 0, 0},\r\n    width          = 1400,\r\n    height         = 330,\r\n    font_size      = 180,\r\n    scale          = {0.3, 0.3, 0.3},\r\n    color          = {1, 1, 1},\r\n    font_color     = {0, 0, 0},\r\n    tooltip        = \"색상 플레이어들 중 순서를 정합니다.\",\r\n}\r\n\r\nfunction onLoad()\r\n    math.randomseed(os.time())\r\n    self.createButton(btparams1)\r\n    self.createButton(btparams2)\r\nend\r\n\r\nfunction getSelectingOrder(obj, color, alt)\r\n    if alt == true then\r\n        return\r\n    end\r\n\r\n    local greymen = {}\r\n    local nickname = {}\r\n    local nName = 0\r\n    local nicknameOrdered = {}\r\n    local nOrdered = 1\r\n    local rv = 0\r\n    local listToBroadcast = \"\"\r\n    \r\n    greymen = Player.getSpectators()\r\n    nName = #greymen\r\n    for i = 1, #greymen do\r\n        nickname[i] = greymen[i].steam_name\r\n    end\r\n    \r\n    for i = 1, #greymen do\r\n        rv = math.random(1, nName)\r\n        nicknameOrdered[nOrdered] = '['..nickname[rv]..']'\r\n        nOrdered = nOrdered + 1\r\n        nickname[rv] = nickname[nName]\r\n        nName = nName - 1\r\n    end\r\n    for i = 1, #greymen do\r\n        listToBroadcast = listToBroadcast..nicknameOrdered[i]..\"\\n\"\r\n    end\r\n    broadcastToAll('회색 플레이어('..tostring(#greymen)..\"명) 중 순서를 정합니다. - 채팅창 확인!\")\r\n    printToAll(listToBroadcast..\"----------------------------------\")\r\nend\r\n\r\ncolorValue = {}\r\ncolorValue['White'] = {1, 1, 1}\r\ncolorValue['Brown'] = {0.443, 0.231, 0.09}\r\ncolorValue['Red'] = {0.856, 0.1, 0.094}\r\ncolorValue['Orange'] = {0.956, 0.392, 0.113}\r\ncolorValue['Yellow'] = {0.905, 0.898, 0.172}\r\ncolorValue['Green'] = {0.192, 0.701, 0.168}\r\ncolorValue['Teal'] = {0.129, 0.694, 0.607}\r\ncolorValue['Blue'] = {0.118, 0.53, 1}\r\ncolorValue['Purple'] = {0.627, 0.125, 0.941}\r\ncolorValue['Pink'] = {0.96, 0.439, 0.807}\r\n\r\nfunction getColorOrder(obj, color, alt)\r\n    if alt == true then\r\n        return\r\n    end\r\n\r\n    local colorList = {'White', 'Brown', 'Red', 'Orange', 'Yellow', 'Green', 'Teal', 'Blue', 'Purple', 'Pink'}\r\n    local seatedColor = {}\r\n    local nColor = 0\r\n    local rv = 0\r\n    local pName\r\n\r\n    for i = 1, 10 do\r\n        if Player[colorList[i]].seated == true then\r\n            nColor = nColor + 1\r\n            seatedColor[nColor] = colorList[i]\r\n        end\r\n    end\r\n\r\n    broadcastToAll(\"색상 플레이어(\"..tostring(nColor)..\"명) 중 순서를 정합니다. - 채팅창 확인!\")\r\n    \r\n    while nColor > 0 do\r\n        rv = math.random(1, nColor)\r\n        if Player[seatedColor[rv]].steam_name ~= nil and Player[seatedColor[rv]].steam_name ~= '' then\r\n            pName = Player[seatedColor[rv]].steam_name\r\n        else\r\n            pName = seatedColor[rv]\r\n        end\r\n        \r\n        printToAll('['..pName..']', colorValue[seatedColor[rv]])\r\n        seatedColor[rv] = seatedColor[nColor]\r\n        nColor = nColor - 1\r\n    end\r\n    printToAll(\"----------------------------------\")\r\nend",
+      "LuaScriptState": "",
+      "XmlUI": "<Panel active=\"true\" width=\"1000\" height=\"1000\" visibility=\"Black\"\r\n    rectAlignment=\"MiddleCenter\" offsetXY=\"0 0\" scale=\"0.1 0.1 1\" position=\"0 0 -51\" rotation=\"0 0 180\">\r\n    <Text color=\"#000000\" width=\"180\" height=\"80\" offsetXY=\"-10 0\" fontSize=\"70\" rectAlignment=\"UpperRight\">v1.1</Text>\r\n    <!-- <Button onClick=\"getSelectingOrder\" width=\"750\" height=\"240\" offsetXY=\"0 150\" fontSize=\"100\">회색 순서 결정</Button>\r\n    <Button onClick=\"getColorOrder\" width=\"750\" height=\"240\" offsetXY=\"0 -150\" fontSize=\"100\">색상 순서 결정</Button> -->\r\n</Panel>"
+    }
+  ]
+}

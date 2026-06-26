@@ -1,0 +1,77 @@
+{
+  "SaveName": "",
+  "Date": "",
+  "VersionNumber": "",
+  "GameMode": "",
+  "GameType": "",
+  "GameComplexity": "",
+  "Tags": [],
+  "Gravity": 0.5,
+  "PlayArea": 0.5,
+  "Table": "",
+  "Sky": "",
+  "Note": "",
+  "TabStates": {},
+  "LuaScript": "",
+  "LuaScriptState": "",
+  "XmlUI": "",
+  "ObjectStates": [
+    {
+      "GUID": "3b50f5",
+      "Name": "Custom_Token",
+      "Transform": {
+        "posX": -0.000260603148,
+        "posY": 1.060001,
+        "posZ": 0.0178540144,
+        "rotX": -5.769464E-07,
+        "rotY": 179.999939,
+        "rotZ": 5.15033526E-06,
+        "scaleX": 0.67,
+        "scaleY": 1.0,
+        "scaleZ": 0.67
+      },
+      "Nickname": "Player order randomizer",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomImage": {
+        "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/822313860014048544/CB69DE873E376A1B8C608A3C4976B7B2BE2B6A4F/",
+        "ImageSecondaryURL": "",
+        "ImageScalar": 1.0,
+        "WidthScale": 0.0,
+        "CustomToken": {
+          "Thickness": 0.2,
+          "MergeDistancePixels": 15.0,
+          "StandUp": false,
+          "Stackable": false
+        }
+      },
+      "LuaScript": "\r\n-- Thanks to dzikakulka for the script\r\n\r\r\nfunction onload()\r\n  self.createButton({ click_function = 'PrintRandomOrder',\r\n                      label = 'Random\\nplayer\\norder',\r\n                      function_owner = self,\r\n                      position = {0, 0.18, 0},\r\n                      rotation = {0, 0, 0},\r\n                      width = 1000,\r\n                      height = 1000,\r\n                      font_size = 200})\r\r\nend\r\n\r\nfunction PrintRandomOrder(_, clickPlayerColor)\r\n    local function BBcolor(stringColor)\r\n        local color = stringColorToRGB(stringColor)\r\n        return '[' .. string.format(\"%02x%02x%02x\", color[1]*255, color[2]*255, color[3]*255) .. ']'\r\n    end\r\n\r\n    clickCount = clickCount or 1\r\n    local seated = getSeatedPlayers()\r\n    local shuffled = {}\r\n    while #seated > 0 do\r\n        local rand = math.random(1, #seated)\r\n        table.insert(shuffled, table.remove(seated, rand))\r\n    end\r\n    local msg = '(#' .. clickCount .. ') ' .. Player[clickPlayerColor].steam_name .. ' (' .. Player[clickPlayerColor].color .. ') '\r\n    msg = msg .. 'determines the random player order to be: '\r\n    for k,color in ipairs(shuffled) do\r\n        msg = msg .. BBcolor(color) .. Player[color].steam_name .. ' (' .. color .. '), [-]'\r\n    end\r\n    msg = msg:sub(1, -6)\r\n    broadcastToAll(msg, {1, 1, 1})\r\n\r\n    clickCount = clickCount + 1\r\nend\r\r\n",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    }
+  ]
+}

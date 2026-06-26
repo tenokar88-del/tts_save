@@ -1,0 +1,77 @@
+{
+  "SaveName": "",
+  "Date": "",
+  "VersionNumber": "",
+  "GameMode": "",
+  "GameType": "",
+  "GameComplexity": "",
+  "Tags": [],
+  "Gravity": 0.5,
+  "PlayArea": 0.5,
+  "Table": "",
+  "Sky": "",
+  "Note": "",
+  "TabStates": {},
+  "LuaScript": "",
+  "LuaScriptState": "",
+  "XmlUI": "",
+  "ObjectStates": [
+    {
+      "GUID": "a9d90a",
+      "Name": "Custom_Tile",
+      "Transform": {
+        "posX": 9.842869E-08,
+        "posY": 3.66972518,
+        "posZ": 2.0,
+        "rotX": -1.18268381E-05,
+        "rotY": 179.999847,
+        "rotZ": -6.48155037E-07,
+        "scaleX": 3.1206615,
+        "scaleY": 1.0,
+        "scaleZ": 3.1206615
+      },
+      "Nickname": "가위바위보",
+      "Description": "우클릭으로 사용",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.182926327,
+        "g": 0.0823166445,
+        "b": 0.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomImage": {
+        "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/9852916965540996233/A1AEC691D26261CAA488CFA817534640A8D1EBDC/",
+        "ImageSecondaryURL": "https://steamusercontent-a.akamaihd.net/ugc/49083714025498790/33FE440167DF21F00297E0110CA0E06538E5874A/",
+        "ImageScalar": 1.0,
+        "WidthScale": 0.0,
+        "CustomTile": {
+          "Type": 3,
+          "Thickness": 0.5049998,
+          "Stackable": false,
+          "Stretch": true
+        }
+      },
+      "LuaScript": "colorList = {'White', 'Brown', 'Red', 'Orange', 'Yellow', 'Green', 'Teal', 'Blue', 'Purple', 'Pink', 'Black'}\r\ncolorCode = {}\r\ncolorCode['White'] = 'FFFFFF'\r\ncolorCode['Brown'] = '713B17'\r\ncolorCode['Red'] = 'DA1A18'\r\ncolorCode['Orange'] = 'F4641D'\r\ncolorCode['Yellow'] = 'E7E52C'\r\ncolorCode['Green'] = '31B32B'\r\ncolorCode['Teal'] = '21B19B'\r\ncolorCode['Blue'] = '1E87FF'\r\ncolorCode['Purple'] = 'A020F0'\r\ncolorCode['Pink'] = 'F570CE'\r\ncolorCode['Black'] = '404040'\r\nmarker = {}\r\nrspValue = {}\r\nparticipantsStr = ''\r\n\r\nfunction onLoad()\r\n    -- self.createButton({position={x=0, y=0.505, z=0.67}, scale={7.2, 1, 2.6}, color={r=1, g=0, b=0, a=0}, \r\n    --     click_function='userFunction', function_owner=self, tooltip=self.getName()})\r\n    initialize()\r\n    self.addContextMenuItem(\"가위 내기\", use_s, true)\r\n    self.addContextMenuItem(\"바위 내기\", use_r, true)\r\n    self.addContextMenuItem(\"보 내기\", use_p, true)\r\n    self.addContextMenuItem(\"취소하기\", cancel, true)\r\n    self.addContextMenuItem(\"결과 보기\", run)\r\nend\r\n\r\nfunction initialize()\r\n    for i = 1, #colorList do\r\n        rspValue[colorList[i]] = nil\r\n        marker[colorList[i]] = '<textcolor color=\"#' .. colorCode[colorList[i]] .. '\">■</textcolor>'\r\n    end\r\nend\r\n\r\nfunction addParticipants(color)\r\n    if string.find(participantsStr, colorCode[color]) then\r\n    else\r\n        participantsStr = participantsStr .. marker[color]\r\n    end\r\n    self.UI.setValue('uistring', participantsStr)\r\n    self.UI.setAttribute('text1', 'active', 'true')\r\nend\r\n\r\nfunction removeParticipants(color)\r\n    if string.find(participantsStr, colorCode[color]) then\r\n        participantsStr = string.gsub(participantsStr, marker[color], '')\r\n    else\r\n    end\r\n    self.UI.setValue('uistring', participantsStr)\r\nend\r\n\r\nfunction use_s(player_color, position, object)\r\n    if player_color == 'Grey' then\r\n        return\r\n    end\r\n    if rspValue[player_color] == nil then\r\n        addParticipants(player_color)\r\n    end\r\n    rspValue[player_color] = '가위'\r\n    if Player[player_color].seated == true then\r\n        broadcastToColor('당신은 가위를 냈습니다.', player_color)\r\n    end\r\nend\r\nfunction use_r(player_color, position, object)\r\n    if player_color == 'Grey' then\r\n        return\r\n    end\r\n    if rspValue[player_color] == nil then\r\n        addParticipants(player_color)\r\n    end\r\n    rspValue[player_color] = '바위'\r\n    if Player[player_color].seated == true then\r\n        broadcastToColor('당신은 바위를 냈습니다.', player_color)\r\n    end\r\nend\r\nfunction use_p(player_color, position, object)\r\n    if player_color == 'Grey' then\r\n        return\r\n    end\r\n    if rspValue[player_color] == nil then\r\n        addParticipants(player_color)\r\n    end\r\n    rspValue[player_color] = '보'\r\n    if Player[player_color].seated == true then\r\n        broadcastToColor('당신은 보를 냈습니다.', player_color)\r\n    end\r\nend\r\nfunction cancel(player_color, position, object)\r\n    if player_color == 'Grey' then\r\n        return\r\n    end\r\n    if rspValue[player_color] ~= nil then\r\n        removeParticipants(player_color)\r\n    end\r\n    rspValue[player_color] = nil\r\n    if Player[player_color].seated == true then\r\n        broadcastToColor('당신은 아무것도 내지 않습니다.', player_color)\r\n    end\r\nend\r\n\r\nfunction run(player_color, position, object)\r\n    local swr = 0\r\n    local sws = 0\r\n    local swp = 0\r\n    local draw = 0\r\n    local winner_r = 0\r\n    local winner_s = 0\r\n    local winner_p = 0\r\n    local winner_list = '승자 :'\r\n    for i = 1, #colorList do\r\n        if rspValue[colorList[i]] ~= nil then\r\n            if rspValue[colorList[i]] == '가위' then\r\n                sws = 1\r\n            elseif rspValue[colorList[i]] == '바위' then\r\n                swr = 1\r\n            elseif rspValue[colorList[i]] == '보' then\r\n                swp = 1\r\n            end\r\n        end\r\n    end\r\n    if swr + sws + swp == 2 then\r\n        if swr == 0 then\r\n            winner_s = 1\r\n            for i = 1, #colorList do\r\n                if rspValue[colorList[i]] == '가위' then\r\n                    rspValue[colorList[i]] = '[33FF33]가위[FFFFFF]'\r\n                    if Player[colorList[i]].seated == true then\r\n                        winner_list = winner_list .. ' [' .. colorCode[colorList[i]] .. ']'.. Player[colorList[i]].steam_name .. '[FFFFFF]'\r\n                    else\r\n                        winner_list = winner_list .. ' [' .. colorCode[colorList[i]] .. ']'.. colorList[i] .. '플레이어[FFFFFF]'\r\n                    end\r\n                elseif rspValue[colorList[i]] == '보' then\r\n                    rspValue[colorList[i]] = '[FF3333]보[FFFFFF]'\r\n                end\r\n            end\r\n        elseif sws == 0 then\r\n            winner_p = 1\r\n            for i = 1, #colorList do\r\n                if rspValue[colorList[i]] == '보' then\r\n                    rspValue[colorList[i]] = '[33FF33]보[FFFFFF]'\r\n                    if Player[colorList[i]].seated == true then\r\n                        winner_list = winner_list .. ' [' .. colorCode[colorList[i]] .. ']'.. Player[colorList[i]].steam_name .. '[FFFFFF]'\r\n                    else\r\n                        winner_list = winner_list .. ' [' .. colorCode[colorList[i]] .. ']'.. colorList[i] .. '플레이어[FFFFFF]'\r\n                    end\r\n                elseif rspValue[colorList[i]] == '바위' then\r\n                    rspValue[colorList[i]] = '[FF3333]바위[FFFFFF]'\r\n                end\r\n            end\r\n        else\r\n            winner_r = 1\r\n            for i = 1, #colorList do\r\n                if rspValue[colorList[i]] == '바위' then\r\n                    rspValue[colorList[i]] = '[33FF33]바위[FFFFFF]'\r\n                    if Player[colorList[i]].seated == true then\r\n                        winner_list = winner_list .. ' [' .. colorCode[colorList[i]] .. ']'.. Player[colorList[i]].steam_name .. '[FFFFFF]'\r\n                    else\r\n                        winner_list = winner_list .. ' [' .. colorCode[colorList[i]] .. ']'.. colorList[i] .. '플레이어[FFFFFF]'\r\n                    end\r\n                elseif rspValue[colorList[i]] == '가위' then\r\n                    rspValue[colorList[i]] = '[FF3333]가위[FFFFFF]'\r\n                end\r\n            end\r\n        end\r\n    else\r\n        draw = 1\r\n    end\r\n    for i = 1, #colorList do\r\n        if rspValue[colorList[i]] ~= nil then\r\n            if Player[colorList[i]].seated == true then\r\n                printToAll('[' .. colorCode[colorList[i]] .. ']' .. Player[colorList[i]].steam_name .. '[FFFFFF] >> ' .. rspValue[colorList[i]])\r\n            else\r\n                printToAll('[' .. colorCode[colorList[i]] .. ']' .. colorList[i] .. '플레이어[FFFFFF] >> ' .. rspValue[colorList[i]])\r\n            end\r\n        end\r\n        \r\n        rspValue[colorList[i]] = nil\r\n    end\r\n    participantsStr = ''\r\n    self.UI.setValue('uistring', participantsStr)\r\n    self.UI.setAttribute('text1', 'active', 'false')\r\n    if draw == 1 then\r\n        broadcastToAll('무승부입니다.')\r\n    else\r\n        broadcastToAll(winner_list)\r\n    end\r\nend",
+      "LuaScriptState": "",
+      "XmlUI": "<Panel position=\"0 0 -51\" rotation=\"0 0 180\" width=\"1500\" height=\"2000\" scale=\"0.1 0.1 0.1\">\r\n    <Text id=\"text1\" active=\"false\" rectAlignment=\"UpperLeft\" offsetXY=\"0 0\" alignment=\"UpperLeft\" color=\"#FFFFFF\" fontSize=\"150\" width=\"1500\" height=\"300\" fontStyle=\"Bold\"><textsize size=\"100\">참가자 : </textsize></Text>\r\n    <Text id=\"uistring\" rectAlignment=\"UpperLeft\" offsetXY=\"390 0\" alignment=\"UpperLeft\" color=\"#FFFFFF\" outLine=\"#FFFFFF\" outLineSize=\"5 -5\" fontSize=\"150\" width=\"1500\" height=\"300\" fontStyle=\"Bold\"></Text>\r\n</Panel>"
+    }
+  ]
+}

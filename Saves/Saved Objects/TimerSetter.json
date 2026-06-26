@@ -1,0 +1,86 @@
+{
+  "SaveName": "",
+  "Date": "",
+  "VersionNumber": "",
+  "GameMode": "",
+  "GameType": "",
+  "GameComplexity": "",
+  "Tags": [],
+  "Gravity": 0.5,
+  "PlayArea": 0.5,
+  "Table": "",
+  "Sky": "",
+  "Note": "",
+  "TabStates": {},
+  "LuaScript": "",
+  "LuaScriptState": "",
+  "XmlUI": "",
+  "ObjectStates": [
+    {
+      "GUID": "d1799b",
+      "Name": "Custom_Tile",
+      "Transform": {
+        "posX": -0.1342717,
+        "posY": 0.959993,
+        "posZ": -4.7196207,
+        "rotX": 1.6402917E-05,
+        "rotY": 179.998734,
+        "rotZ": 2.190937E-05,
+        "scaleX": 2.64999819,
+        "scaleY": 1.0,
+        "scaleZ": 2.64999819
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.06640541,
+        "g": 0.385017276,
+        "b": 0.3636975
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomImage": {
+        "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/17650361696567703797/8182A260F254169BF25E7DED4C0F517E2B79831F/",
+        "ImageSecondaryURL": "https://steamusercontent-a.akamaihd.net/ugc/10390042764175882845/F6A80B1B131B0F55436D74B8004F287DBA7D6807/",
+        "ImageScalar": 1.0,
+        "WidthScale": 0.0,
+        "CustomTile": {
+          "Type": 0,
+          "Thickness": 0.2,
+          "Stackable": false,
+          "Stretch": true
+        }
+      },
+      "LuaScript": "btColor = {r=1, g=0, b=0}\r\ntargetObj = nil\r\nfunction onLoad()\r\n    self.createInput({\r\n        label=\"seconds\", position={0, 0.21, 0.26}, height=200, width=800, scale={0.5, 0.5, 0.5}, font_size=140, font_color={0, 0, 0}, alignment=3,\r\n        color={1, 1, 1}, value=cdg, tooltip=\"# of seconds\", input_function=\"input_time\", function_owner=self,\r\n    })\r\n\r\n    self.createButton({position={x=0, y=0.21, z=0.55}, width=800, height=250, scale={0.5, 0.5, 0.5}, color={0, 0.8, 0}, \r\n        click_function='runScript', function_owner=self, tooltip='Set Timer', label=\"SET TIMER\"})\r\n    local objs = getObjects()\r\n    for i = 1, #objs do\r\n        if objs[i].getName() == '3g4u8gt347y'..self.guid then\r\n            objs[i].destroyObject()\r\n        end\r\n    end\r\n\r\n    makeZone()\r\nend\r\n\r\nfunction input_time(_, color, inputString, stillEditing)\r\n    return\r\nend\r\n\r\nfunction onEndEdit(player, value, id)\r\n    self.UI.setAttribute('if', 'text', value)\r\n    scriptStr = value\r\nend\r\n\r\nfunction runScript(obj, player_color, alt_click)\r\n    if alt_click == true then return end\r\n    local zobj = nil\r\n    local pos = self.getPosition()\r\n    local sz = self.getBounds().size\r\n    pos.y = pos.y + sz.y + 1\r\n    sz.y = sz.y + 2\r\n    if targetObj == nil then\r\n        makeZone()\r\n    end\r\n    targetObj.setPosition(pos)\r\n    targetObj.setScale(sz)\r\n\r\n    Wait.frames(function()\r\n        setTimer()\r\n    end, 20)\r\nend\r\n\r\nfunction onDestroy()\r\n    local objs = getObjects()\r\n    for i = 1, #objs do\r\n        if objs[i].getName() == '3g4u8gt347y'..self.guid then\r\n            objs[i].destroyObject()\r\n        end\r\n    end\r\nend\r\n\r\nfunction makeZone()\r\n    local pos = self.getPosition()\r\n    local sz = self.getBounds().size\r\n    pos.y = pos.y + sz.y + 1\r\n    sz.y = sz.y + 2\r\n    if targetObj == nil then\r\n        local spawnParams = {\r\n            type = 'ScriptingTrigger',\r\n            position = {0, 500, 0},\r\n            scale = sz,\r\n        }\r\n        targetObj = spawnObject(spawnParams)\r\n        targetObj.setName('3g4u8gt347y'..self.guid)\r\n    end\r\nend\r\n\r\nfunction setTimer()\r\n    local inputs = self.getInputs()\r\n    if inputs and inputs[1] then\r\n        local timeValue = inputs[1].value\r\n        if tonumber(timeValue) == nil then\r\n            return\r\n        end\r\n        local tobj = targetObj.getObjects()\r\n        for i = 1, #tobj do\r\n            if tobj[i] ~= self then\r\n                local scr = tobj[i].getLuaScript()\r\n                local sw1 = nil\r\n                local sw2 = nil\r\n                if string.find(scr, '= countdownGoal') or string.find(scr, '=countdownGoal') then\r\n                    sw1 = 1\r\n                end\r\n                if string.find(scr, 'countdownGoal =') or string.find(scr, 'countdownGoal=') then\r\n                    sw2 = 1\r\n                end\r\n                if sw1 and sw2 then\r\n                    tobj[i].setVar('countdownGoal', tonumber(timeValue))\r\n                    tobj[i].call('click_reset')\r\n                    tobj[i].clearInputs()\r\n                    tobj[i].call('createTimeInputs')\r\n                    return\r\n                end\r\n            end\r\n        end\r\n    end\r\nend",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "AttachedSnapPoints": [
+        {
+          "Position": {
+            "x": -7.99027748E-06,
+            "y": 0.200000286,
+            "z": -0.3977026
+          }
+        }
+      ]
+    }
+  ]
+}

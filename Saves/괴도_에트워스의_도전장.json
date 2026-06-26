@@ -1,0 +1,2391 @@
+{
+  "SaveName": "괴도 에트워스의  도전장",
+  "EpochTime": 1749793594,
+  "Date": "6/13/2025 2:46:34 PM",
+  "VersionNumber": "v13.3",
+  "GameMode": "괴도 에트워스의  도전장",
+  "GameType": "Game",
+  "GameComplexity": "Low Complexity",
+  "PlayingTime": [
+    60,
+    60
+  ],
+  "PlayerCounts": [
+    4,
+    4
+  ],
+  "Tags": [],
+  "Gravity": 0.5,
+  "PlayArea": 0.5,
+  "Table": "Table_None",
+  "Sky": "Sky_Regal",
+  "Note": "",
+  "TabStates": {
+    "0": {
+      "title": "Rules",
+      "body": "",
+      "color": "Grey",
+      "visibleColor": {
+        "r": 0.5,
+        "g": 0.5,
+        "b": 0.5
+      },
+      "id": 0
+    },
+    "1": {
+      "title": "White",
+      "body": "",
+      "color": "White",
+      "visibleColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "id": 1
+    },
+    "2": {
+      "title": "Brown",
+      "body": "",
+      "color": "Brown",
+      "visibleColor": {
+        "r": 0.443,
+        "g": 0.231,
+        "b": 0.09
+      },
+      "id": 2
+    },
+    "3": {
+      "title": "Red",
+      "body": "",
+      "color": "Red",
+      "visibleColor": {
+        "r": 0.856,
+        "g": 0.1,
+        "b": 0.094
+      },
+      "id": 3
+    },
+    "4": {
+      "title": "Orange",
+      "body": "",
+      "color": "Orange",
+      "visibleColor": {
+        "r": 0.956,
+        "g": 0.392,
+        "b": 0.113
+      },
+      "id": 4
+    },
+    "5": {
+      "title": "Yellow",
+      "body": "",
+      "color": "Yellow",
+      "visibleColor": {
+        "r": 0.905,
+        "g": 0.898,
+        "b": 0.172
+      },
+      "id": 5
+    },
+    "6": {
+      "title": "Green",
+      "body": "",
+      "color": "Green",
+      "visibleColor": {
+        "r": 0.192,
+        "g": 0.701,
+        "b": 0.168
+      },
+      "id": 6
+    },
+    "7": {
+      "title": "Blue",
+      "body": "",
+      "color": "Blue",
+      "visibleColor": {
+        "r": 0.118,
+        "g": 0.53,
+        "b": 1.0
+      },
+      "id": 7
+    },
+    "8": {
+      "title": "Teal",
+      "body": "",
+      "color": "Teal",
+      "visibleColor": {
+        "r": 0.129,
+        "g": 0.694,
+        "b": 0.607
+      },
+      "id": 8
+    },
+    "9": {
+      "title": "Purple",
+      "body": "",
+      "color": "Purple",
+      "visibleColor": {
+        "r": 0.627,
+        "g": 0.125,
+        "b": 0.941
+      },
+      "id": 9
+    },
+    "10": {
+      "title": "Pink",
+      "body": "",
+      "color": "Pink",
+      "visibleColor": {
+        "r": 0.96,
+        "g": 0.439,
+        "b": 0.807
+      },
+      "id": 10
+    },
+    "11": {
+      "title": "Black",
+      "body": "",
+      "color": "Black",
+      "visibleColor": {
+        "r": 0.25,
+        "g": 0.25,
+        "b": 0.25
+      },
+      "id": 11
+    }
+  },
+  "Grid": {
+    "Type": 0,
+    "Lines": false,
+    "Color": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.0
+    },
+    "Opacity": 0.75,
+    "ThickLines": false,
+    "Snapping": false,
+    "Offset": false,
+    "BothSnapping": false,
+    "xSize": 2.0,
+    "ySize": 2.0,
+    "PosOffset": {
+      "x": 0.0,
+      "y": 1.0,
+      "z": 0.0
+    }
+  },
+  "Lighting": {
+    "LightIntensity": 0.54,
+    "LightColor": {
+      "r": 1.0,
+      "g": 1.0,
+      "b": 1.0
+    },
+    "AmbientIntensity": 1.796001,
+    "AmbientType": 1,
+    "AmbientSkyColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.5
+    },
+    "AmbientEquatorColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.5
+    },
+    "AmbientGroundColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.5
+    },
+    "ReflectionIntensity": 0.176000416,
+    "LutIndex": 0,
+    "LutContribution": 1.0,
+    "LutURL": ""
+  },
+  "Hands": {
+    "Enable": true,
+    "DisableUnused": false,
+    "Hiding": 0
+  },
+  "ComponentTags": {
+    "labels": []
+  },
+  "Turns": {
+    "Enable": false,
+    "Type": 0,
+    "TurnOrder": [],
+    "Reverse": false,
+    "SkipEmpty": false,
+    "DisableInteractions": false,
+    "PassTurns": true,
+    "TurnColor": ""
+  },
+  "DecalPallet": [],
+  "LuaScript": "--",
+  "LuaScriptState": "",
+  "XmlUI": "<!-- Xml UI. See documentation: https://api.tabletopsimulator.com/ui/introUI/ -->",
+  "ObjectStates": [
+    {
+      "GUID": "8e9e22",
+      "Name": "HandTrigger",
+      "Transform": {
+        "posX": 10.0,
+        "posY": 5.0,
+        "posZ": -19.5,
+        "rotX": 0.0,
+        "rotY": 0.0,
+        "rotZ": 0.0,
+        "scaleX": 12.0,
+        "scaleY": 7.002465,
+        "scaleZ": 5.0
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.191999972,
+        "g": 0.701,
+        "b": 0.167999953,
+        "a": 0.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": false,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "FogColor": "Green",
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "afc863",
+      "Name": "Custom_Assetbundle",
+      "Transform": {
+        "posX": -27.0,
+        "posY": -9.0,
+        "posZ": 0.0,
+        "rotX": 6.536436E-07,
+        "rotY": -2.39176334E-05,
+        "rotZ": -3.84849864E-06,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomAssetbundle": {
+        "AssetbundleURL": "https://steamusercontent-a.akamaihd.net/ugc/879750610978795929/723C50F43FAB3DE3DC12CB8460536E8CB34B60A3/",
+        "AssetbundleSecondaryURL": "",
+        "MaterialIndex": 2,
+        "TypeIndex": 4,
+        "LoopingEffectIndex": 0
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "c8edca",
+      "Name": "Custom_Assetbundle",
+      "Transform": {
+        "posX": -27.0,
+        "posY": -9.0,
+        "posZ": 0.0,
+        "rotX": 6.536436E-07,
+        "rotY": 90.0,
+        "rotZ": -3.84849864E-06,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomAssetbundle": {
+        "AssetbundleURL": "https://steamusercontent-a.akamaihd.net/ugc/879750610978795929/723C50F43FAB3DE3DC12CB8460536E8CB34B60A3/",
+        "AssetbundleSecondaryURL": "",
+        "MaterialIndex": 2,
+        "TypeIndex": 4,
+        "LoopingEffectIndex": 0
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "393bf7",
+      "Name": "Custom_Assetbundle",
+      "Transform": {
+        "posX": 27.0,
+        "posY": -9.0,
+        "posZ": 0.0,
+        "rotX": 6.536436E-07,
+        "rotY": 180.0,
+        "rotZ": -3.84849864E-06,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomAssetbundle": {
+        "AssetbundleURL": "https://steamusercontent-a.akamaihd.net/ugc/879750610978795929/723C50F43FAB3DE3DC12CB8460536E8CB34B60A3/",
+        "AssetbundleSecondaryURL": "",
+        "MaterialIndex": 2,
+        "TypeIndex": 4,
+        "LoopingEffectIndex": 0
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "12c65e",
+      "Name": "Custom_Assetbundle",
+      "Transform": {
+        "posX": 27.0,
+        "posY": -9.0,
+        "posZ": 0.0,
+        "rotX": 6.536436E-07,
+        "rotY": 270.0,
+        "rotZ": -3.84849864E-06,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomAssetbundle": {
+        "AssetbundleURL": "https://steamusercontent-a.akamaihd.net/ugc/879750610978795929/723C50F43FAB3DE3DC12CB8460536E8CB34B60A3/",
+        "AssetbundleSecondaryURL": "",
+        "MaterialIndex": 2,
+        "TypeIndex": 4,
+        "LoopingEffectIndex": 0
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "f938a2",
+      "Name": "Custom_Assetbundle",
+      "Transform": {
+        "posX": 0.0,
+        "posY": -9.0,
+        "posZ": 0.0,
+        "rotX": -1.01777751E-13,
+        "rotY": 0.0,
+        "rotZ": 0.0,
+        "scaleX": 2.5,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomAssetbundle": {
+        "AssetbundleURL": "https://steamusercontent-a.akamaihd.net/ugc/879750610978796471/14ED0DBD593370733A0309B0950004F33EB9FACA/",
+        "AssetbundleSecondaryURL": "",
+        "MaterialIndex": 1,
+        "TypeIndex": 4,
+        "LoopingEffectIndex": 0
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "9f95fd",
+      "Name": "Custom_Assetbundle",
+      "Transform": {
+        "posX": -27.0,
+        "posY": -9.0,
+        "posZ": 0.0,
+        "rotX": 0.0,
+        "rotY": 90.0,
+        "rotZ": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomAssetbundle": {
+        "AssetbundleURL": "https://steamusercontent-a.akamaihd.net/ugc/879750610978796471/14ED0DBD593370733A0309B0950004F33EB9FACA/",
+        "AssetbundleSecondaryURL": "",
+        "MaterialIndex": 1,
+        "TypeIndex": 4,
+        "LoopingEffectIndex": 0
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "35b95f",
+      "Name": "Custom_Assetbundle",
+      "Transform": {
+        "posX": 0.0,
+        "posY": -9.0,
+        "posZ": 0.0,
+        "rotX": -1.01777751E-13,
+        "rotY": 180.0,
+        "rotZ": 0.0,
+        "scaleX": 2.5,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomAssetbundle": {
+        "AssetbundleURL": "https://steamusercontent-a.akamaihd.net/ugc/879750610978796471/14ED0DBD593370733A0309B0950004F33EB9FACA/",
+        "AssetbundleSecondaryURL": "",
+        "MaterialIndex": 1,
+        "TypeIndex": 4,
+        "LoopingEffectIndex": 0
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "5af8f2",
+      "Name": "Custom_Assetbundle",
+      "Transform": {
+        "posX": 27.0,
+        "posY": -9.0,
+        "posZ": 0.0,
+        "rotX": 0.0,
+        "rotY": 270.0,
+        "rotZ": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomAssetbundle": {
+        "AssetbundleURL": "https://steamusercontent-a.akamaihd.net/ugc/879750610978796471/14ED0DBD593370733A0309B0950004F33EB9FACA/",
+        "AssetbundleSecondaryURL": "",
+        "MaterialIndex": 1,
+        "TypeIndex": 4,
+        "LoopingEffectIndex": 0
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "4ee1f2",
+      "Name": "Custom_Model",
+      "Transform": {
+        "posX": 0.0,
+        "posY": -9.0,
+        "posZ": 0.0,
+        "rotX": 0.0,
+        "rotY": 0.0,
+        "rotZ": 0.0,
+        "scaleX": 2.5,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": true,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomMesh": {
+        "MeshURL": "https://steamusercontent-a.akamaihd.net/ugc/879750610978796176/4A5A65543B98BCFBF57E910D06EC984208223D38/",
+        "DiffuseURL": "https://i.imgur.com/eHXDjyy.jpg",
+        "NormalURL": "",
+        "ColliderURL": "",
+        "Convex": true,
+        "MaterialIndex": 1,
+        "TypeIndex": 4,
+        "CustomShader": {
+          "SpecularColor": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0
+          },
+          "SpecularIntensity": 0.0,
+          "SpecularSharpness": 2.0,
+          "FresnelStrength": 0.0
+        },
+        "CastShadows": true
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "623f75",
+      "Name": "Custom_Assetbundle",
+      "Transform": {
+        "posX": -4.93321859E-05,
+        "posY": 3.489999,
+        "posZ": 27.377615,
+        "rotX": -1.69126384E-08,
+        "rotY": 180.000214,
+        "rotZ": 180.0,
+        "scaleX": 1.99999917,
+        "scaleY": 1.99999917,
+        "scaleZ": 1.99999917
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "-350,-50",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 0.0,
+        "b": 0.784313738
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": false,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomAssetbundle": {
+        "AssetbundleURL": "https://steamusercontent-a.akamaihd.net/ugc/876374721190277400/02AEB874991484941EF0ECCDE9484A7FECCE06EA/",
+        "AssetbundleSecondaryURL": "",
+        "MaterialIndex": 0,
+        "TypeIndex": 0,
+        "LoopingEffectIndex": 0
+      },
+      "LuaScript": "--Announces when time runs out with a broadcast/chat message. (true or false)\r\nannounceToggle = false\r\n\r\n--The colors the tool is, if fadeout mode is on (in r,g,b format, 0-1)\r\nfadeoutColor_start = {1, 1, 1}\r\nfadeoutColor_end = {0.1, 0.1, 0.1}\r\n\r\npanelID = nil\r\ndisplayerID = nil\r\ncurrentGMNote = nil\r\ncurrentColorTint = nil\r\nUIoffsetX = '-550'\r\nUIoffsetY = '-45'\r\nUIcolorCode = '000000'\r\n\r\nfunction addGlobalXML()\r\n    local globalxmlstr = nil\r\n    local retxmlstr = nil\r\n    \r\n    panelID = 'timer_panel_by_chester_' .. self.guid\r\n    displayerID = 'timer_displayer_by_chester_' .. self.guid\r\n\r\n    local additionalxml = [[\r\n    <Panel id=']] .. panelID .. [[' offsetXY=']] .. UIoffsetX .. ' ' .. UIoffsetY .. [[' width='130' height='58' rectAlignment='UpperCenter' color='#00000000' allowDragging='true'\r\n    returnToOriginalPositionWhenReleased='false' restrictDraggingToParentBounds='false'>\r\n    <Text id=']] .. displayerID .. [[' color='#FFFFFF' fontSize='60' fontStyle='Bold' outline='#]] .. UIcolorCode .. [[' outlineSize='2 2'\r\n    shadow='#000000' shadowDistance='4 -4' horizontalOverflow='Overflow' verticalOverflow='Overflow' showAnimation='Grow' animationDuration='0.2'\r\n    hideAnimationDelay='2' hideAnimation='FadeOut'>0:00</Text>\r\n    </Panel>\r\n    ]]\r\n\r\n    globalxmlstr = Global.UI.getXml()\r\n    if globalxmlstr == nil then\r\n        retxmlstr = additionalxml\r\n    elseif string.find(globalxmlstr, panelID) == nil then\r\n        retxmlstr = additionalxml..globalxmlstr\r\n    end\r\n    if retxmlstr ~= nil then\r\n        Global.UI.setXml(retxmlstr)\r\n    end\r\nend\r\n\r\n--Runs whenever game is saved/autosaved\r\nfunction onSave()\r\n    local data_to_save = {\r\n        cr=countdownRemaining,\r\n        cg=countdownGoal,\r\n        rof=resetOnFlip,\r\n        pc=pauseCountdown,\r\n        ft=fadeToggle,\r\n    }\r\n    saved_data = JSON.encode(data_to_save)\r\n    --saved_data = \"\" --Remove -- at start + save to clear save data\r\n    return saved_data\r\nend\r\n\r\n--Runs when game is loaded\r\nfunction onLoad(saved_data)\r\n    currentGMNote = self.getGMNotes()\r\n    currentColorTint = self.getColorTint()\r\n    -- setting UIoffsetX, UIoffsetY, UIcolorCode\r\n    getUIoffsetXY()\r\n    getColorCode()\r\n\r\n        \r\n\r\n    --Loads the tracking for if the game has started yet\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        countdownRemaining = loaded_data.cr\r\n        countdownGoal = loaded_data.cg\r\n        resetOnFlip = loaded_data.rof\r\n        pauseCountdown = loaded_data.pc\r\n        fadeToggle = loaded_data.ft\r\n    else\r\n        countdownGoal = 10\r\n        countdownRemaining = countdownGoal\r\n        resetOnFlip = true\r\n        pauseCountdown = false\r\n        fadeToggle = true\r\n    end\r\n\r\n    --Establish color offset, how much needs to be added to fadeoutColor_start\r\n    fadeoutColor_offset = {\r\n        fadeoutColor_start[1]-fadeoutColor_end[1],\r\n        fadeoutColor_start[2]-fadeoutColor_end[2],\r\n        fadeoutColor_start[3]-fadeoutColor_end[3],\r\n    }\r\n\r\n    --Tracks if tool was upright based on its current memory\r\n    currentlyUp = true\r\n    if upsideDown() then currentlyUp = false end\r\n\r\n    createDisplayButtons()\r\n    createFunctionButtons()\r\n    createTimeInputs()\r\n    \r\n    --Global UI timer display\r\n    Wait.frames(function()\r\n        addGlobalXML()\r\n        Global.UI.setAttribute(displayerID, 'active', 'true')\r\n        Global.UI.setAttribute(panelID, 'active', 'true')\r\n    end, math.floor(tonumber(self.guid, 16) / 50000))\r\nend\r\n\r\nfunction onDestroy()\r\n    Global.UI.setAttribute(panelID, 'active', 'false')\r\nend\r\n\r\n\r\n--Countdown Handling\r\n\r\n\r\n\r\n--Start Countdown\r\nfunction onCollisionEnter(collision_info)\r\n    function onCollisionEnter_routine()\r\n        --Avoids an error on startup\r\n        if currentlyUp == nil then return end\r\n        --Check if the tool's rotation match's its current memory of what it was\r\n        if upsideDown() and currentlyUp or not upsideDown() and not currentlyUp then\r\n            --Toggle which way is \"up\" for the current status\r\n            currentlyUp = not currentlyUp\r\n            --Kill any currently running coroutine and wait for it to be exectued\r\n            if countdownRunning then\r\n                killCountdown = true\r\n                while killCountdown do\r\n                    coroutine.yield(0)\r\n                end\r\n            end\r\n            --Determine countdown amount based off of countdown mode\r\n            if resetOnFlip then\r\n                countdownRemaining = countdownGoal\r\n            else\r\n                countdownRemaining = countdownGoal - countdownRemaining\r\n                if countdownRemaining == 0 then\r\n                    countdownRemaining = countdownGoal\r\n                end\r\n            end\r\n\r\n            --Initate countdown\r\n            startLuaCoroutine(self, \"countdown_routine\")\r\n        end\r\n        return 1\r\n    end\r\n    startLuaCoroutine(self, \"onCollisionEnter_routine\")\r\nend\r\n\r\n--Runs countdown\r\nfunction countdown_routine()\r\n    countdownRunning = true\r\n    local startTime = os.time()\r\n    rotateDisplayButtons()\r\n    \r\n    while countdownRemaining > 0 do\r\n        --Perform countdown step for this frame of the game\r\n        local timeDelta = os.time() - startTime\r\n        countdownRemaining = countdownRemaining - timeDelta\r\n        updateDisplayButtons()\r\n        startTime = os.time()\r\n        \r\n        --Perform color change step\r\n        if fadeToggle then\r\n            --fadeoutColor_start\r\n            --fadeoutColor_end\r\n            percentLeft = countdownRemaining / countdownGoal\r\n            local r = fadeoutColor_end[1] + (fadeoutColor_offset[1] * percentLeft)\r\n            local g = fadeoutColor_end[2] + (fadeoutColor_offset[2] * percentLeft)\r\n            local b = fadeoutColor_end[3] + (fadeoutColor_offset[3] * percentLeft)\r\n            self.setColorTint({r,g,b})\r\n        end\r\n        coroutine.yield(0)\r\n\r\n        --Stall routine until pause is removed or it is killed\r\n        while pauseCountdown do\r\n            startTime = os.time()\r\n            coroutine.yield(0)\r\n            if killCountdown then break end\r\n        end\r\n        --Kills coroutine on-demand\r\n        if killCountdown then\r\n            killCountdown = nil\r\n            countdownRunning = false\r\n            return 1\r\n        end\r\n    end\r\n\r\n    if announceToggle then broadcastToAll(\"Time's Up!\", {1,1,1}) end\r\n    self.AssetBundle.playTriggerEffect(0)\r\n    countdownRunning = false\r\n    return 1\r\nend\r\n\r\n--Reset and Pause\r\n\r\n\r\n\r\n--Pauses countdown (countdown cannot continute until reset or unpaused)\r\nfunction click_pause()\r\n    pauseCountdown = not pauseCountdown\r\n    pauseCountdownToggle()\r\nend\r\n\r\n--Resets tool\r\nfunction click_reset()\r\n    if countdownRunning then\r\n        killCountdown = true\r\n    end\r\n    pauseCountdown = false\r\n    pauseCountdownToggle()\r\n    countdownRemaining = countdownGoal\r\n    updateDisplayButtons()\r\nend\r\n\r\nfunction pauseCountdownToggle()\r\n    if pauseCountdown then\r\n        for i=0,3 do\r\n            self.editButton({index=i, font_color={0.5,0.5,0.5}})\r\n        end\r\n    else\r\n        for i=0,3 do\r\n            self.editButton({index=i, font_color={1,1,1}})\r\n        end\r\n    end\r\nend\r\n\r\n\r\n\r\n\r\n\r\n--Settings buttons/inputs\r\n\r\n\r\n\r\n--toggles between hourglass mode and reset mode\r\nfunction click_toggleMode()\r\n    resetOnFlip = not resetOnFlip\r\n\r\n    --Mode toggle (hourglass or reset on flip)\r\n    local label = string.char(8987)\r\n    local tooltip = \"[b]Hourglass Mode:[/b] Flipping timer over will 'reverse' the countdown.\"\r\n    if resetOnFlip then\r\n        label = string.char(8630)\r\n        tooltip = \"[b]Reset Mode:[/b] Flipping timer over will restart the countdown.\"\r\n    end\r\n    self.editButton({index=8, label=label, tooltip=tooltip})\r\n    self.editButton({index=9, label=label, tooltip=tooltip})\r\nend\r\n\r\n--Toggles between announcing or not\r\nfunction click_fadeToggle()\r\n    fadeToggle = not fadeToggle\r\n\r\n    --Update buttons\r\n    local label = string.char(9788)\r\n    local tooltip = \"[b]Fadeout Mode Disabled[/b]\\nThe color of the timer will not change.\"\r\n    if fadeToggle then\r\n        label = string.char(9790)\r\n        tooltip = \"[b]Fadeout Mode Enabled[/b]\\nThe color of the timer will fade during countdown.\"\r\n    end\r\n    self.editButton({index=10, label=label, tooltip=tooltip})\r\n    self.editButton({index=11, label=label, tooltip=tooltip})\r\nend\r\n\r\n--Handles inputting of new time\r\nfunction input_time(_, color, inputString, stillEditing)\r\n    if not stillEditing then\r\n        local inputNum = tonumber(inputString)\r\n        if type(inputNum) == \"number\" and inputNum ~= countdownGoal then\r\n            countdownGoal = inputNum\r\n            click_reset()\r\n            printToAll(Player[color].steam_name .. \" has updated the digital hourglass's time to \"..countdownGoal..\" seconds.\", stringColorToRGB(color))\r\n        else\r\n            --Here in case I decide I want to broadcast an error for a blank timer\r\n        end\r\n        self.clearInputs()\r\n        createTimeInputs()\r\n    end\r\nend\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n--Information finding and formatting\r\n\r\n\r\n\r\n--Determines if this object is upside down (using rotation values)\r\nfunction upsideDown()\r\n    if self.getRotationValue() == \"Digital Hourglass \" then\r\n        return true\r\n    else\r\n        return false\r\n    end\r\nend\r\n\r\n--Formats seconds into readable time format\r\nfunction formatSecondsForCountdown(seconds)\r\n    local seconds = math.ceil(seconds)\r\n    local hours = math.floor(seconds / 3600)\r\n    local minutes = math.floor((seconds / 60) % 60)\r\n    local seconds = seconds % 60\r\n\r\n    s = \"\"\r\n    if hours > 0 then\r\n        minutes = string.format(\"%02d\", minutes)\r\n        seconds = string.format(\"%02d\", seconds)\r\n        s = hours .. \":\" .. minutes .. \":\" .. seconds\r\n    else\r\n        seconds = string.format(\"%02d\", seconds)\r\n        s = minutes .. \":\" .. seconds\r\n    end\r\n\r\n    return s\r\nend\r\n\r\n-- Get real string lenght per char table\r\nfunction getStringUnitWidth(str)\r\n    local len = 0\r\n    for i = 1, #str do\r\n        local c = str:sub(i,i)\r\n        if ref_charUnitWidth[c] then\r\n            len = len + ref_charUnitWidth[c]\r\n        else\r\n            len = len + ref_charUnitWidth.avg\r\n        end\r\n    end\r\n    return len\r\nend\r\n\r\n\r\n\r\n--Button creation\r\n\r\n\r\n\r\n--Places the time numbers on the 4 faces\r\nfunction createDisplayButtons()\r\n    --Format time for display\r\n    local cd_format = formatSecondsForCountdown(countdownRemaining)\r\n\r\n    --Adjust font size if needed\r\n    local font_size = 300\r\n    if getStringUnitWidth(cd_format) > 10000 then font_size = 200 end\r\n\r\n    --Adjust font color if needed\r\n    local font_color = {1,1,1}\r\n    if pauseCountdown then font_color = {0.5,0.5,0.5} end\r\n\r\n    --Adjust rotation for if it is flipped or not\r\n    local rot_offset = 0\r\n    if upsideDown() then rot_offset = 180 end\r\n\r\n    --Create 4 faces\r\n    self.createButton({\r\n        label=cd_format, click_function=\"n/a\", function_owner=self,\r\n        position={0,0,0.85}, height=0, width=0, font_size=font_size,\r\n        font_color=font_color, rotation=ref_faceRotation[upsideDown()][1]\r\n    })\r\n    self.createButton({\r\n        label=cd_format, click_function=\"n/a\", function_owner=self,\r\n        position={0,0,-0.85}, height=0, width=0, font_size=font_size,\r\n        font_color=font_color, rotation=ref_faceRotation[upsideDown()][2]\r\n    })\r\n    self.createButton({\r\n        label=cd_format, click_function=\"n/a\", function_owner=self,\r\n        position={-0.85,0,0}, height=0, width=0, font_size=font_size,\r\n        font_color=font_color, rotation=ref_faceRotation[upsideDown()][3]\r\n    })\r\n    self.createButton({\r\n        label=cd_format, click_function=\"n/a\", function_owner=self,\r\n        position={0.85,0,0}, height=0, width=0, font_size=font_size,\r\n        font_color=font_color, rotation=ref_faceRotation[upsideDown()][4]\r\n    })\r\nend\r\n\r\n\r\nprevS = ''\r\nfunction updateDisplayButtons()\r\n    --Format time for display\r\n    local cd_format = formatSecondsForCountdown(countdownRemaining)\r\n    local currentButtonData = self.getButtons()[1]\r\n    local cd_old = currentButtonData.label\r\n\r\n    if cd_format ~= cd_old then\r\n        --Adjust font size if needed\r\n        local font_size = 300\r\n        if getStringUnitWidth(cd_format) > 10000 then font_size = 200 end\r\n\r\n        --Edit 4 faces\r\n        for i=0, 3 do\r\n            self.editButton({\r\n                index=i,\r\n                label=cd_format,\r\n                font_size=font_size,\r\n                --rotation=ref_faceRotation[upsideDown()][i+1]\r\n            })\r\n        end\r\n    end\r\n    --Global UI timer display\r\n    Global.UI.setAttribute(displayerID, 'text', s)\r\n    Global.UI.setAttribute(displayerID, 'active', 'true')\r\n    if currentGMNote ~= self.getGMNotes() then\r\n        currentGMNote = self.getGMNotes()\r\n        getUIoffsetXY()\r\n        Global.UI.setAttribute(panelID, 'offsetXY', UIoffsetX .. ' ' .. UIoffsetY)\r\n    end\r\n    local tmpct = self.getColorTint()\r\n    if currentColorTint.r ~= tmpct.r or currentColorTint.g ~= tmpct.g or currentColorTint.b ~= tmpct.b then\r\n        currentColorTint.r = tmpct.r\r\n        currentColorTint.g = tmpct.g\r\n        currentColorTint.b = tmpct.b\r\n        getColorCode()\r\n        Global.UI.setAttribute(displayerID, 'outline', '#'..UIcolorCode)\r\n    end\r\n\r\n    if prevS ~= cd_format then\r\n        prevS = cd_format\r\n        if countdownRemaining <= 10 then\r\n            Global.UI.show(displayerID)\r\n        end\r\n    end\r\nend\r\n\r\nfunction rotateDisplayButtons()\r\n    for i=0, 3 do\r\n        self.editButton({\r\n            index=i,\r\n            rotation=ref_faceRotation[upsideDown()][i+1]\r\n        })\r\n    end\r\nend\r\n\r\nfunction createFunctionButtons()\r\n    --Pause\r\n    self.createButton({\r\n        label=\"PAUSE\", click_function=\"click_pause\", function_owner=self,\r\n        position={0,1,-0.42}, rotation={0,0,0}, height=500, width=740,\r\n        font_size=200, font_color={0.5,0.5,0.5}, color={0.1,0.1,0.1}\r\n    })\r\n    self.createButton({\r\n        label=\"PAUSE\", click_function=\"click_pause\", function_owner=self,\r\n        position={0,-1,-0.42}, rotation={180,180,0}, height=500, width=740,\r\n        font_size=200, font_color={0.5,0.5,0.5}, color={0.1,0.1,0.1}\r\n    })\r\n\r\n    --Reset\r\n    self.createButton({\r\n        label=\"RESET\", click_function=\"click_reset\", function_owner=self,\r\n        position={0,1,0.3}, rotation={0,0,0}, height=200, width=740,\r\n        font_size=140, font_color={0.5,0.5,0.5}, color={0.1,0.1,0.1}\r\n    })\r\n    self.createButton({\r\n        label=\"RESET\", click_function=\"click_reset\", function_owner=self,\r\n        position={0,-1,0.3}, rotation={180,180,0}, height=200, width=740,\r\n        font_size=140, font_color={0.5,0.5,0.5}, color={0.1,0.1,0.1}\r\n    })\r\n\r\n    --Mode toggle (hourglass or reset on flip)\r\n    local label = string.char(8987)\r\n    local tooltip = \"[b]Hourglass Mode:[/b] Flipping timer over will 'reverse' the countdown.\"\r\n    if resetOnFlip then\r\n        label = string.char(8630)\r\n        tooltip = \"[b]Reset Mode:[/b] Flipping timer over will restart the countdown.\"\r\n    end\r\n    self.createButton({\r\n        label=label, click_function=\"click_toggleMode\", function_owner=self,\r\n        position={-0.5,1,0.72}, rotation={0,0,0}, height=160, width=160,\r\n        font_size=140, font_color={0.5,0.5,0.5}, color={0.1,0.1,0.1},\r\n        tooltip=tooltip\r\n    })\r\n    self.createButton({\r\n        label=label, click_function=\"click_toggleMode\", function_owner=self,\r\n        position={0.5,-1,0.72}, rotation={180,180,0}, height=160, width=160,\r\n        font_size=140, font_color={0.5,0.5,0.5}, color={0.1,0.1,0.1},\r\n        tooltip=tooltip\r\n    })\r\n\r\n    --Announce toggle (broadcast or not broadcast when finished)\r\n    local label = string.char(9788)\r\n    local tooltip = \"[b]Fadeout Mode Disabled[/b]\\nThe color of the timer will not change.\"\r\n    if fadeToggle then\r\n        label = string.char(9790)\r\n        tooltip = \"[b]Fadeout Mode Enabled[/b]\\nThe color of the timer will fade during countdown.\"\r\n    end\r\n    self.createButton({\r\n        label=label, click_function=\"click_fadeToggle\", function_owner=self,\r\n        position={0.5,1,0.72}, rotation={0,0,0}, height=160, width=160,\r\n        font_size=110, font_color={0.5,0.5,0.5}, color={0.1,0.1,0.1},\r\n        tooltip=tooltip\r\n    })\r\n    self.createButton({\r\n        label=label, click_function=\"click_fadeToggle\", function_owner=self,\r\n        position={-0.5,-1,0.72}, rotation={180,180,0}, height=160, width=160,\r\n        font_size=110, font_color={0.5,0.5,0.5}, color={0.1,0.1,0.1},\r\n        tooltip=tooltip\r\n    })\r\nend\r\n\r\n--Inputs for entering time amount\r\nfunction createTimeInputs()\r\n    self.createInput({\r\n        label=\"TIME\", input_function=\"input_time\", function_owner=self,\r\n        position={0,1,0.72}, rotation={0,0,0}, alignment=3,\r\n        height=114, width=260, font_size=80, font_color={0.5,0.5,0.5},\r\n        color={0.1,0.1,0.1}, value=countdownGoal, validation=2, tab=1,\r\n        tooltip=\"# of seconds\"\r\n    })\r\n    self.createInput({\r\n        label=\"TIME\", input_function=\"input_time\", function_owner=self,\r\n        position={0,-1,0.72}, rotation={0,0,180}, alignment=3,\r\n        height=114, width=260, font_size=80, font_color={0.5,0.5,0.5},\r\n        color={0.1,0.1,0.1}, value=countdownGoal, validation=2, tab=1,\r\n        tooltip=\"# of seconds\"\r\n    })\r\nend\r\n\r\n\r\nfunction splitNumbers(inputString)\r\n    -- 입력값이 nil이거나 빈 문자열인 경우 처리\r\n    if not inputString or inputString == \"\" then\r\n        return nil, nil\r\n    end\r\n    \r\n    -- 콤마를 기준으로 문자열 분리\r\n    local parts = {}\r\n    for part in string.gmatch(inputString, \"[^,]+\") do\r\n        table.insert(parts, part)\r\n    end\r\n    \r\n    -- 정확히 2개의 부분이 있는지 확인\r\n    if #parts ~= 2 then\r\n        return nil, nil\r\n    end\r\n    \r\n    -- 앞뒤 공백 제거하고 숫자로 변환\r\n    local num1 = tonumber(string.match(parts[1], \"^%s*(.-)%s*$\"))\r\n    local num2 = tonumber(string.match(parts[2], \"^%s*(.-)%s*$\"))\r\n    \r\n    -- 숫자 변환이 실패한 경우 확인\r\n    if not num1 then\r\n        return nil, nil\r\n    end\r\n    if not num2 then\r\n        return nil, nil\r\n    end\r\n    \r\n    return num1, num2\r\nend\r\nfunction rgbToHex(r, g, b)\r\n    -- 입력값을 0~1 범위로 클리핑\r\n    r = math.max(0, math.min(1, r))\r\n    g = math.max(0, math.min(1, g))\r\n    b = math.max(0, math.min(1, b))\r\n    \r\n    -- 0~1 범위를 0~255 정수로 변환\r\n    local r255 = math.floor(r * 255 + 0.5)  -- 반올림\r\n    local g255 = math.floor(g * 255 + 0.5)\r\n    local b255 = math.floor(b * 255 + 0.5)\r\n    \r\n    -- 16진수 문자열로 변환 (대문자, 2자리 패딩)\r\n    return string.format(\"%02X%02X%02X\", r255, g255, b255)\r\nend\r\nfunction getUIoffsetXY()\r\n    local retnum1, retnum2 = splitNumbers(self.getGMNotes())\r\n    if retnum1 == nil or retnum2 == nil then\r\n        return\r\n    else\r\n        UIoffsetX = tostring(retnum1)\r\n        UIoffsetY = tostring(retnum2)\r\n    end\r\nend\r\nfunction getColorCode()\r\n    local colorTable = self.getColorTint()\r\n    UIcolorCode = rgbToHex(colorTable.r, colorTable.g, colorTable.b)\r\nend\r\n\r\n\r\n\r\n--Data tables\r\n\r\n\r\n\r\n--Rotations for the 4 faces of the timer\r\nref_faceRotation = {\r\n    [false] = {\r\n        {-90, 0, 0},\r\n        {90, 0, 180},\r\n        {0, 90, -90},\r\n        {0, -90, 90},\r\n    },\r\n    [true] = {\r\n        {-90, 0, 180},\r\n        {90, 0, 0},\r\n        {0, -90, -90},\r\n        {0, 90, 90},\r\n    }\r\n}\r\n\r\n-- Char width table by Indimeco\r\nref_charUnitWidth = {\r\n    ['`'] = 2381, ['~'] = 2381, ['1'] = 1724, ['!'] = 1493, ['2'] = 2381,\r\n    ['@'] = 4348, ['3'] = 2381, ['#'] = 3030, ['4'] = 2564, ['$'] = 2381,\r\n    ['5'] = 2381, ['%'] = 3846, ['6'] = 2564, ['^'] = 2564, ['7'] = 2174,\r\n    ['&'] = 2777, ['8'] = 2564, ['*'] = 2174, ['9'] = 2564, ['('] = 1724,\r\n    ['0'] = 2564, [')'] = 1724, ['-'] = 1724, ['_'] = 2381, ['='] = 2381,\r\n    ['+'] = 2381, ['q'] = 2564, ['Q'] = 3226, ['w'] = 3704, ['W'] = 4167,\r\n    ['e'] = 2174, ['E'] = 2381, ['r'] = 1724, ['R'] = 2777, ['t'] = 1724,\r\n    ['T'] = 2381, ['y'] = 2564, ['Y'] = 2564, ['u'] = 2564, ['U'] = 3030,\r\n    ['i'] = 1282, ['I'] = 1282, ['o'] = 2381, ['O'] = 3226, ['p'] = 2564,\r\n    ['P'] = 2564, ['['] = 1724, ['{'] = 1724, [']'] = 1724, ['}'] = 1724,\r\n    ['|'] = 1493, ['\\\\'] = 1923, ['a'] = 2564, ['A'] = 2777, ['s'] = 1923,\r\n    ['S'] = 2381, ['d'] = 2564, ['D'] = 3030, ['f'] = 1724, ['F'] = 2381,\r\n    ['g'] = 2564, ['G'] = 2777, ['h'] = 2564, ['H'] = 3030, ['j'] = 1075,\r\n    ['J'] = 1282, ['k'] = 2381, ['K'] = 2777, ['l'] = 1282, ['L'] = 2174,\r\n    [';'] = 1282, [':'] = 1282, ['\\''] = 855, ['\"'] = 1724, ['z'] = 1923,\r\n    ['Z'] = 2564, ['x'] = 2381, ['X'] = 2777, ['c'] = 1923, ['C'] = 2564,\r\n    ['v'] = 2564, ['V'] = 2777, ['b'] = 2564, ['B'] = 2564, ['n'] = 2564,\r\n    ['N'] = 3226, ['m'] = 3846, ['M'] = 3846, [','] = 1282, ['<'] = 2174,\r\n    ['.'] = 1282, ['>'] = 2174, ['/'] = 1923, ['?'] = 2174, [' '] = 1282,\r\n    ['avg'] = 2500,\r\n}",
+      "LuaScriptState": "{\"cg\":600,\"cr\":600,\"ft\":false,\"pc\":false,\"rof\":true}",
+      "XmlUI": "<Panel id=\"afe\"><Panel/>\n</Panel>",
+      "RotationValues": [
+        {
+          "Value": "Digital Hourglass",
+          "Rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "Value": "Digital Hourglass ",
+          "Rotation": {
+            "x": 0.0,
+            "y": 180.0,
+            "z": 180.0
+          }
+        }
+      ]
+    },
+    {
+      "GUID": "57119f",
+      "Name": "HandTrigger",
+      "Transform": {
+        "posX": -10.0,
+        "posY": 5.0,
+        "posZ": -19.5,
+        "rotX": 0.0,
+        "rotY": 0.0,
+        "rotZ": 0.0,
+        "scaleX": 12.0,
+        "scaleY": 7.0,
+        "scaleZ": 5.0
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.905,
+        "g": 0.898,
+        "b": 0.171999961,
+        "a": 0.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": false,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "FogColor": "Yellow",
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "3240c7",
+      "Name": "HandTrigger",
+      "Transform": {
+        "posX": 30.0,
+        "posY": 5.0,
+        "posZ": -19.5,
+        "rotX": 0.0,
+        "rotY": 0.0,
+        "rotZ": 0.0,
+        "scaleX": 12.0,
+        "scaleY": 7.0,
+        "scaleZ": 5.0
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.117999978,
+        "g": 0.53,
+        "b": 1.0,
+        "a": 0.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": false,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "FogColor": "Blue",
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "e8bc93",
+      "Name": "HandTrigger",
+      "Transform": {
+        "posX": -30.0,
+        "posY": 5.0,
+        "posZ": -19.5,
+        "rotX": 0.0,
+        "rotY": 0.0,
+        "rotZ": 0.0,
+        "scaleX": 12.0,
+        "scaleY": 7.0,
+        "scaleZ": 5.0
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.856,
+        "g": 0.09999997,
+        "b": 0.09399996,
+        "a": 0.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": false,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "FogColor": "Red",
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "a44a70",
+      "Name": "Custom_Tile",
+      "Transform": {
+        "posX": -27.3418331,
+        "posY": 1.48149931,
+        "posZ": 7.29085,
+        "rotX": -9.79662E-08,
+        "rotY": 180.027328,
+        "rotZ": -1.87759838E-07,
+        "scaleX": 10.2493505,
+        "scaleY": 1.0,
+        "scaleZ": 10.2468271
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.144598812,
+        "g": 0.0540126041,
+        "b": 0.00125953415
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomImage": {
+        "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/14577948768554506350/28E3E1BB05B47D61DD75C3FFE1CC07975474243F/",
+        "ImageSecondaryURL": "https://steamusercontent-a.akamaihd.net/ugc/14577948768554506350/28E3E1BB05B47D61DD75C3FFE1CC07975474243F/",
+        "ImageScalar": 1.0,
+        "WidthScale": 0.0,
+        "CustomTile": {
+          "Type": 0,
+          "Thickness": 0.2,
+          "Stackable": false,
+          "Stretch": true
+        }
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "5afc5c",
+      "Name": "Custom_Tile",
+      "Transform": {
+        "posX": -15.0663118,
+        "posY": 1.48000038,
+        "posZ": 67.98958,
+        "rotX": 2.75924386E-08,
+        "rotY": 180.016113,
+        "rotZ": -1.24838166E-07,
+        "scaleX": 5.738586,
+        "scaleY": 1.0,
+        "scaleZ": 5.738586
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.144598752,
+        "g": 0.0540125668,
+        "b": 0.00125953415
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomImage": {
+        "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/9849795485742665038/E544C989F24A2D8BECEC95B91683D9ED4D813BE7/",
+        "ImageSecondaryURL": "https://steamusercontent-a.akamaihd.net/ugc/9515568051379657066/B241A5777D29914490573DC5EA914006B5EB28A1/",
+        "ImageScalar": 1.0,
+        "WidthScale": 0.0,
+        "CustomTile": {
+          "Type": 0,
+          "Thickness": 0.2,
+          "Stackable": false,
+          "Stretch": true
+        }
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "66d185",
+      "Name": "Custom_Tile",
+      "Transform": {
+        "posX": -15.0,
+        "posY": 1.48149931,
+        "posZ": -0.42,
+        "rotX": 1.56584479E-09,
+        "rotY": 179.987625,
+        "rotZ": -1.00479651E-08,
+        "scaleX": 5.738586,
+        "scaleY": 1.0,
+        "scaleZ": 5.738586
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.144598782,
+        "g": 0.05401258,
+        "b": 0.00125953415
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomImage": {
+        "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/14644404503335275644/3C411AD2A2A69B37837FCBC0BE4EAB0C8FB837DF/",
+        "ImageSecondaryURL": "https://steamusercontent-a.akamaihd.net/ugc/14644404503335275644/3C411AD2A2A69B37837FCBC0BE4EAB0C8FB837DF/",
+        "ImageScalar": 1.0,
+        "WidthScale": 0.0,
+        "CustomTile": {
+          "Type": 0,
+          "Thickness": 0.2,
+          "Stackable": false,
+          "Stretch": true
+        }
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "f7fd7a",
+      "Name": "Custom_Tile",
+      "Transform": {
+        "posX": 4.997712,
+        "posY": 1.48149931,
+        "posZ": -0.419386059,
+        "rotX": 5.722999E-10,
+        "rotY": 179.999969,
+        "rotZ": -1.91492884E-08,
+        "scaleX": 5.738586,
+        "scaleY": 1.0,
+        "scaleZ": 5.738586
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.144598752,
+        "g": 0.0540125668,
+        "b": 0.00125953415
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomImage": {
+        "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/9553346779723022420/D116A868684144CB37329CF2FD82FB388DA07949/",
+        "ImageSecondaryURL": "https://steamusercontent-a.akamaihd.net/ugc/9553346779723022420/D116A868684144CB37329CF2FD82FB388DA07949/",
+        "ImageScalar": 1.0,
+        "WidthScale": 0.0,
+        "CustomTile": {
+          "Type": 0,
+          "Thickness": 0.2,
+          "Stackable": false,
+          "Stretch": true
+        }
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "59dc7a",
+      "Name": "Custom_Tile",
+      "Transform": {
+        "posX": -5.002288,
+        "posY": 1.48149931,
+        "posZ": -0.42,
+        "rotX": -1.436289E-08,
+        "rotY": 179.999969,
+        "rotZ": -6.20158458E-09,
+        "scaleX": 5.738586,
+        "scaleY": 1.0,
+        "scaleZ": 5.738586
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.144598752,
+        "g": 0.0540125668,
+        "b": 0.00125953415
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomImage": {
+        "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/10854509953371593721/B94237F523B31E68AF36948287C33F9BA1A57266/",
+        "ImageSecondaryURL": "https://steamusercontent-a.akamaihd.net/ugc/10854509953371593721/B94237F523B31E68AF36948287C33F9BA1A57266/",
+        "ImageScalar": 1.0,
+        "WidthScale": 0.0,
+        "CustomTile": {
+          "Type": 0,
+          "Thickness": 0.2,
+          "Stackable": false,
+          "Stretch": true
+        }
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "22aeaa",
+      "Name": "Custom_Tile",
+      "Transform": {
+        "posX": 15.0,
+        "posY": 1.48149931,
+        "posZ": -0.425984979,
+        "rotX": -1.38271844E-07,
+        "rotY": 180.015732,
+        "rotZ": 2.50770228E-07,
+        "scaleX": 5.738586,
+        "scaleY": 1.0,
+        "scaleZ": 5.738586
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.144598752,
+        "g": 0.0540125668,
+        "b": 0.00125953415
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomImage": {
+        "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/14856304860200242803/629A668E55B4E977F1A752747EC0FE53B02A58FA/",
+        "ImageSecondaryURL": "https://steamusercontent-a.akamaihd.net/ugc/14856304860200242803/629A668E55B4E977F1A752747EC0FE53B02A58FA/",
+        "ImageScalar": 1.0,
+        "WidthScale": 0.0,
+        "CustomTile": {
+          "Type": 0,
+          "Thickness": 0.2,
+          "Stackable": false,
+          "Stretch": true
+        }
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "adddfb",
+      "Name": "BlockSquare",
+      "Transform": {
+        "posX": 0.0,
+        "posY": 0.98,
+        "posZ": 0.0,
+        "rotX": 0.0,
+        "rotY": 6.04989836E-10,
+        "rotZ": 8.176778E-08,
+        "scaleX": 350.0,
+        "scaleY": 1.0,
+        "scaleZ": 350.0
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.0549014658,
+        "g": 0.4666664,
+        "b": 0.152940542,
+        "a": 0.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "function onLoad()\n    self.interactable = false\nend\n",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "3a89bc",
+      "Name": "FogOfWarTrigger",
+      "Transform": {
+        "posX": 0.0,
+        "posY": 4.03,
+        "posZ": 60.8129272,
+        "rotX": 0.0,
+        "rotY": 0.0,
+        "rotZ": 0.0,
+        "scaleX": 73.8,
+        "scaleY": 8.0,
+        "scaleZ": 55.8
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.24999997,
+        "g": 0.24999997,
+        "b": 0.24999997
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "FogColor": "Black",
+      "FogHidePointers": false,
+      "FogReverseHiding": false,
+      "FogSeethrough": false,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "<Panel rotation='0 90 0' visibility='White|Grey|Red|Orange|Yellow|Green|Teal|Blue|Purple|Pink|Brown'>\r\n    <Image position='0 0 -50.02' width=\"100.04\" height=\"100.04\"  color='#555500'/>\r\n    <Image position='0 0 50.02' width=\"100.04\" height=\"100.04\"  color='#555500'/>\r\n</Panel>\r\n<Panel rotation='90 0 0' visibility='White|Grey|Red|Orange|Yellow|Green|Teal|Blue|Purple|Pink|Brown'>\r\n    <Image position='0 0 -50.02' width=\"100.04\" height=\"100.04\"  color='#555500'/>\r\n    <Image position='0 0 50.02' width=\"100.04\" height=\"100.04\"  color='#555500'/>\r\n</Panel>\r\n<Panel position=\"0 0 -50.02\">\r\n    <Image width=\"100.04\" height=\"100.04\" visibility='Black' color=\"#FFFFFF10\" image=\"https://steamusercontent-a.akamaihd.net/ugc/16988599086958532751/DF4EBF9007586E7014D54A8597ADD1F3AAC2361D/\"/>\r\n    <Image width=\"100.04\" height=\"100.04\" visibility='White|Grey|Red|Orange|Yellow|Green|Teal|Blue|Purple|Pink|Brown' image=\"https://steamusercontent-a.akamaihd.net/ugc/16988599086958532751/DF4EBF9007586E7014D54A8597ADD1F3AAC2361D/\"/>\r\n</Panel>"
+    },
+    {
+      "GUID": "86056a",
+      "Name": "Custom_PDF",
+      "Transform": {
+        "posX": -15.0308552,
+        "posY": 1.68150008,
+        "posZ": 80.98959,
+        "rotX": 3.03007042E-08,
+        "rotY": 179.977692,
+        "rotZ": -3.16625943E-08,
+        "scaleX": 2.86434484,
+        "scaleY": 1.0,
+        "scaleZ": 2.86434484
+      },
+      "Nickname": "캐릭터시트",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": true,
+      "CustomPDF": {
+        "PDFUrl": "https://steamusercontent-a.akamaihd.net/ugc/11015172339904715806/A95D65ED7AB83A7C0E1BA43719FCE370D2877FBF/",
+        "PDFPassword": "",
+        "PDFPage": 0,
+        "PDFPageOffset": 0
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "73681e",
+      "Name": "Custom_PDF",
+      "Transform": {
+        "posX": -5.030737,
+        "posY": 1.68150008,
+        "posZ": 80.98959,
+        "rotX": -1.85770741E-08,
+        "rotY": 179.978363,
+        "rotZ": -3.579987E-08,
+        "scaleX": 2.86434484,
+        "scaleY": 1.0,
+        "scaleZ": 2.86434484
+      },
+      "Nickname": "캐릭터시트",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": true,
+      "CustomPDF": {
+        "PDFUrl": "https://steamusercontent-a.akamaihd.net/ugc/10126541907503835330/957114C237D4AD81E8CB1DFEE211EF6CC9F0B01D/",
+        "PDFPassword": "",
+        "PDFPage": 0,
+        "PDFPageOffset": 0
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "ab5f67",
+      "Name": "Custom_PDF",
+      "Transform": {
+        "posX": 4.969263,
+        "posY": 1.68150008,
+        "posZ": 80.98959,
+        "rotX": 3.85524168E-10,
+        "rotY": 179.978363,
+        "rotZ": 1.16066436E-08,
+        "scaleX": 2.86434484,
+        "scaleY": 1.0,
+        "scaleZ": 2.86434484
+      },
+      "Nickname": "캐릭터시트",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": true,
+      "CustomPDF": {
+        "PDFUrl": "https://steamusercontent-a.akamaihd.net/ugc/12613564769573678149/9543F73503608D21D806C66FEB5BA547D2BE243F/",
+        "PDFPassword": "",
+        "PDFPage": 0,
+        "PDFPageOffset": 0
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "04e7cc",
+      "Name": "Custom_PDF",
+      "Transform": {
+        "posX": 14.969264,
+        "posY": 1.68150008,
+        "posZ": 80.98959,
+        "rotX": -1.39206975E-07,
+        "rotY": 179.978363,
+        "rotZ": 2.0734231E-07,
+        "scaleX": 2.86434484,
+        "scaleY": 1.0,
+        "scaleZ": 2.86434484
+      },
+      "Nickname": "캐릭터시트",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": true,
+      "CustomPDF": {
+        "PDFUrl": "https://steamusercontent-a.akamaihd.net/ugc/10909944489139542450/DEB9F613307A9D30163C08CD12CA03E639B32BBF/",
+        "PDFPassword": "",
+        "PDFPage": 0,
+        "PDFPageOffset": 0
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "f0394d",
+      "Name": "BlockSquare",
+      "Transform": {
+        "posX": -15.0,
+        "posY": 1.521499,
+        "posZ": -7.72485352,
+        "rotX": -1.97926965E-07,
+        "rotY": 179.965881,
+        "rotZ": 5.834952E-07,
+        "scaleX": 1.8,
+        "scaleY": 0.08,
+        "scaleZ": 1.8
+      },
+      "Nickname": "이 캐릭터 선택하기",
+      "Description": "",
+      "GMNotes": "86056a",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "function onLoad()\r\n    self.createButton({position={x=0, y=1, z=0}, scale={4, 4, 4}, color={r=1, g=0, b=0}, \r\n        click_function='userFunction', function_owner=self, tooltip=self.getName()})\r\nend\r\n\r\n\r\nfunction userFunction(obj, pColor, alt)\r\n    if pColor ~= 'Red' and pColor ~= 'Yellow' and pColor ~= 'Green' and pColor ~= 'Blue' then\r\n        return\r\n    end\r\n    local target = getObjectFromGUID(self.getGMNotes())\r\n    if target ~= nil then\r\n        target.use_hands = true\r\n        target.setLock(false)\r\n        target.deal(1, pColor, 1)\r\n    end\r\n    self.destroyObject()\r\nend",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "6bf014",
+      "Name": "BlockSquare",
+      "Transform": {
+        "posX": -5.0,
+        "posY": 1.521499,
+        "posZ": -7.724854,
+        "rotX": -1.04927111E-07,
+        "rotY": 179.965881,
+        "rotZ": 2.20994184E-06,
+        "scaleX": 1.8,
+        "scaleY": 0.08,
+        "scaleZ": 1.8
+      },
+      "Nickname": "이 캐릭터 선택하기",
+      "Description": "",
+      "GMNotes": "73681e",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "function onLoad()\r\n    self.createButton({position={x=0, y=1, z=0}, scale={4, 4, 4}, color={r=1, g=0, b=0}, \r\n        click_function='userFunction', function_owner=self, tooltip=self.getName()})\r\nend\r\n\r\n\r\nfunction userFunction(obj, pColor, alt)\r\n    if pColor ~= 'Red' and pColor ~= 'Yellow' and pColor ~= 'Green' and pColor ~= 'Blue' then\r\n        return\r\n    end\r\n    local target = getObjectFromGUID(self.getGMNotes())\r\n    if target ~= nil then\r\n        target.use_hands = true\r\n        target.setLock(false)\r\n        target.deal(1, pColor, 1)\r\n    end\r\n    self.destroyObject()\r\nend",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "117d5a",
+      "Name": "BlockSquare",
+      "Transform": {
+        "posX": 5.0,
+        "posY": 1.521499,
+        "posZ": -7.724854,
+        "rotX": 4.920172E-09,
+        "rotY": 179.965866,
+        "rotZ": -2.22072185E-06,
+        "scaleX": 1.8,
+        "scaleY": 0.08,
+        "scaleZ": 1.8
+      },
+      "Nickname": "이 캐릭터 선택하기",
+      "Description": "",
+      "GMNotes": "ab5f67",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "function onLoad()\r\n    self.createButton({position={x=0, y=1, z=0}, scale={4, 4, 4}, color={r=1, g=0, b=0}, \r\n        click_function='userFunction', function_owner=self, tooltip=self.getName()})\r\nend\r\n\r\n\r\nfunction userFunction(obj, pColor, alt)\r\n    if pColor ~= 'Red' and pColor ~= 'Yellow' and pColor ~= 'Green' and pColor ~= 'Blue' then\r\n        return\r\n    end\r\n    local target = getObjectFromGUID(self.getGMNotes())\r\n    if target ~= nil then\r\n        target.use_hands = true\r\n        target.setLock(false)\r\n        target.deal(1, pColor, 1)\r\n    end\r\n    self.destroyObject()\r\nend",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "dde868",
+      "Name": "BlockSquare",
+      "Transform": {
+        "posX": 15.0,
+        "posY": 1.521499,
+        "posZ": -7.72485352,
+        "rotX": 2.56162966E-08,
+        "rotY": 179.965881,
+        "rotZ": -7.64877E-07,
+        "scaleX": 1.8,
+        "scaleY": 0.08,
+        "scaleZ": 1.8
+      },
+      "Nickname": "이 캐릭터 선택하기",
+      "Description": "",
+      "GMNotes": "04e7cc",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "function onLoad()\r\n    self.createButton({position={x=0, y=1, z=0}, scale={4, 4, 4}, color={r=1, g=0, b=0}, \r\n        click_function='userFunction', function_owner=self, tooltip=self.getName()})\r\nend\r\n\r\n\r\nfunction userFunction(obj, pColor, alt)\r\n    if pColor ~= 'Red' and pColor ~= 'Yellow' and pColor ~= 'Green' and pColor ~= 'Blue' then\r\n        return\r\n    end\r\n    local target = getObjectFromGUID(self.getGMNotes())\r\n    if target ~= nil then\r\n        target.use_hands = true\r\n        target.setLock(false)\r\n        target.deal(1, pColor, 1)\r\n    end\r\n    self.destroyObject()\r\nend",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "01c87f",
+      "Name": "BlockSquare",
+      "Transform": {
+        "posX": -22.6906624,
+        "posY": 1.71334755,
+        "posZ": 8.164406,
+        "rotX": 8.999727E-08,
+        "rotY": 3.997916E-05,
+        "rotZ": 7.203489E-08,
+        "scaleX": 1.43315244,
+        "scaleY": 0.06369567,
+        "scaleZ": 1.43315244
+      },
+      "Nickname": "추가정보 읽기",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "function onLoad()\r\n    self.createButton({position={x=0, y=1, z=0}, scale={4, 4, 4}, color={r=1, g=0, b=0}, \r\n        click_function='userFunction', function_owner=self, tooltip=self.getName()})\r\nend\r\n\r\n\r\nfunction userFunction()\r\n    local target = getObjectFromGUID('5afc5c')\r\n    target.setLock(false)\r\n    target.setPositionSmooth({0, 3, -5.57}, false, true)\r\nend",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "3eea49",
+      "Name": "BlockSquare",
+      "Transform": {
+        "posX": -25.5573673,
+        "posY": 1.71334755,
+        "posZ": -0.07867392,
+        "rotX": 5.52139454E-08,
+        "rotY": 2.87815819E-05,
+        "rotZ": 2.58563773E-07,
+        "scaleX": 1.43315244,
+        "scaleY": 0.06369567,
+        "scaleZ": 1.43315244
+      },
+      "Nickname": "엔딩 가져오기",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "function onLoad()\r\n    self.createButton({position={x=0, y=1, z=0}, scale={4, 4, 4}, color={r=1, g=0, b=0}, \r\n        click_function='userFunction', function_owner=self, tooltip=self.getName()})\r\nend\r\n\r\n\r\nfunction userFunction()\r\n    local target = getObjectFromGUID('a9a164')\r\n    target.setLock(false)\r\n    target.setPositionSmooth({24.78, 1.48, -0.43}, false, true)\r\n    target = getObjectFromGUID('7b7ac2')\r\n    target.setPosition({29.95, 1.51, 4.50})\r\nend",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "29ab2b",
+      "Name": "BlockSquare",
+      "Transform": {
+        "posX": -38.9688148,
+        "posY": 1.60776269,
+        "posZ": 3.52115774,
+        "rotX": -2.94696356E-08,
+        "rotY": 180.022736,
+        "rotZ": -1.06479314E-08,
+        "scaleX": 8.694917,
+        "scaleY": 0.252527475,
+        "scaleZ": 12.6524591
+      },
+      "Nickname": "투표 보드",
+      "Description": "투표 대상을 입력하세요.(ex: 범인)",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.8,
+        "g": 0.8,
+        "b": 0.8
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "\r\ntargetNameList = {}\r\ntargetImageList = {}\r\nvoterColorList = {}\r\n\r\nvoterColorList[1] = \"Red\"            \r\nvoterColorList[2] = \"Yellow\"            \r\nvoterColorList[3] = \"Green\"            \r\nvoterColorList[4] = \"Blue\"            \r\ntargetNameList[1] = \"명두진\"            \r\ntargetImageList[1] = \"https://steamusercontent-a.akamaihd.net/ugc/10736957251885965768/48F4611CA8997D42840C40F4BFD02A352B9DA5D6/\"            \r\ntargetNameList[2] = \"조수택\"            \r\ntargetImageList[2] = \"https://steamusercontent-a.akamaihd.net/ugc/12433394044896110218/14EB7AB57F3F47E31B2C408EF0BEA4347FB053C3/\"            \r\ntargetNameList[3] = \"윤정순\"            \r\ntargetImageList[3] = \"https://steamusercontent-a.akamaihd.net/ugc/11217137917098015532/D961725E7D925F522C12C45B7F316086DF07A1B6/\"            \r\ntargetNameList[4] = \"이윤섭\"            \r\ntargetImageList[4] = \"https://steamusercontent-a.akamaihd.net/ugc/17769267511914424284/CFBD3E707D2AFED5B6E86B074424811EA05830C2/\"            \r\n\r\nisUIInitialized = 0\r\nisVoteStarted = 0\r\nvoteCount = {}\r\nLOC_X = {}\r\nLOC_Y = {}\r\nLOC_X[1] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}\r\nLOC_Y[1] = {70, 70, 70, 70, 70, 70, 70, 70, 70, 70}\r\nLOC_X[2] = {-55, 55, 0, 0, 0, 0, 0, 0, 0, 0}\r\nLOC_Y[2] = {70, 70, 70, 70, 70, 70, 70, 70, 70, 70}\r\nLOC_X[3] = {-110, 0, 110, 0, 0, 0, 0, 0, 0, 0}\r\nLOC_Y[3] = {70, 70, 70, 70, 70, 70, 70, 70, 70, 70}\r\nLOC_X[4] = {-165, -55, 55, 165, 0, 0, 0, 0, 0, 0}\r\nLOC_Y[4] = {70, 70, 70, 70, 70, 70, 70, 70, 70, 70}\r\nLOC_X[5] = {-220, -110, 0, 110, 220, 0, 0, 0, 0, 0, 0}\r\nLOC_Y[5] = {70, 70, 70, 70, 70, 0, 0, 0, 0, 0}\r\nLOC_X[6] = {-110, 0, 110, -110, 0, 110, 0, 0, 0, 0}\r\nLOC_Y[6] = {70, 70, 70, -70, -70, -70, 0, 0, 0, 0}\r\nLOC_X[7] = {-165, -55, 55, 165, -110, 0, 110, 0, 0, 0}\r\nLOC_Y[7] = {70, 70, 70, 70, -70, -70, -70, 0, 0, 0}\r\nLOC_X[8] = {-165, -55, 55, 165, -165, -55, 55, 165, 0, 0}\r\nLOC_Y[8] = {70, 70, 70, 70, -70, -70, -70, -70, 0, 0}\r\nLOC_X[9] = {-220, -110, 0, 110, 220, -165, -55, 55, 165, 0}\r\nLOC_Y[9] = {70, 70, 70, 70, 70, -70, -70, -70, -70, 0}\r\nLOC_X[10] = {-220, -110, 0, 110, 220, -220, -110, 0, 110, 220}\r\nLOC_Y[10] = {70, 70, 70, 70, 70, -70, -70, -70, -70, -70}\r\n\r\n\r\nfunction onLoad()\r\n    params = {\r\n        click_function = \"voteStartStop\",\r\n        function_owner = self,\r\n        label          = \"투표시작/종료\",\r\n        position       = {0, 0.5, -0.42},\r\n        rotation       = {0, 0, 0},\r\n        width          = 900,\r\n        height         = 120,\r\n        font_size      = 90,\r\n        color          = {1, 0, 0},\r\n        font_color     = {1, 1, 1},\r\n        scale          = {0.4, 0.3, 0.3}\r\n    }\r\n    self.createButton(params)\r\n    setThisXml()\r\nend\r\n\r\n\r\n\r\n\r\nfunction voteStartStop()\r\n    if isUIInitialized == 0 then\r\n        isUIInitialized = 1\r\n        initializeVoteUI()\r\n    end\r\n\r\n    if isVoteStarted == 0 then\r\n        setVisibility(0)\r\n        isVoteStarted = 1 \r\n        broadcastToAll(self.getDescription()..' 투표가 시작되었습니다.')\r\n        for i = 1, #voterColorList do\r\n            self.UI.setAttribute('target_' .. voterColorList[i], 'text', 'None')\r\n        end\r\n        for i = 1, #targetNameList do\r\n            voteCount[targetNameList[i]] = 0\r\n        end\r\n        Global.UI.setAttribute('guid' .. self.guid .. '_vote_window', 'active', 'true')\r\n    else\r\n        setVisibility(1)\r\n        isVoteStarted = 0\r\n        broadcastToAll(self.getDescription()..' 투표가 종료되었습니다.')\r\n        Global.UI.setAttribute('guid' .. self.guid .. '_vote_window', 'active', 'false')\r\n\r\n\r\n\r\n        for i = 1, #voterColorList do\r\n            local tmpc = self.UI.getAttribute('target_'..voterColorList[i], 'text')\r\n            for j = 1, #targetNameList do\r\n                if tmpc == string.gsub(targetNameList[j], '_', ' ') then\r\n                    voteCount[targetNameList[j]] = voteCount[targetNameList[j]] + 1\r\n                end\r\n            end\r\n        end\r\n\r\n        local maxVote = 0\r\n        local maxPerson = 0\r\n        local maxWho = ''\r\n\r\n        for i = 1, #targetNameList do\r\n            if voteCount[targetNameList[i]] > maxVote then\r\n                maxVote = voteCount[targetNameList[i]]\r\n            end\r\n        end\r\n        for i = 1, #targetNameList do\r\n            if voteCount[targetNameList[i]] == maxVote then\r\n                maxPerson = maxPerson + 1\r\n                maxWho = maxWho .. ' \"' .. string.gsub(targetNameList[i], '_', ' ') .. '\"'\r\n            end\r\n        end\r\n\r\n        if maxPerson <= 2 then\r\n            broadcastToAll('최다표('..tostring(maxVote)..')를 받은 사람은'..maxWho..'입니다.', {0, 1, 0})\r\n        else\r\n            broadcastToAll('최다표가 3인 이상입니다.', {0, 1, 0})\r\n        end\r\n    end\r\nend\r\n\r\nfunction vote_target(color, target_name)\r\n    self.UI.setAttribute('target_'..color, 'text', target_name)\r\nend\r\n\r\nfunction initializeVoteUI()\r\n    local globalUIXml = Global.UI.getXml()\r\n\r\n    globalUIXml = globalUIXml.. [[\r\n    \r\n    \r\n    ]] .. '<Panel id=\"guid' .. self.guid .. '_vote_window\" active=\"true\">'\r\n    for i = 1, #targetNameList do\r\n        if targetImageList[i] == nil or targetImageList[i] == '' then\r\n            globalUIXml = globalUIXml .. '<Button width=\"100\" height=\"100\" offsetXY=\"' .. tostring(LOC_X[#targetNameList][i]) .. ' ' .. tostring(LOC_Y[#targetNameList][i]) \r\n            .. '\" color=\"#66CC66\" onClick=\"' .. self.guid .. '/vote_target_' .. targetNameList[i] .. '\" image=\"' .. targetImageList[i] .. '\"/><Text width=\"105\" fontSize=\"19\" fontStyle=\"Bold\" outline=\"#FFFFFF\" offsetXY=\"'\r\n            .. tostring(LOC_X[#targetNameList][i]) .. ' ' .. tostring(LOC_Y[#targetNameList][i]) .. '\">'\r\n            .. string.gsub(targetNameList[i], '_', ' ') .. '</Text>'\r\n        else\r\n            globalUIXml = globalUIXml .. '<Button width=\"100\" height=\"100\" offsetXY=\"' .. tostring(LOC_X[#targetNameList][i]) .. ' ' .. tostring(LOC_Y[#targetNameList][i]) \r\n            .. '\" color=\"#FFFFFF\" onClick=\"' .. self.guid .. '/vote_target_' .. targetNameList[i] .. '\" image=\"' .. targetImageList[i] .. '\"/><Text width=\"105\" fontSize=\"17\" fontStyle=\"Bold\" outline=\"#FFFFFF\" offsetXY=\"'\r\n            .. tostring(LOC_X[#targetNameList][i]) .. ' ' .. tostring(LOC_Y[#targetNameList][i] - 65) .. '\">'\r\n            .. string.gsub(targetNameList[i], '_', ' ') .. '</Text>'\r\n        end\r\n    end\r\n    globalUIXml = globalUIXml .. '</Panel>'\r\n    Global.UI.setXml(globalUIXml)\r\nend\r\n\r\nfunction visibilityToggle()\r\n    if self.UI.getAttribute('vt_button', 'color') == '#00FF00' then\r\n        self.UI.setAttribute('vote_board', 'visibility', 'Black')\r\n        self.UI.setAttribute('vt_button', 'color', '#FF4444')\r\n    else\r\n        self.UI.setAttribute('vote_board', 'visibility', '')\r\n        self.UI.setAttribute('vt_button', 'color', '#00FF00')\r\n    end\r\nend\r\n\r\nfunction setVisibility(flag)\r\n    if flag == 0 then\r\n        self.UI.setAttribute('vote_board', 'visibility', 'Black')\r\n        self.UI.setAttribute('vt_button', 'color', '#FF4444')\r\n    else\r\n        self.UI.setAttribute('vote_board', 'visibility', '')\r\n        self.UI.setAttribute('vt_button', 'color', '#00FF00')\r\n    end\r\nend\r\n\r\nfunction vote_target_명두진(player, value, id)            \r\n                            \r\n    vote_target(player.color, '명두진')\r\n    broadcastToColor('명두진에게 투표했습니다.', player.color)\r\nend\r\n        \r\nfunction vote_target_조수택(player, value, id)            \r\n                            \r\n    vote_target(player.color, '조수택')\r\n    broadcastToColor('조수택에게 투표했습니다.', player.color)\r\nend\r\n        \r\nfunction vote_target_윤정순(player, value, id)            \r\n                            \r\n    vote_target(player.color, '윤정순')\r\n    broadcastToColor('윤정순에게 투표했습니다.', player.color)\r\nend\r\n        \r\nfunction vote_target_이윤섭(player, value, id)            \r\n                            \r\n    vote_target(player.color, '이윤섭')\r\n    broadcastToColor('이윤섭에게 투표했습니다.', player.color)\r\nend\r\n        \r\n\r\nfunction setThisXml()\r\n    local xmlstr = [=[\r\n\r\n\r\n<Panel id='vote_board' active=\"true\" visibility=\"Black\" width=\"500\" height=\"480\" rectAlignment=\"MiddleCenter\" offsetXY=\"0 0\" scale=\"0.22 0.15 1\" position=\"0 0 -51\" rotation=\"0 0 180\">\r\n    <Button id=\"vt_button\" width=\"120\" height=\"120\" offsetXY=\"192 275\" fontSize=\"39\" scale=\"0.33 0.33\" color=\"#FF4444\" onClick=\"visibilityToggle\">전체\r\n공개</Button>\r\n\r\n\r\n    <Image width=\"50\" height=\"50\" rectAlignment=\"UpperCenter\" offsetXY=\"-150 0\" color=\"#DA1A18\">\r\n        <Text id=\"name_Red\" width=\"250\" offsetXY=\"105 0\" textAlignment=\"MiddleCenter\" color=\"#000000\" fontSize=\"50\" scale=\"0.3 0.3 0.3\" horizontalOverflow=\"Overflow\" verticalOverflow=\"Overflow\">빨강</Text>\r\n        <Text width=\"250\" offsetXY=\"190 0\" textAlignment=\"MiddleCenter\" color=\"#000000\" fontSize=\"70\" scale=\"0.3 0.3 0.3\" horizontalOverflow=\"Overflow\" verticalOverflow=\"Overflow\">→</Text>\r\n        <Text id=\"target_Red\" width=\"250\" offsetXY=\"275 0\" textAlignment=\"MiddleCenter\" color=\"#000000\" fontSize=\"50\" scale=\"0.3 0.3 0.3\" horizontalOverflow=\"Overflow\" verticalOverflow=\"Overflow\">None</Text>\r\n    </Image>\r\n\r\n\r\n    <Image width=\"50\" height=\"50\" rectAlignment=\"UpperCenter\" offsetXY=\"-150 -55\" color=\"#E7E52C\">\r\n        <Text id=\"name_Yellow\" width=\"250\" offsetXY=\"105 0\" textAlignment=\"MiddleCenter\" color=\"#000000\" fontSize=\"50\" scale=\"0.3 0.3 0.3\" horizontalOverflow=\"Overflow\" verticalOverflow=\"Overflow\">노랑</Text>\r\n        <Text width=\"250\" offsetXY=\"190 0\" textAlignment=\"MiddleCenter\" color=\"#000000\" fontSize=\"70\" scale=\"0.3 0.3 0.3\" horizontalOverflow=\"Overflow\" verticalOverflow=\"Overflow\">→</Text>\r\n        <Text id=\"target_Yellow\" width=\"250\" offsetXY=\"275 0\" textAlignment=\"MiddleCenter\" color=\"#000000\" fontSize=\"50\" scale=\"0.3 0.3 0.3\" horizontalOverflow=\"Overflow\" verticalOverflow=\"Overflow\">None</Text>\r\n    </Image>\r\n\r\n\r\n    <Image width=\"50\" height=\"50\" rectAlignment=\"UpperCenter\" offsetXY=\"-150 -110\" color=\"#31B32B\">\r\n        <Text id=\"name_Green\" width=\"250\" offsetXY=\"105 0\" textAlignment=\"MiddleCenter\" color=\"#000000\" fontSize=\"50\" scale=\"0.3 0.3 0.3\" horizontalOverflow=\"Overflow\" verticalOverflow=\"Overflow\">초록</Text>\r\n        <Text width=\"250\" offsetXY=\"190 0\" textAlignment=\"MiddleCenter\" color=\"#000000\" fontSize=\"70\" scale=\"0.3 0.3 0.3\" horizontalOverflow=\"Overflow\" verticalOverflow=\"Overflow\">→</Text>\r\n        <Text id=\"target_Green\" width=\"250\" offsetXY=\"275 0\" textAlignment=\"MiddleCenter\" color=\"#000000\" fontSize=\"50\" scale=\"0.3 0.3 0.3\" horizontalOverflow=\"Overflow\" verticalOverflow=\"Overflow\">None</Text>\r\n    </Image>\r\n\r\n\r\n    <Image width=\"50\" height=\"50\" rectAlignment=\"UpperCenter\" offsetXY=\"-150 -165\" color=\"#1E87FF\">\r\n        <Text id=\"name_Blue\" width=\"250\" offsetXY=\"105 0\" textAlignment=\"MiddleCenter\" color=\"#000000\" fontSize=\"50\" scale=\"0.3 0.3 0.3\" horizontalOverflow=\"Overflow\" verticalOverflow=\"Overflow\">파랑</Text>\r\n        <Text width=\"250\" offsetXY=\"190 0\" textAlignment=\"MiddleCenter\" color=\"#000000\" fontSize=\"70\" scale=\"0.3 0.3 0.3\" horizontalOverflow=\"Overflow\" verticalOverflow=\"Overflow\">→</Text>\r\n        <Text id=\"target_Blue\" width=\"250\" offsetXY=\"275 0\" textAlignment=\"MiddleCenter\" color=\"#000000\" fontSize=\"50\" scale=\"0.3 0.3 0.3\" horizontalOverflow=\"Overflow\" verticalOverflow=\"Overflow\">None</Text>\r\n    </Image>\r\n\r\n</Panel>    \r\n    ]=]\r\n        self.UI.setXml(xmlstr)\r\n    end\r\n    \r\n",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "b2cf46",
+      "Name": "Custom_PDF",
+      "Transform": {
+        "posX": -15.9233847,
+        "posY": 1.48000038,
+        "posZ": 55.3362541,
+        "rotX": -2.00798453E-07,
+        "rotY": 179.9999,
+        "rotZ": -7.49387752E-08,
+        "scaleX": 2.86434484,
+        "scaleY": 1.0,
+        "scaleZ": 2.86434484
+      },
+      "Nickname": "개별 엔딩",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": true,
+      "CustomPDF": {
+        "PDFUrl": "https://steamusercontent-a.akamaihd.net/ugc/11794319034607968072/1859EBA8D968F4844B1F303E1A48164097DC5EB7/",
+        "PDFPassword": "",
+        "PDFPage": 0,
+        "PDFPageOffset": 0
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "08c79f",
+      "Name": "Custom_PDF",
+      "Transform": {
+        "posX": -8.097606,
+        "posY": 1.48000038,
+        "posZ": 55.3362541,
+        "rotX": -6.0699934E-09,
+        "rotY": 179.995728,
+        "rotZ": -6.56841E-08,
+        "scaleX": 2.86434484,
+        "scaleY": 1.0,
+        "scaleZ": 2.86434484
+      },
+      "Nickname": "개별 엔딩",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": true,
+      "CustomPDF": {
+        "PDFUrl": "https://steamusercontent-a.akamaihd.net/ugc/14131450677521921202/BFE589140A639C1BA22E60E3B2339768CEA8B898/",
+        "PDFPassword": "",
+        "PDFPage": 0,
+        "PDFPageOffset": 0
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "9309fc",
+      "Name": "Custom_PDF",
+      "Transform": {
+        "posX": -0.271826178,
+        "posY": 1.48000026,
+        "posZ": 55.3362541,
+        "rotX": 1.38031211E-07,
+        "rotY": 179.977661,
+        "rotZ": -8.668188E-08,
+        "scaleX": 2.86434484,
+        "scaleY": 1.0,
+        "scaleZ": 2.86434484
+      },
+      "Nickname": "개별 엔딩",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": true,
+      "CustomPDF": {
+        "PDFUrl": "https://steamusercontent-a.akamaihd.net/ugc/17606755239264891872/0D3C683DC4288E32BFA424065A16866B298C15AF/",
+        "PDFPassword": "",
+        "PDFPage": 0,
+        "PDFPageOffset": 0
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "d12d8d",
+      "Name": "Custom_PDF",
+      "Transform": {
+        "posX": 7.55395746,
+        "posY": 1.48000038,
+        "posZ": 55.3362541,
+        "rotX": -5.580554E-09,
+        "rotY": 180.002136,
+        "rotZ": -7.838182E-08,
+        "scaleX": 2.86434484,
+        "scaleY": 1.0,
+        "scaleZ": 2.86434484
+      },
+      "Nickname": "개별 엔딩",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": true,
+      "CustomPDF": {
+        "PDFUrl": "https://steamusercontent-a.akamaihd.net/ugc/15836713666635726708/2B0F725940D1700DA317D98CBB88C3723D0092F1/",
+        "PDFPassword": "",
+        "PDFPage": 0,
+        "PDFPageOffset": 0
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "3fafe6",
+      "Name": "Custom_PDF",
+      "Transform": {
+        "posX": 15.3797159,
+        "posY": 1.48000038,
+        "posZ": 55.3362541,
+        "rotX": 1.85972251E-08,
+        "rotY": 180.000748,
+        "rotZ": -9.707288E-08,
+        "scaleX": 2.86434484,
+        "scaleY": 1.0,
+        "scaleZ": 2.86434484
+      },
+      "Nickname": "개별 엔딩",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": true,
+      "CustomPDF": {
+        "PDFUrl": "https://steamusercontent-a.akamaihd.net/ugc/15659650830659294081/068BF2CE10A6A3A2E0FA8EEE2947F49A8FC6772F/",
+        "PDFPassword": "",
+        "PDFPage": 0,
+        "PDFPageOffset": 0
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "a9a164",
+      "Name": "Custom_PDF",
+      "Transform": {
+        "posX": 14.87956,
+        "posY": 1.48000038,
+        "posZ": 68.11509,
+        "rotX": -3.05268735E-08,
+        "rotY": 180.011871,
+        "rotZ": -5.70344838E-08,
+        "scaleX": 2.86434484,
+        "scaleY": 1.0,
+        "scaleZ": 2.86434484
+      },
+      "Nickname": "캐릭터시트",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": true,
+      "CustomPDF": {
+        "PDFUrl": "https://steamusercontent-a.akamaihd.net/ugc/12329658135316140063/48BF90C335A7B5298BA2369D72585165CFBE497A/",
+        "PDFPassword": "",
+        "PDFPage": 0,
+        "PDFPageOffset": 0
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "7b7ac2",
+      "Name": "BlockSquare",
+      "Transform": {
+        "posX": 29.9460773,
+        "posY": 1.51334667,
+        "posZ": 38.8381271,
+        "rotX": 5.52139454E-08,
+        "rotY": 2.87815819E-05,
+        "rotZ": 2.58563773E-07,
+        "scaleX": 1.43315244,
+        "scaleY": 0.06369567,
+        "scaleZ": 1.43315244
+      },
+      "Nickname": "개별엔딩 가져오기",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "function onLoad()\r\n    self.createButton({position={x=0, y=1, z=0}, scale={4, 4, 4}, color={r=1, g=0, b=0}, \r\n        click_function='userFunction', function_owner=self, tooltip=self.getName()})\r\nend\r\n\r\n\r\nfunction userFunction()\r\n    local target\r\n    target = getObjectFromGUID('b2cf46')\r\n    target.setLock(false)\r\n    target.setPositionSmooth({9.12, 1.48, 11.65}, false, true)\r\n    target = getObjectFromGUID('08c79f')\r\n    target.setLock(false)\r\n    target.setPositionSmooth({16.95, 1.48, 11.65}, false, true)\r\n    target = getObjectFromGUID('9309fc')\r\n    target.setLock(false)\r\n    target.setPositionSmooth({24.78, 1.48, 11.65}, false, true)\r\n    target = getObjectFromGUID('d12d8d')\r\n    target.setLock(false)\r\n    target.setPositionSmooth({32.60, 1.48, 11.65}, false, true)\r\n    target = getObjectFromGUID('3fafe6')\r\n    target.setLock(false)\r\n    target.setPositionSmooth({40.43, 1.48, 11.65}, false, true)\r\n\r\nend",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "62a14d",
+      "Name": "Custom_Tile",
+      "Transform": {
+        "posX": -10.0,
+        "posY": 1.4814992,
+        "posZ": 11.65,
+        "rotX": 7.15336455E-07,
+        "rotY": 180.0303,
+        "rotZ": -7.07371271E-07,
+        "scaleX": 5.738586,
+        "scaleY": 1.0,
+        "scaleZ": 5.738586
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.144598782,
+        "g": 0.05401258,
+        "b": 0.00125953415
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomImage": {
+        "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/12935545020548150309/32F9B6964AE0143D09E869741646B63F3EBE01F2/",
+        "ImageSecondaryURL": "https://steamusercontent-a.akamaihd.net/ugc/12935545020548150309/32F9B6964AE0143D09E869741646B63F3EBE01F2/",
+        "ImageScalar": 1.0,
+        "WidthScale": 0.0,
+        "CustomTile": {
+          "Type": 0,
+          "Thickness": 0.2,
+          "Stackable": false,
+          "Stretch": true
+        }
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "7caae3",
+      "Name": "Custom_Tile",
+      "Transform": {
+        "posX": 0.0,
+        "posY": 1.48,
+        "posZ": 11.65,
+        "rotX": 7.15336455E-07,
+        "rotY": 180.0303,
+        "rotZ": -7.07371271E-07,
+        "scaleX": 5.738586,
+        "scaleY": 1.0,
+        "scaleZ": 5.738586
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.144598752,
+        "g": 0.0540125668,
+        "b": 0.00125953415
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomImage": {
+        "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/16910226799421838921/15FD70E7B6ACC20CB000169D65736A39CA6E37B0/",
+        "ImageSecondaryURL": "https://steamusercontent-a.akamaihd.net/ugc/16910226799421838921/15FD70E7B6ACC20CB000169D65736A39CA6E37B0/",
+        "ImageScalar": 1.0,
+        "WidthScale": 0.0,
+        "CustomTile": {
+          "Type": 0,
+          "Thickness": 0.2,
+          "Stackable": false,
+          "Stretch": true
+        }
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    }
+  ]
+}

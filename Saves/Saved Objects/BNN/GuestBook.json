@@ -1,0 +1,66 @@
+{
+  "SaveName": "",
+  "Date": "",
+  "VersionNumber": "",
+  "GameMode": "",
+  "GameType": "",
+  "GameComplexity": "",
+  "Tags": [],
+  "Gravity": 0.5,
+  "PlayArea": 0.5,
+  "Table": "",
+  "Sky": "",
+  "Note": "",
+  "TabStates": {},
+  "LuaScript": "",
+  "LuaScriptState": "",
+  "XmlUI": "",
+  "ObjectStates": [
+    {
+      "GUID": "70e21c",
+      "Name": "BlockSquare",
+      "Transform": {
+        "posX": 0.004983425,
+        "posY": 1.45999908,
+        "posZ": 0.4296422,
+        "rotX": -1.18596279E-06,
+        "rotY": -0.000859704451,
+        "rotZ": 2.13418025E-06,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "GuestBook",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.5,
+        "g": 0.5,
+        "b": 0.5,
+        "a": 0.5
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "workshopid = nil\r\npermissionMin = -1\r\n\r\n----\r\npermissionCode = nil\r\nobjScript = nil\r\nobjPosition = nil\r\ngameid = nil\r\nhost_name = nil\r\nhost_id = nil\r\nsave_min = -1\r\nsaveCount = 0\r\nfunction onLoad()\r\n    local dt = os.date('*t')\r\n    self.setLock(true)\r\n    for _, hostPlayer in ipairs(Player.getPlayers()) do\r\n        if hostPlayer.host == true then\r\n            host_name = hostPlayer.steam_name\r\n            host_id = hostPlayer.steam_id\r\n            break\r\n        end\r\n    end\r\n    if workshopid == nil then\r\n        self.interactable = true\r\n        self.setScale({1.0, 1.0, 1.0})\r\n        self.setColorTint({0.5, 0.5, 0.5, 0.5})\r\n    else\r\n        gameid = workshopid..'-'..dt.year..'-'..dt.month..'-'..dt.day..'-'..dt.hour..'-'..dt.min..'-'..dt.sec\r\n        self.interactable = false\r\n        self.setScale({0.01, 0.01, 0.01})\r\n        self.setColorTint({0.0, 0.0, 0.0, 0.0})\r\n    end\r\nend\r\n\r\nfunction onPlayerConnect(player)\r\n    if workshopid ~= nil then\r\n        postConnectLog(player)\r\n    end\r\nend\r\n\r\nfunction onSave()\r\n    if save_min == -1 and workshopid ~= nil then\r\n        postOpenLog()\r\n    end\r\n    postSaveLog()\r\nend\r\n\r\nfunction postOpenLog()\r\n    local dt = os.date('*t')\r\n    local dts = dt.year..'-'..dt.month..'-'..dt.day..' '..dt.hour..':'..dt.min..':'..dt.sec\r\n    for _, player in ipairs(Player.getPlayers()) do\r\n        if player.host == true then\r\n            WebRequest.post('http://tenokar.dothome.co.kr/ttsworkshop/bananadata/add_open_log.php', \r\n            {['Opener_Name']=player.steam_name, ['Opener_SteamID']=player.steam_id, ['Open_Time']=dts, \r\n             ['Game_ID']=gameid, ['Game_Name']=Info.name, ['WorkshopID']=workshopid})\r\n        elseif player.color == 'White' or player.color == 'Brown' or player.color == 'Red' or player.color == 'Orange' or \r\n        player.color == 'Yellow' or player.color == 'Green' or player.color == 'Teal' or player.color == 'Purple' or \r\n        player.color == 'Blue' or player.color == 'Pink' then\r\n            postConnectLog(player)\r\n        end\r\n    end\r\n    for _, spectator in ipairs(Player.getSpectators()) do\r\n        if spectator.host == true then\r\n            WebRequest.post('http://tenokar.dothome.co.kr/ttsworkshop/bananadata/add_open_log.php', \r\n            {['Opener_Name']=spectator.steam_name, ['Opener_SteamID']=spectator.steam_id, ['Open_Time']=dts, \r\n             ['Game_ID']=gameid, ['Game_Name']=Info.name, ['WorkshopID']=workshopid})\r\n        else\r\n            postConnectLog(spectator)\r\n        end\r\n    end\r\nend\r\n\r\nfunction postPlayLog(player)\r\n    WebRequest.post('http://tenokar.dothome.co.kr/ttsworkshop/bananadata/add_play_log_v1.php', \r\n    {['Permission_Code']=permissionCode, ['Client_Name']=player.steam_name, ['Client_SteamID']=player.steam_id, \r\n    ['Game_Name']=Info.name, ['WorkshopID']=workshopid})\r\nend\r\n\r\nfunction postConnectLog(player)\r\n    local dt = os.date('*t')\r\n    local dts = dt.year..'-'..dt.month..'-'..dt.day..' '..dt.hour..':'..dt.min..':'..dt.sec\r\n    WebRequest.post('http://tenokar.dothome.co.kr/ttsworkshop/bananadata/add_join_log.php', \r\n    {['Client_Name']=player.steam_name, ['Client_SteamID']=player.steam_id, ['Join_Time']=dts, ['Game_ID']=gameid,\r\n     ['Game_Name']=Info.name, ['WorkshopID']=workshopid, ['Host_Name']=host_name, ['Host_SteamID']=host_id})\r\nend\r\n\r\nfunction postSaveLog()\r\n    local dt = os.date('*t')\r\n    local dts = dt.hour..':'..dt.min..':'..dt.sec\r\n    if save_min ~= dt.min then\r\n        WebRequest.post('http://tenokar.dothome.co.kr/ttsworkshop/bananadata/add_save_log.php', \r\n        {['Opener_SteamID']=host_id, ['Game_ID']=gameid, ['Save_Time']=dts})\r\n        save_min = dt.min\r\n\r\n        if saveCount < permissionMin then\r\n            saveCount = saveCount + 1\r\n        elseif saveCount > permissionMin then\r\n            return\r\n        elseif saveCount == permissionMin then\r\n            saveCount = permissionMin + 1\r\n            for _, player in ipairs(Player.getPlayers()) do\r\n                if player.host == true then\r\n                elseif player.color == 'White' or player.color == 'Brown' or player.color == 'Red' or player.color == 'Orange' or \r\n                player.color == 'Yellow' or player.color == 'Green' or player.color == 'Teal' or player.color == 'Purple' or \r\n                player.color == 'Blue' or player.color == 'Pink' then\r\n                    postPlayLog(player)\r\n                end\r\n            end\r\n        end\r\n    end\r\nend\r\n\r\nfunction setPermissionCode(string)\r\n    permissionCode = string\r\nend\r\n",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "SaveName": "",
+  "Date": "",
+  "VersionNumber": "",
+  "GameMode": "",
+  "GameType": "",
+  "GameComplexity": "",
+  "Tags": [],
+  "Gravity": 0.5,
+  "PlayArea": 0.5,
+  "Table": "",
+  "Sky": "",
+  "Note": "",
+  "TabStates": {},
+  "LuaScript": "",
+  "LuaScriptState": "",
+  "XmlUI": "",
+  "ObjectStates": [
+    {
+      "GUID": "4a00ea",
+      "Name": "Custom_Assetbundle",
+      "Transform": {
+        "posX": -11.6709461,
+        "posY": 1.21932149,
+        "posZ": -1.89742172,
+        "rotX": 0.461337656,
+        "rotY": 179.993576,
+        "rotZ": -8.005268E-05,
+        "scaleX": 1.19999981,
+        "scaleY": 1.19999981,
+        "scaleZ": 1.19999981
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.3675958,
+        "g": 0.3675958,
+        "b": 0.3675958
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomAssetbundle": {
+        "AssetbundleURL": "https://steamusercontent-a.akamaihd.net/ugc/267231170580138054/83B9C07DD90D4FA8F3DE016617A6BF0BC935D9FF/",
+        "AssetbundleSecondaryURL": "",
+        "MaterialIndex": 0,
+        "TypeIndex": 0,
+        "LoopingEffectIndex": 0
+      },
+      "LuaScript": "ButtonColors = {White = {1, 1, 1}, Brown = {0.443, 0.231, 0.09}, Red = {0.856, 0.1, 0.094}, Orange = {0.956, 0.392, 0.113},\r\n    Yellow = {0.905, 0.898, 0.172}, Green = {0.192, 0.701, 0.168}, Teal = {0.129, 0.694, 0.607}, Blue = {0.118, 0.53, 1},\r\n    Purple = {0.627, 0.125, 0.941}, Pink = {0.96, 0.439, 0.807}}\r\n\r\nSixSymbolColor = {White = '[FFFFFF]', Brown = '[703A16]', Red = '[DA1917]', Orange = '[F3631C]',\r\n    Yellow = '[E6E42B]', Green = '[30B22A]', Teal = '[20B09A]', Blue = '[1E87FF]',\r\n    Purple = '[9F1FEF]', Pink = '[F46FCD]'}\r\n\r\nColorKor = {White = '흰색', Brown = '갈색', Red = '빨간색', Orange = '주황색',\r\n    Yellow = '노란색', Green = '녹색', Teal = '청록색', Blue = '파란색',\r\n    Purple = '보라색', Pink = '핑크색'}\r\n\r\n--Runs when the scripted button inside the button is clicked\r\nfunction buttonPress()\r\n    if lockout == false then\r\n        --Call on any other function here. For example:\r\n        --Global.call(\"Function Name\", {table of parameters if needed})\r\n        --You could also add your own scrting here. For example:\r\n        --print(\"The button was pressed. Hoozah.\")\r\n        FirstPlayer()\r\n        self.AssetBundle.playTriggerEffect(0) --triggers animation/sound\r\n        lockout = true --locks out the button\r\n        startLockoutTimer() --Starts up a timer to remove lockout\r\n    end\r\nend\r\n\r\n\r\nfunction FirstPlayer()\r\n    q = 1\r\n    PlayerColors = {}\r\n    PlayerNames = {}\r\n    for _, p in ipairs(getSeatedPlayers()) do\r\n    PlayerColors[q] = Player[p].color\r\n    PlayerNames[q] = Player[p].steam_name\r\n    q = q+1\r\n    end\r\n\r\n    RandomPlayer = math.random(1, #PlayerColors) + os.date('%S')\r\n    RandomPlayer = math.fmod(RandomPlayer,#PlayerColors)\r\n    if RandomPlayer < 0 then RandomPlayer = RandomPlayer + #PlayerColors end\r\n    RandomPlayer = RandomPlayer + 1\r\n\r\n    for i=1, #PlayerColors, 1 do\r\n        if RandomPlayer == i then self.setColorTint(ButtonColors[PlayerColors[i]]) end\r\n    end\r\n\r\n    AllPlayersString = ''\r\n    for i=1, #PlayerColors, 1 do\r\n        if i != q-1 then\r\n        AllPlayersString = AllPlayersString .. tostring(ColorKor[PlayerColors[i]]) .. ', '\r\n        else\r\n        AllPlayersString = AllPlayersString .. tostring(ColorKor[PlayerColors[i]])\r\n        end\r\n    end\r\n\r\n    pl = PlayerColors[RandomPlayer]\r\n    broadcastToAll('[FFFFFF](' .. AllPlayersString .. ')[7F7F7F] 플레이어들 중 ' .. SixSymbolColor[tostring(pl)]..tostring(ColorKor[pl])..tostring(' '..PlayerNames[RandomPlayer]).. '[7F7F7F] 님이 [i]선 플레이어 입니다[/i]',  {0.5, 0.5, 0.5})\r\nend\r\n\r\n--Runs on load, creates button and makes sure the lockout is off\r\nfunction onload()\r\n    self.createButton({\r\n        label=\"\", click_function = \"buttonPress\",\r\n        function_owner = self,  position={0,0.25,0}, height=1400, width=1400\r\n    })\r\n    self.createButton({\r\n        label=\"누가\\n선이야?\", click_function = \"buttonPress\",\r\n        function_owner = self,  position={0,0.65,0}, height=0, width=0, color = {1,0,0}, font_color={0,0,0}, font_size=400\r\n    })\r\n    lockout = false\r\nend\r\n\r\n--Starts a timer that, when it ends, will unlock the button\r\nfunction startLockoutTimer()\r\n    Timer.create({identifier=self.getGUID(), function_name='unlockLockout', delay=0.5})\r\nend\r\n\r\n--Unlocks button\r\nfunction unlockLockout()\r\n    lockout = false\r\nend\r\n\r\n--Ends the timer if the object is destroyed before the timer ends, to prevent an error\r\nfunction onDestroy()\r\n    Timer.destroy(self.getGUID())\r\nend",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "SaveName": "",
+  "Date": "",
+  "VersionNumber": "",
+  "GameMode": "",
+  "GameType": "",
+  "GameComplexity": "",
+  "Tags": [],
+  "Gravity": 0.5,
+  "PlayArea": 0.5,
+  "Table": "",
+  "Sky": "",
+  "Note": "",
+  "TabStates": {},
+  "LuaScript": "",
+  "LuaScriptState": "",
+  "XmlUI": "",
+  "ObjectStates": [
+    {
+      "GUID": "bcc037",
+      "Name": "CardCustom",
+      "Transform": {
+        "posX": -2.725653,
+        "posY": 0.9736056,
+        "posZ": 4.04679966,
+        "rotX": -5.74874757E-05,
+        "rotY": 180.0001,
+        "rotZ": -6.216649E-07,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "ChesterCardScriptor",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.240417659,
+        "g": 0.1700514,
+        "b": 0.07958055
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": false,
+      "GridProjection": false,
+      "HideWhenFaceDown": true,
+      "Hands": false,
+      "CardID": 200,
+      "SidewaysCard": false,
+      "CustomDeck": {
+        "2": {
+          "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/49083714025498683/EB34A40AFA033F3B29179F43A9084A0C4D64A29C/",
+          "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/49083714025498790/33FE440167DF21F00297E0110CA0E06538E5874A/",
+          "NumWidth": 1,
+          "NumHeight": 1,
+          "BackIsHidden": true,
+          "UniqueBack": false,
+          "Type": 0
+        }
+      },
+      "LuaScript": "userColorList = {}\r\nuserColorList[1] = 'White'\r\nuserColorList[2] = 'Brown'\r\nuserColorList[3] = 'Red'\r\nuserColorList[4] = 'Orange'\r\nuserColorList[5] = 'Yellow'\r\nuserColorList[6] = 'Green'\r\nuserColorList[7] = 'Teal'\r\nuserColorList[8] = 'Blue'\r\nuserColorList[9] = 'Purple'\r\nuserColorList[10] = 'Pink'\r\nuserColorList[11] = 'Grey'\r\n\r\nownedBy = nil\r\nfaceImageUrl = nil\r\nscriptorObj = nil\r\ncardFaceList = {}\r\n\r\nfunction onLoad()\r\n    if self.getName() == 'ChesterCardScriptor' then\r\n        spreadScript()\r\n    elseif self.getName() == 'card' then\r\n        local tobj = self.getCustomObject()\r\n        faceImageUrl = tobj.face\r\n        scriptorObj = getObjectFromGUID('_GUID_')\r\n        \r\n        ownedBy = getThisCardOwner()\r\n\r\n        Wait.frames(function ()\r\n            if ownedBy == nil then\r\n                self.setHiddenFrom(userColorList)\r\n                self.use_hands = false\r\n            else\r\n                self.setHiddenFrom({})\r\n                self.use_hands = true\r\n            end\r\n        end, 30)\r\n    end\r\nend\r\n\r\nfunction setCardOwner(params)\r\n    if params == nil then\r\n        return nil\r\n    elseif params.imageUrl == nil or params.color == nil then\r\n        return nil\r\n    end\r\n    cardFaceList[params.imageUrl] = params.color\r\nend\r\n\r\nfunction getCardOwner(imageUrl)\r\n    if imageUrl == nil then\r\n        return nil\r\n    elseif cardFaceList[imageUrl] == nil then\r\n        return nil\r\n    else\r\n        return cardFaceList[imageUrl]\r\n    end\r\nend\r\n\r\nfunction setThisCardOwner(inputColor)\r\n    if scriptorObj ~= nil then\r\n        scriptorObj.call('setCardOwner', {imageUrl = faceImageUrl, color = inputColor})\r\n    end\r\nend\r\n\r\nfunction getThisCardOwner()\r\n    if scriptorObj ~= nil then\r\n        return scriptorObj.call('getCardOwner', faceImageUrl)\r\n    end\r\nend\r\n\r\nfunction onCollisionEnter(collision)\r\n    local tmpobj\r\n    local tcolor = nil\r\n    if self.getName() == 'card' then\r\n        if ownedBy == nil then\r\n            tmpobj = collision.collision_object\r\n            if math.abs(tmpobj.getPosition().x - self.getPosition().x) > 1 or math.abs(tmpobj.getPosition().z - self.getPosition().z) > 1 then\r\n                return\r\n            end\r\n            if string.find(tmpobj.getName(), '토큰') then\r\n                for i = 1, 10 do\r\n                    if string.find(tmpobj.getName(), userColorList[i]) then\r\n                        tcolor = userColorList[i]\r\n                    end\r\n                end\r\n                if tcolor == nil then\r\n                    tcolor = tmpobj.getDescription()\r\n                end\r\n                if tcolor == nil then\r\n                    return\r\n                elseif tcolor ~= userColorList[1] and tcolor ~= userColorList[2] and tcolor ~= userColorList[3] and tcolor ~= userColorList[4] and \r\n                tcolor ~= userColorList[5] and tcolor ~= userColorList[6] and tcolor ~= userColorList[7] and tcolor ~= userColorList[8] and \r\n                tcolor ~= userColorList[9] and tcolor ~= userColorList[10] then\r\n                    return\r\n                end\r\n                \r\n                ownedBy = tcolor\r\n                setThisCardOwner(tcolor)\r\n\r\n                tmpobj.destroyObject()\r\n                self.setHiddenFrom({})\r\n                self.use_hands = true\r\n                Wait.frames(function()\r\n                    self.deal(1, ownedBy, 1)\r\n                end, 20)\r\n            else\r\n                return\r\n            end\r\n        else\r\n            return\r\n        end\r\n    end\r\nend\r\n\r\nfunction tryObjectEnter(object)\r\n    return false\r\nend\r\n\r\nfunction spreadScript()\r\n    if self.getName() == 'ChesterCardScriptor' then\r\n        local scriptStr = string.gsub(self.getLuaScript(), '_GUID_', self.guid)\r\n        local tmpObj = getObjects()\r\n        for _, obj in ipairs(tmpObj) do\r\n            if obj.getName() == 'card' then\r\n                obj.setLuaScript(scriptStr)            \r\n            end\r\n        end\r\n    else\r\n        return\r\n    end\r\nend\r\n\r\nfunction onRotate(spin, flip, player_color, old_spin, old_flip)\r\n    if flip ~= old_flip and player_color == 'Black' then\r\n        if flip < old_flip then\r\n            self.setHiddenFrom({})\r\n            ownedBy = 'Black'\r\n            setThisCardOwner('Black')\r\n        end\r\n    end\r\nend",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    }
+  ]
+}

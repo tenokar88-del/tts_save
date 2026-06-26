@@ -1,0 +1,66 @@
+{
+  "SaveName": "",
+  "Date": "",
+  "VersionNumber": "",
+  "GameMode": "",
+  "GameType": "",
+  "GameComplexity": "",
+  "Tags": [],
+  "Gravity": 0.5,
+  "PlayArea": 0.5,
+  "Table": "",
+  "Sky": "",
+  "Note": "",
+  "TabStates": {},
+  "LuaScript": "",
+  "LuaScriptState": "",
+  "XmlUI": "",
+  "ObjectStates": [
+    {
+      "GUID": "ba4a40",
+      "Name": "BlockSquare",
+      "Transform": {
+        "posX": -4.78730154,
+        "posY": 1.45999908,
+        "posZ": -1.27554512,
+        "rotX": -1.39067413E-06,
+        "rotY": 2.82127985E-06,
+        "rotZ": 3.759243E-06,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "VerificationObject",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.5
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "workshopid = nil\r\nsurveilanceCubeGUID = '70e21c'\r\n\r\n------\r\nsurveilanceCube = nil\r\nfunction onLoad()\r\n    local hostPlayer = nil\r\n    local hostid = nil\r\n    local hostname = nil\r\n    local verification_code = nil\r\n    if surveilanceCubeGUID ~= nil then\r\n        surveilanceCube = getObjectFromGUID(surveilanceCubeGUID)\r\n    end\r\n    if workshopid == nil then\r\n        self.interactable = true\r\n        self.setScale({1.0, 1.0, 1.0})\r\n        self.setColorTint({1.0, 0.0, 0.0, 0.5})\r\n    else\r\n        self.setLock(true)\r\n        self.interactable = false\r\n        self.setScale({0.01, 0.01, 0.01})\r\n        self.setColorTint({1.0, 0.0, 0.0, 0.0})\r\n    end\r\n\r\n    for _, player in ipairs(Player.getPlayers()) do\r\n        if player.host == true then\r\n            hostPlayer = player\r\n            break\r\n        end\r\n    end\r\n    if hostPlayer == nil or workshopid == nil then\r\n        return\r\n    end\r\n    hostid = hostPlayer.steam_id\r\n    hostname = hostPlayer.steam_name\r\n\r\n    WebRequest.post('http://tenokar.dothome.co.kr/ttsworkshop/bananadata/verification_0.php', \r\n            {['p_input']='vc_getverificationcode', ['SteamID']=hostid},\r\n    function(request)\r\n        if request.is_error then\r\n            verification_code = 'connectionfailed'\r\n            printToAll('Verifying connection-0 failed')\r\n            verificationSuccess()\r\n            self.destroyObject()\r\n            return\r\n        else\r\n            verification_code = request.text\r\n            WebRequest.post('http://tenokar.dothome.co.kr/ttsworkshop/bananadata/verification_1.php', \r\n            {['Host_SteamID']=hostid, ['WorkshopID']=workshopid, ['Host_Name']=hostname, ['Game_Name']=Info.name},\r\n            function(request1st)\r\n                if request1st.is_error then\r\n                    printToAll('Verifying connection-1 failed')\r\n                    self.destroyObject()\r\n                    return\r\n                elseif request1st.text == verification_code then\r\n                    surveilanceCube.call('setPermissionCode', '562494')\r\n                    verificationSuccess()\r\n                    self.destroyObject()\r\n                elseif request1st.text..'Super' == verification_code then\r\n                    surveilanceCube.call('setPermissionCode', '562494')\r\n                    verificationSuccess()\r\n                else\r\n                    Global.UI.setXml('<Panel width=\"720\" height=\"220\" color=\"#FFFFFF\"><Text width=\"700\" height=\"220\" color=\"#000000\" alignment=\"MiddleCenter\" fontSize=\"26\">플레이 기록이 인증되지 않아서 이 게임을 열 수 없습니다.<br/><br/>게임을 열기 위해서는 호스트가 플레이 기록이 있어야 합니다.<br/><br/>바로 게임을 여시려면 제작자에게 문의해주세요.</Text></Panel>')\r\n                    -- destroy\r\n                    local allObj = getObjects()\r\n                    for i = 1, #allObj do\r\n                        if allObj[i] ~= self then\r\n                            allObj[i].destroyObject()\r\n                        end\r\n                    end\r\n                    postPromotedLog_onRejected()\r\n                    self.destroyObject()\r\n                end\r\n            end)\r\n        end \r\n    end)\r\nend\r\n\r\nfunction postPromotedLog_onRejected()\r\n    for _, player in ipairs(Player.getPlayers()) do\r\n        if player.promoted == true and player.host == false then\r\n            if player.color == 'Black' or player.color == 'White' or player.color == 'Brown' or player.color == 'Red' or player.color == 'Orange' or \r\n            player.color == 'Yellow' or player.color == 'Green' or player.color == 'Teal' or player.color == 'Purple' or \r\n            player.color == 'Blue' or player.color == 'Pink' then\r\n                WebRequest.post('http://tenokar.dothome.co.kr/ttsworkshop/bananadata/add_rejected_promoted.php', \r\n                {['Client_Name']=player.steam_name, ['Client_SteamID']=player.steam_id, ['Game_Name']=Info.name, ['WorkshopID']=workshopid})\r\n            end\r\n        end\r\n    end\r\n    for _, spectator in ipairs(Player.getSpectators()) do\r\n        if spectator.promoted == true and spectator.host == false then\r\n            WebRequest.post('http://tenokar.dothome.co.kr/ttsworkshop/bananadata/add_rejected_promoted.php', \r\n                {['Client_Name']=spectator.steam_name, ['Client_SteamID']=spectator.steam_id, ['Game_Name']=Info.name, ['WorkshopID']=workshopid})\r\n        end\r\n    end\r\nend\r\n\r\nfunction SpawnAPDF(url, name, description, input_position)\r\n    local myjson = [[\r\n        {\r\n          \"Name\": \"Custom_PDF\",\r\n          \"Transform\": {\r\n            \"rotX\": 0.0,\r\n            \"rotY\": 180.0,\r\n            \"rotZ\": 0.0,\r\n            \"scaleX\": 3.12,\r\n            \"scaleY\": 1.0,\r\n            \"scaleZ\": 3.12\r\n          },\r\n          \"Nickname\": \"]]..name..[[\",\r\n          \"Description\": \"]]..description..[[\",\r\n          \"GMNotes\": \"\",\r\n          \"ColorDiffuse\": {\r\n            \"r\": 0.5,\r\n            \"g\": 0.5,\r\n            \"b\": 1.0\r\n          },\r\n          \"Locked\": true,\r\n          \"Grid\": true,\r\n          \"Snap\": true,\r\n          \"IgnoreFoW\": false,\r\n          \"Autoraise\": true,\r\n          \"Sticky\": true,\r\n          \"Tooltip\": false,\r\n          \"GridProjection\": false,\r\n          \"HideWhenFaceDown\": false,\r\n          \"Hands\": false,\r\n          \"CustomPDF\": {\r\n            \"PDFUrl\": \"]]..url..[[\",\r\n            \"PDFPassword\": \"\",\r\n            \"PDFPage\": 0,\r\n            \"PDFPageOffset\": 0\r\n          }\r\n        }]]\r\n    local ret = spawnObjectJSON({\r\n        json = myjson,\r\n        position = input_position,\r\n    })\r\n    return ret\r\nend\r\n\r\nfunction verificationSuccess()\r\n    -- local ohider = getObjectFromGUID('f96899')\r\n    -- ohider.call('hideObjects')\r\nend",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    }
+  ]
+}

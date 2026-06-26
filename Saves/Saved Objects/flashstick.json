@@ -1,0 +1,72 @@
+{
+  "SaveName": "",
+  "Date": "",
+  "VersionNumber": "",
+  "GameMode": "",
+  "GameType": "",
+  "GameComplexity": "",
+  "Tags": [],
+  "Gravity": 0.5,
+  "PlayArea": 0.5,
+  "Table": "",
+  "Sky": "",
+  "Note": "",
+  "TabStates": {},
+  "LuaScript": "",
+  "LuaScriptState": "",
+  "XmlUI": "",
+  "ObjectStates": [
+    {
+      "GUID": "f45aec",
+      "Name": "Custom_Assetbundle",
+      "Transform": {
+        "posX": 7.61829424,
+        "posY": 1.6610806,
+        "posZ": -6.41191626,
+        "rotX": 0.1337866,
+        "rotY": 0.348954916,
+        "rotZ": -0.001993857,
+        "scaleX": 0.2,
+        "scaleY": 0.2,
+        "scaleZ": 0.2
+      },
+      "Nickname": "l",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomAssetbundle": {
+        "AssetbundleURL": "http://chry.me/up/lightsaber_white.unity3d",
+        "AssetbundleSecondaryURL": "",
+        "MaterialIndex": 2,
+        "TypeIndex": 0,
+        "LoopingEffectIndex": 3
+      },
+      "LuaScript": "function onload()\r\n  self.AssetBundle.playLoopingEffect(3)\r\nend\r\n\r\nfunction onPickedUp()\r\n self.AssetBundle.playLoopingEffect(0)\r\nend\r\n\r\nfunction onDropped()\r\n self.AssetBundle.playLoopingEffect(3)\r\nend\r\n",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    }
+  ]
+}

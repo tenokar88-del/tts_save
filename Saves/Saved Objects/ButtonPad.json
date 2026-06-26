@@ -1,0 +1,77 @@
+{
+  "SaveName": "",
+  "Date": "",
+  "VersionNumber": "",
+  "GameMode": "",
+  "GameType": "",
+  "GameComplexity": "",
+  "Tags": [],
+  "Gravity": 0.5,
+  "PlayArea": 0.5,
+  "Table": "",
+  "Sky": "",
+  "Note": "",
+  "TabStates": {},
+  "LuaScript": "",
+  "LuaScriptState": "",
+  "XmlUI": "",
+  "ObjectStates": [
+    {
+      "GUID": "cdd5f8",
+      "Name": "Custom_Tile",
+      "Transform": {
+        "posX": 0.217882991,
+        "posY": 0.9600009,
+        "posZ": 0.95994097,
+        "rotX": 1.03607226E-06,
+        "rotY": 179.984818,
+        "rotZ": -1.68951374E-06,
+        "scaleX": 3.31565976,
+        "scaleY": 1.0,
+        "scaleZ": 3.31565976
+      },
+      "Nickname": "ButtonPad",
+      "Description": "",
+      "GMNotes": "이 버튼은 이런 내용\n입니다.",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.559233248,
+        "g": 0.3362785,
+        "b": 0.152960479
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomImage": {
+        "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/16634486873030030658/B07ADD4978B309450F5042DAE029D5F29E2330DC/",
+        "ImageSecondaryURL": "https://steamusercontent-a.akamaihd.net/ugc/9811379854791557153/86E00BB451107B6620D09E18DB5EE90042C926C3/",
+        "ImageScalar": 1.0,
+        "WidthScale": 0.0,
+        "CustomTile": {
+          "Type": 0,
+          "Thickness": 0.2,
+          "Stackable": false,
+          "Stretch": true
+        }
+      },
+      "LuaScript": "btColor = {r=1, g=0, b=0}\r\n\r\nfunction onLoad(en_state)\r\n    local state = JSON.decode(en_state)\r\n    if state ~= nil then\r\n        if state.btColor ~= nil then\r\n            btColor.r = state.btColor.r\r\n            btColor.g = state.btColor.g\r\n            btColor.b = state.btColor.b\r\n        end\r\n    end\r\n    self.createButton({position={x=0, y=0.21, z=-0.40}, scale={4, 4, 4}, color=btColor, \r\n        click_function='userFunction', function_owner=self, tooltip=self.getGMNotes()})\r\n    self.createButton({position={x=0, y=0.21, z=0.40}, scale={0.5, 0.5, 0.5}, color={r=0, g=0, b=0}, width=0, height=0,\r\n        click_function='none', function_owner=self, fontSize=80, label=self.getGMNotes()})\r\n    self.addContextMenuItem(\"캡션 설정\", setCaption)\r\n    self.addContextMenuItem(\"버튼색 설정\", setBtColor)\r\nend\r\n\r\nfunction userFunction(obj, player_color, alt_click)\r\n    if alt_click == true then return end\r\n    \r\n    -- 이 부분에 버튼 클릭 시 실행할 내용 작성\r\n    print(1)\r\n\r\n\r\n\r\n\r\nend\r\n\r\n\r\n\r\n\r\n\r\nfunction onSave()\r\n    local state = {\r\n        btColor = {r = btColor.r, g = btColor.g, b = btColor.b}\r\n    }\r\n    return JSON.encode(state)\r\nend\r\n\r\nfunction setCaption(player_color, position, object)\r\n    if player_color == 'Black' then\r\n        Player[player_color].showMemoDialog(\"캡션 설정 - 적절히 줄바꿈 추가해서 입력 (GMNote 데이터를 사용합니다)\",\r\n        function (text, player_color)\r\n            self.editButton({\r\n                index = 1,\r\n                label = text\r\n            })\r\n            self.editButton({\r\n                index = 0,\r\n                tooltip = text\r\n            })\r\n            self.setGMNotes(text)\r\n        end\r\n        )\r\n    end\r\nend\r\n\r\nfunction externSetCaption(text)\r\n    self.editButton({\r\n        index = 1,\r\n        label = text\r\n    })\r\n    self.editButton({\r\n        index = 0,\r\n        tooltip = text\r\n    })\r\n    self.setGMNotes(text)\r\nend\r\n\r\nfunction setBtColor(player_color, position, object)\r\n    if player_color == 'Black' then\r\n        Player[player_color].showColorDialog({r=0, g=0, b=0},\r\n        function (color, player_color)\r\n            self.editButton({\r\n                index = 0,\r\n                color = color\r\n            })\r\n            btColor.r = color.r\r\n            btColor.g = color.g\r\n            btColor.b = color.b\r\n        end\r\n        )\r\n    end\r\nend\r\n\r\nfunction findObject(name, description, gmnote)\r\n    local objs = getObjects()\r\n    if name == nil and description == nil and gmnote == nil then\r\n        return nil\r\n    end\r\n    for i = 1, #objs do\r\n        if (objs[i].getName() == name or name == nil) and (objs[i].getDescription() == description or description == nil) and (objs[i].getGMNotes() == gmnote or gmnote == nil) then\r\n            return objs[i]\r\n        end\r\n    end\r\nend\r\nfunction inverseColor(colorTable)\r\n    local retColors = {'White', 'Brown', 'Red', 'Orange', 'Yellow', 'Green', 'Teal', 'Blue', 'Purple', 'Pink', 'Grey'}\r\n    for i = 1, #colorTable do\r\n        removeByValue(retColors, colorTable[i])\r\n    end\r\n    return retColors\r\nend\r\nfunction removeByValue(t, val)\r\n    for i, v in ipairs(t) do\r\n        if v == val then\r\n            table.remove(t, i)\r\n            break\r\n        end\r\n    end\r\nend\r\n\r\nfunction none()\r\nend",
+      "LuaScriptState": "{\"btColor\":{\"b\":0,\"g\":0,\"r\":1}}",
+      "XmlUI": ""
+    }
+  ]
+}

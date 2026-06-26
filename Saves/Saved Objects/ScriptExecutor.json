@@ -1,0 +1,77 @@
+{
+  "SaveName": "",
+  "Date": "",
+  "VersionNumber": "",
+  "GameMode": "",
+  "GameType": "",
+  "GameComplexity": "",
+  "Tags": [],
+  "Gravity": 0.5,
+  "PlayArea": 0.5,
+  "Table": "",
+  "Sky": "",
+  "Note": "",
+  "TabStates": {},
+  "LuaScript": "",
+  "LuaScriptState": "",
+  "XmlUI": "",
+  "ObjectStates": [
+    {
+      "GUID": "cdd5f8",
+      "Name": "Custom_Tile",
+      "Transform": {
+        "posX": -1.21006727,
+        "posY": 1.25432229,
+        "posZ": -0.575993,
+        "rotX": -4.24977043E-06,
+        "rotY": 179.984787,
+        "rotZ": 3.17617423E-06,
+        "scaleX": 3.31565976,
+        "scaleY": 1.0,
+        "scaleZ": 3.31565976
+      },
+      "Nickname": "ScriptExecutor",
+      "Description": "",
+      "GMNotes": "이 버튼은 이런 내용\n입니다.",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.0,
+        "g": 0.5731708,
+        "b": 0.419756472
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomImage": {
+        "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/10390042764175882845/F6A80B1B131B0F55436D74B8004F287DBA7D6807/",
+        "ImageSecondaryURL": "https://steamusercontent-a.akamaihd.net/ugc/10390042764175882845/F6A80B1B131B0F55436D74B8004F287DBA7D6807/",
+        "ImageScalar": 1.0,
+        "WidthScale": 0.0,
+        "CustomTile": {
+          "Type": 0,
+          "Thickness": 0.2,
+          "Stackable": false,
+          "Stretch": true
+        }
+      },
+      "LuaScript": "btColor = {r=1, g=0, b=0}\r\nscriptStr = ''\r\nwindowOpened = 0\r\ntargetObj = nil\r\nfunction onLoad(en_state)\r\n    local state = JSON.decode(en_state)\r\n    if state ~= nil then\r\n        if state.str ~= nil then\r\n            scriptStr = state.str\r\n        end\r\n    end\r\n    self.createButton({position={x=0, y=0.21, z=-0.46}, scale={4, 4, 3.4}, color={1, 0, 0}, \r\n        click_function='setScript', function_owner=self, tooltip='Set the script'})\r\n    self.createButton({position={x=0, y=0.21, z=0.36}, scale={4, 4, 3.4}, color={0, 0.8, 0}, \r\n        click_function='runScript', function_owner=self, tooltip='Run the script'})\r\n    local objs = getObjects()\r\n    for i = 1, #objs do\r\n        if objs[i].getName() == 'egr50oi8jh' then\r\n            objs[i].destroyObject()\r\n        end\r\n    end\r\nend\r\n\r\nfunction onEndEdit(player, value, id)\r\n    self.UI.setAttribute('if', 'text', value)\r\n    scriptStr = value\r\nend\r\n\r\nfunction setScript(obj, player_color, alt_click)\r\n    if alt_click == true then return end\r\n    if windowOpened == 0 then\r\n        windowOpened = 1\r\n        self.UI.setAttribute('mainPanel', 'active', 'true')\r\n        self.UI.setAttribute('if', 'text', scriptStr)\r\n    else\r\n        windowOpened = 0\r\n        self.UI.setAttribute('mainPanel', 'active', 'false')\r\n    end\r\nend\r\n\r\nfunction runScript(obj, player_color, alt_click)\r\n    if alt_click == true then return end\r\n    local zobj = nil\r\n    if targetObj ~= nil then\r\n        targetObj.destroyObject()\r\n    end\r\n    local pos = self.getPosition()\r\n    local spawnParams = {\r\n        type = 'ScriptingTrigger',\r\n        position = {x=0, y=-500, z=0},\r\n        scale = {x=0.01, y=0.01, z=0.01},\r\n    }\r\n    targetObj = spawnObject(spawnParams)\r\n    targetObj.setName('egr50oi8jh')\r\n    local pre_str = [=[function userFunction()\r\n\r\n]=]\r\n    local post_str = [=[\r\n\r\nself.destroyObject()\r\nend]=]\r\n    targetObj.setLuaScript(pre_str .. scriptStr .. post_str)\r\n    Wait.frames(function ()\r\n        targetObj.call('userFunction')\r\n    end, 20)\r\nend\r\n\r\nfunction onSave()\r\n    local state = {\r\n        str = scriptStr\r\n    }\r\n    return JSON.encode(state)\r\nend",
+      "LuaScriptState": "{\"str\":\"print(1)\"}",
+      "XmlUI": "<Panel id=\"mainPanel\" active=\"false\" position=\"-200 0 -100\" rotation=\"0 0 180\" width=\"800\" height=\"1000\" color=\"#FFFFFF88\" scale=\"0.4 0.4 0.4\">\r\n<InputField id=\"if\" width=\"750\" height=\"950\" lineType=\"MultiLineNewLine\" onEndEdit=\"onEndEdit\"/>\r\n</Panel>"
+    }
+  ]
+}

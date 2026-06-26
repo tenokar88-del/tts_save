@@ -1,0 +1,77 @@
+{
+  "SaveName": "",
+  "Date": "",
+  "VersionNumber": "",
+  "GameMode": "",
+  "GameType": "",
+  "GameComplexity": "",
+  "Tags": [],
+  "Gravity": 0.5,
+  "PlayArea": 0.5,
+  "Table": "",
+  "Sky": "",
+  "Note": "",
+  "TabStates": {},
+  "LuaScript": "",
+  "LuaScriptState": "",
+  "XmlUI": "",
+  "ObjectStates": [
+    {
+      "GUID": "392dde",
+      "Name": "Custom_Tile",
+      "Transform": {
+        "posX": -7.11761475,
+        "posY": 1.4814992,
+        "posZ": 11.4731865,
+        "rotX": 1.75012516E-07,
+        "rotY": 180.024612,
+        "rotZ": -2.00586086E-07,
+        "scaleX": 6.64081669,
+        "scaleY": 1.0,
+        "scaleZ": 6.64081669
+      },
+      "Nickname": "증거 조사",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.182923645,
+        "g": 0.182923645,
+        "b": 0.182923645
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomImage": {
+        "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/11715705947998967367/A2BCBAC426F5011C4C05636EA8E310FA4B648C7A/",
+        "ImageSecondaryURL": "https://steamusercontent-a.akamaihd.net/ugc/49081380760980196/D3035C30ABEC15D4E2395D24EFC202AD9B312F9B/",
+        "ImageScalar": 1.0,
+        "WidthScale": 0.0,
+        "CustomTile": {
+          "Type": 0,
+          "Thickness": 0.2,
+          "Stackable": false,
+          "Stretch": true
+        }
+      },
+      "LuaScript": "commentDB = {\r\n    [\"검색키워드1\"] = {\r\n        [\"Title\"] = [=[단서(1)의 제목]=],\r\n        [\"Content\"] = [=[단서(1)의 내용을\r\n쓴다.]=],\r\n    },\r\n    [\"검색키워드2\"] = {\r\n        [\"Title\"] = [=[단서(2)의 제목]=],\r\n        [\"Content\"] = [=[단서(2)의 내용을\r\n쓴다.]=],\r\n    },\r\n    -- 키워드 부분에는 공백을 쓰면 안된다.\r\n}\r\n\r\nreplaceTable = {\r\n    [\"검섹키워드1\"] = '검색키워드1',\r\n    [\"검색키와드1\"] = '검색키워드1',\r\n    -- 이렇게 쓰면 검섹키워드1을 써도 검색키워드1로 검색된다.\r\n}\r\n\r\n\r\ncolorHex = {\r\n    White = \"FFFFFF\", Brown = \"713B17\", Red = \"DA1917\",\r\n    Orange = \"F5740B\", Yellow = \"E7E52D\", Green = \"31B319\",\r\n    Teal = \"21B19B\", Blue = \"1F87FF\", Purple = \"A021B1\",\r\n    Pink = \"EE5BB1\", Black = \"000000\", Grey = \"8C8C8C\"\r\n}\r\n\r\nfunction onLoad()\r\n    \r\nend\r\n\r\n\r\nfunction run(player, value, id)\r\n\tlocal str = value\r\n    if value == '' then\r\n        return\r\n    end\r\n    local pcNameOfColor = Global.call('externGetTable', 'pcNameOfColor')\r\n\r\n    if pcNameOfColor == nil or (pcNameOfColor[player.color] == nil and player.color ~= 'Black') then\r\n        return\r\n    end\r\n\r\n    if pcNameOfColor[player.color] ~= '7' and player.color ~= 'Black' then\r\n        return\r\n    end\r\n\r\n    self.UI.setAttribute(id, 'text', '')\r\n\r\n\tlocal result = {}\r\n\tfor i = 1, #str do\r\n\t\tif string.byte(str, i) ~= 32 then\r\n\t\t\tresult[#result + 1] = string.sub(str, i, i)\r\n\t\tend\r\n\tend\r\n\tlocal nospace = table.concat(result)\r\n    if replaceTable[nospace] ~= nil then\r\n        nospace = replaceTable[nospace]\r\n    end\r\n    makeCard(player.color, nospace)\r\nend\r\n\r\nfunction findObject(name, description, gmnote)\r\n    local objs = getObjects()\r\n    if name == nil and description == nil and gmnote == nil then\r\n        return nil\r\n    end\r\n    for i = 1, #objs do\r\n        if (objs[i].getName() == name or name == nil) and (objs[i].getDescription() == description or description == nil) and (objs[i].getGMNotes() == gmnote or gmnote == nil) then\r\n            return objs[i]\r\n        end\r\n    end\r\nend\r\n\r\n\r\nfunction makeCard(pColor, keyword)\r\n    local sample = findObject('GMCard', nil, 'CardForCopy')\r\n    local newCard = nil \r\n    local thispos = self.getPosition()\r\n    thispos.y = thispos.y + 1\r\n    local vcolor\r\n    local hcolor\r\n    local content = nil\r\n    local title = nil\r\n    vcolor = pColor .. '|Black'\r\n    \r\n\r\n    if commentDB[keyword] ~= nil or (content ~= nil) then\r\n        content = commentDB[keyword]['Content']\r\n        if content == nil then\r\n            return\r\n        end\r\n        if title == nil then\r\n            title = commentDB[keyword]['Title']\r\n        end\r\n\r\n        newCard = sample.clone({position=thispos})\r\n\t\tnewCard.setName('조사카드')\r\n        local wholeScript = [===[\r\nfunction onLoad()\r\n\tlocal ui_script = [=[<Panel id=\"main\">\r\n<Panel id=\"ownerPanel\" visibility=\"]===] .. vcolor .. [===[\" scale=\"0.2 0.185 0.2\" position=\"0 0 -51\" rotation=\"0 0 180\" width=\"1000\" height=\"1622\">\r\n<Text font=\"font/kpwbatang\" id=\"title\" fontSize=\"56\" alignment=\"UpperCenter\" color=\"Black\" fontStyle=\"Bold\">]===] .. title .. [===[</Text>\t\r\n<Text font=\"font/kpwbatang\" id=\"content\" fontSize=\"37\" alignment=\"UpperLeft\" color=\"Black\" offsetXY=\"0 -120\">]===] .. content .. [===[</Text>\r\n</Panel>\r\n\r\n</Panel>\r\n]=]\r\n\tself.UI.setXml(ui_script)\r\nend\r\n\r\nfunction tryObjectEnter(object)\r\n    return false\r\nend\r\n\r\nfunction getTitle()\r\n\treturn [=[]===] .. title .. [===[]=]\r\nend\r\n]===]\r\n        newCard.setLuaScript(wholeScript)\r\n\r\n        if Player['Black'].seated == true then\r\n            printToColor('조사성공: ' .. keyword, 'Black', {0.2, 1, 0.2})\r\n        end\r\n    else\r\n        if Player['Black'].seated == true then\r\n            printToColor('조사실패: ' .. keyword, 'Black', {1, 0.2, 0.2})\r\n        end\r\n    end\r\n\r\n    if newCard ~= nil then\r\n        newCard.setName('')\r\n        newCard.setDescription('')\r\n        newCard.setGMNotes('')\r\n        Wait.time(function()\r\n            newCard.flip()\r\n        end, 1)\r\n    end\r\nend\r\n\r\nfunction findObject(name, description, gmnote)\r\n    local objs = getObjects()\r\n    if name == nil and description == nil and gmnote == nil then\r\n        return nil\r\n    end\r\n    for i = 1, #objs do\r\n        if (objs[i].getName() == name or name == nil) and (objs[i].getDescription() == description or description == nil) and (objs[i].getGMNotes() == gmnote or gmnote == nil) then\r\n            return objs[i]\r\n        end\r\n    end\r\nend",
+      "LuaScriptState": "",
+      "XmlUI": "<Panel id=\"main\" position=\"0 0 -21\" rotation=\"0 0 180\" scale=\"0.3 0.3 0.3\">\r\n<InputField offsetXY=\"0 -270\" id=\"if_Black\" visibility=\"Black\" width=\"430\" height=\"40\" fontSize=\"21\" lineType=\"MultiLineSubmit\" onEndEdit=\"run\"></InputField>\r\n<InputField offsetXY=\"0 -270\" id=\"if_White\" visibility=\"White\" width=\"430\" height=\"40\" fontSize=\"21\" lineType=\"MultiLineSubmit\" onEndEdit=\"run\"></InputField>\r\n<InputField offsetXY=\"0 -270\" id=\"if_Brown\" visibility=\"Brown\" width=\"430\" height=\"40\" fontSize=\"21\" lineType=\"MultiLineSubmit\" onEndEdit=\"run\"></InputField>\r\n<InputField offsetXY=\"0 -270\" id=\"if_Red\" visibility=\"Red\" width=\"430\" height=\"40\" fontSize=\"21\" lineType=\"MultiLineSubmit\" onEndEdit=\"run\"></InputField>\r\n<InputField offsetXY=\"0 -270\" id=\"if_Orange\" visibility=\"Orange\" width=\"430\" height=\"40\" fontSize=\"21\" lineType=\"MultiLineSubmit\" onEndEdit=\"run\"></InputField>\r\n<InputField offsetXY=\"0 -270\" id=\"if_Yellow\" visibility=\"Yellow\" width=\"430\" height=\"40\" fontSize=\"21\" lineType=\"MultiLineSubmit\" onEndEdit=\"run\"></InputField>\r\n<InputField offsetXY=\"0 -270\" id=\"if_Green\" visibility=\"Green\" width=\"430\" height=\"40\" fontSize=\"21\" lineType=\"MultiLineSubmit\" onEndEdit=\"run\"></InputField>\r\n<InputField offsetXY=\"0 -270\" id=\"if_Teal\" visibility=\"Teal\" width=\"430\" height=\"40\" fontSize=\"21\" lineType=\"MultiLineSubmit\" onEndEdit=\"run\"></InputField>\r\n<InputField offsetXY=\"0 -270\" id=\"if_Blue\" visibility=\"Blue\" width=\"430\" height=\"40\" fontSize=\"21\" lineType=\"MultiLineSubmit\" onEndEdit=\"run\"></InputField>\r\n<InputField offsetXY=\"0 -270\" id=\"if_Purple\" visibility=\"Purple\" width=\"430\" height=\"40\" fontSize=\"21\" lineType=\"MultiLineSubmit\" onEndEdit=\"run\"></InputField>\r\n<InputField offsetXY=\"0 -270\" id=\"if_Pink\" visibility=\"Pink\" width=\"430\" height=\"40\" fontSize=\"21\" lineType=\"MultiLineSubmit\" onEndEdit=\"run\"></InputField>\r\n</Panel>"
+    }
+  ]
+}

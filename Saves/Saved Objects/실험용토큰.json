@@ -1,0 +1,80 @@
+{
+  "SaveName": "",
+  "Date": "",
+  "VersionNumber": "",
+  "GameMode": "",
+  "GameType": "",
+  "GameComplexity": "",
+  "Tags": [],
+  "Gravity": 0.5,
+  "PlayArea": 0.5,
+  "Table": "",
+  "Sky": "",
+  "Note": "",
+  "TabStates": {},
+  "LuaScript": "",
+  "LuaScriptState": "",
+  "XmlUI": "",
+  "ObjectStates": [
+    {
+      "GUID": "c16709",
+      "Name": "Custom_Token",
+      "Transform": {
+        "posX": 2.51524568,
+        "posY": 1.01000011,
+        "posZ": 0.7734143,
+        "rotX": 1.3373915E-05,
+        "rotY": 179.962479,
+        "rotZ": -2.32635357E-05,
+        "scaleX": 0.275000423,
+        "scaleY": 1.0,
+        "scaleZ": 0.275000423
+      },
+      "Nickname": "실험용토큰",
+      "Description": "",
+      "GMNotes": "Token:Black",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "Tags": [
+        "ChesterToken"
+      ],
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomImage": {
+        "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/17114693819321081279/E017B993399823F2AC8D61DC008EEFB9AE292BC4/",
+        "ImageSecondaryURL": "",
+        "ImageScalar": 1.0,
+        "WidthScale": 0.0,
+        "CustomToken": {
+          "Thickness": 0.1,
+          "MergeDistancePixels": 15.0,
+          "StandUp": false,
+          "Stackable": false
+        }
+      },
+      "LuaScript": "colorList = {}\r\ncolorList[1] = 'White'\r\ncolorList[2] = 'Brown'\r\ncolorList[3] = 'Red'\r\ncolorList[4] = 'Orange'\r\ncolorList[5] = 'Yellow'\r\ncolorList[6] = 'Green'\r\ncolorList[7] = 'Teal'\r\ncolorList[8] = 'Blue'\r\ncolorList[9] = 'Purple'\r\ncolorList[10] = 'Pink'\r\ncolorList[11] = 'Grey'\r\ncolorList[12] = 'Black'\r\npColor = {}\r\npColor[colorList[1]] = {1, 1, 1}\r\npColor[colorList[2]] = {0.443, 0.231, 0.09}\r\npColor[colorList[3]] = {0.856, 0.1, 0.094}\r\npColor[colorList[4]] = {0.956, 0.392, 0.113}\r\npColor[colorList[5]] = {0.905, 0.898, 0.172}\r\npColor[colorList[6]] = {0.192, 0.701, 0.168}\r\npColor[colorList[7]] = {0.129, 0.698, 0.607}\r\npColor[colorList[8]] = {0.118, 0.53, 1}\r\npColor[colorList[9]] = {0.627, 0.125, 0.941}\r\npColor[colorList[10]] = {0.96, 0.439, 0.807}\r\npColor[colorList[11]] = {0.5, 0.5, 0.5}\r\npColor[colorList[12]] = {0.25, 0.25, 0.25}\r\n\r\n\r\ncBag = nil\r\nfunction onLoad()\r\n    cBag = findObjectWithGMNotes('CHESTER_TOKEN_BAG')\r\nend\r\n\r\nfunction changeOwner(color)\r\n    if cBag == nil then\r\n        cBag = findObjectWithGMNotes('CHESTER_TOKEN_BAG')\r\n    end\r\n    if cBag == nil then\r\n        return\r\n    end\r\n    if self.getGMNotes() == 'Token:'..color then\r\n        return\r\n    end\r\n    if cBag.call('getValueAllowingGiving') == 1 or self.getGMNotes() == 'Token:Black' then\r\n        self.setGMNotes('Token:' .. color)\r\n        local tb = self.getCustomObject()\r\n        local nImage = cBag.call('getTokenImage', color)\r\n        if nImage ~= nil then\r\n            tb.image = nImage\r\n            self.setCustomObject(tb)\r\n            self = self.reload()\r\n        end\r\n        return self\r\n        --self.setColorTint(pColor[color])\r\n    end\r\nend\r\n\r\nfunction onPickUp(color)\r\n    if Player[color].lift_height < 0.25 then\r\n        Player[color].lift_height = 0.25\r\n    end\r\n    if color ~= 'Black' then\r\n        if cBag.call('getValueAllowingGiving') ~= 1 and self.getGMNotes() ~= 'Token:'..color and self.getGMNotes() ~= 'Token:Black' then\r\n            self.drop()\r\n        end\r\n        changeOwner(color)\r\n    end\r\nend\r\n\r\nfunction onDrop(color)\r\n    if color ~= 'Black' then\r\n        changeOwner(color)\r\n    end\r\nend\r\n\r\nfunction findObjectWithGMNotes(inputGMNotes)\r\n    local t = getObjects()\r\n    for i = 1, #t do\r\n        if t[i].getGMNotes() == inputGMNotes then\r\n            return t[i]\r\n        end\r\n    end\r\n    return nil\r\nend\r\n\r\nfunction onCollisionEnter(collision)\r\n    local collobj = collision.collision_object\r\n    if math.abs(collobj.getPosition().x - self.getPosition().x) > 0.1 or math.abs(collobj.getPosition().z - self.getPosition().z) > 0.1 \r\n     or (collobj.getPosition().y < self.getPosition().y) then\r\n        return\r\n    end\r\n    if collobj.getName() ~= self.getName() then return end\r\n    if collobj.getDescription() ~= self.getDescription() then return end\r\n    if collobj.getGMNotes() ~= self.getGMNotes() then return end\r\n    local fobj = findBelowCard()\r\n    if fobj == nil then\r\n        return\r\n    end\r\n    fobj.call('byPluralToken', self)\r\nend\r\n\r\nfunction findBelowCard()\r\n    local objs = getObjects()\r\n    local ret = nil\r\n    for i = 1, #objs do\r\n        if string.find(objs[i].getGMNotes(), 'CHESTER_CARD') then\r\n            if math.abs(objs[i].getPosition().x - self.getPosition().x) < 0.1 and math.abs(objs[i].getPosition().z - self.getPosition().z) < 0.1 then\r\n                if objs[i].getPosition().y < self.getPosition().y then\r\n                    ret = objs[i]\r\n                    break\r\n                end\r\n            end\r\n        end\r\n    end\r\n    return ret\r\nend",
+      "LuaScriptState": "",
+      "XmlUI": ""
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "SaveName": "",
+  "Date": "",
+  "VersionNumber": "",
+  "GameMode": "",
+  "GameType": "",
+  "GameComplexity": "",
+  "Tags": [],
+  "Gravity": 0.5,
+  "PlayArea": 0.5,
+  "Table": "",
+  "Sky": "",
+  "Note": "",
+  "TabStates": {},
+  "LuaScript": "",
+  "LuaScriptState": "",
+  "XmlUI": "",
+  "ObjectStates": [
+    {
+      "GUID": "31faec",
+      "Name": "BlockTriangle",
+      "Transform": {
+        "posX": -0.892742634,
+        "posY": 1.7632829,
+        "posZ": 0.461877465,
+        "rotX": 1.12317127E-06,
+        "rotY": 90.03457,
+        "rotZ": -2.31019362E-06,
+        "scaleX": 2.37314248,
+        "scaleY": 2.375603,
+        "scaleZ": 15.1045265
+      },
+      "Nickname": "NamePanel",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": false,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "ImageURL = 'https://steamusercontent-a.akamaihd.net/ugc/17711549262018015394/7180F55196798D60BB71FDFF1BCA7CCFA06D5E65/'\r\nNameText = ''\r\n\r\nfunction onLoad(state)\r\n    self.addContextMenuItem('텍스트 입력', enterText)\r\n    self.addContextMenuItem('이미지URL 입력', enterImage)\r\n    local s = JSON.decode(state)\r\n    if s ~= nil then\r\n        if s.url ~= nil then\r\n            ImageURL = s.url\r\n        end\r\n        if s.text ~= nil then\r\n            NameText = s.text\r\n        end\r\n    end\r\n    setImage(ImageURL)\r\n    setText(NameText)\r\nend\r\n\r\nfunction onSave()\r\n    local s = {url = ImageURL, text = NameText}\r\n    return JSON.encode(s)\r\nend\r\n\r\nfunction enterText(color, pos, obj)\r\n    Player[color].showInputDialog(\"텍스트 입력\", \r\n        function(text, pColor)\r\n            NameText = text\r\n            setText(NameText)\r\n        end\r\n    )\r\nend\r\n\r\nfunction enterImage(color, pos, obj)\r\n    Player[color].showInputDialog(\"이미지URL 입력\", \r\n        function(text, pColor)\r\n            ImageURL = text\r\n            setImage(ImageURL)\r\n        end\r\n    )\r\nend\r\n\r\nfunction setText(input)\r\n    self.UI.setValue('nametext1', input)\r\n    self.UI.setValue('nametext2', input)\r\nend\r\n\r\nfunction setImage(input)\r\n    self.UI.setAttribute('bgimage1', 'image', input)\r\n    self.UI.setAttribute('bgimage2', 'image', input)\r\nend",
+      "LuaScriptState": "{\"text\":\"\",\"url\":\"https://steamusercontent-a.akamaihd.net/ugc/17711549262018015394/7180F55196798D60BB71FDFF1BCA7CCFA06D5E65/\"}",
+      "XmlUI": "\r\n<Panel id=\"main\">\r\n    <Panel id=\"side1\" position=\"36 -0.2 -14.5\" rotation=\"0 -45 90\" width=\"1483\" height=\"230\" scale=\"0.067 0.4 0.1\">\r\n        <Image id=\"bgimage1\" width=\"100%\" height=\"100%\" image=\"\"/>\r\n        <Text id=\"nametext1\" offsetXY=\"0 -5\" fontSize=\"110\" font=\"font/kpwbatang\" color=\"#FFFFFF\" outline=\"#000000\" outlineSize=\"2 -2\" fontStyle=\"Bold\"></Text>\r\n    </Panel>\r\n    <Panel id=\"side2\" position=\"-36 -0.2 -14.5\" rotation=\"0 45 270\" width=\"1483\" height=\"230\" scale=\"0.067 0.4 0.1\">\r\n        <Image id=\"bgimage2\" width=\"100%\" height=\"100%\" image=\"\"/>\r\n        <Text id=\"nametext2\" offsetXY=\"0 -5\" fontSize=\"110\" font=\"font/kpwbatang\" color=\"#FFFFFF\" outline=\"#000000\" outlineSize=\"2 -2\" fontStyle=\"Bold\"></Text>\r\n    </Panel>\r\n</Panel>",
+      "CustomUIAssets": [
+        {
+          "Type": 1,
+          "Name": "font",
+          "URL": "https://steamusercontent-a.akamaihd.net/ugc/15508115169845381258/6CA70CDE3726541A61EC4B1A7711168986A1A89D/"
+        }
+      ]
+    }
+  ]
+}
