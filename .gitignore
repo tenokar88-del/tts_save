@@ -1,3 +1,6 @@
 *.png
 TS_AutoSave*.json
-Saves/SaveFileInfos.json
+Saves/*.json
+*.zip
+*.pdf
+*.docx
